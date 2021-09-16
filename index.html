@@ -6,6 +6,20 @@
 	<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">
 	<style>
 /*- general ------*/
+		@keyframes pop {
+			0% {
+				outline-width: 4px dashed initial;
+				outline-offset: -4ch;
+			}
+			90% {
+				outline: 4px dashed initial;
+				outline-offset: 1ch;
+			}
+			100% {
+				outline: 4px dashed transparent;
+				outline-offset: 1.5ch;
+			}
+		}
 		:root {
 			--col-P1: #EC1A24;
 			--col-P2: #CE1921;
@@ -22,7 +36,7 @@
 			font-weight: 400;
 			color: var(--col-T1);
 		}
-/*- heading -----*/
+	/*- heading ------*/
 		h1,h2,h3 {
 			font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 			text-transform: uppercase;
@@ -32,12 +46,49 @@
 		h2 {font-size: 36px; font-weight: 700}
 		h3 {font-size: 25px; font-weight: 500}
 
-/*- link --------*/
+	/*- link ---------*/
 		a {
 			padding: 4px 8px;
 			position: relative;
 			font-family: 'Comic Sans MS', cursive;
 			z-index: 1;
+		}
+		a::before,a::after {
+			content: '';
+			position: absolute;
+			z-index: -1;
+		}
+		a::before {
+			--bor-rad: calc(1ch + 4px);
+			border-radius: var(--bor-rad);
+			-moz-outline-radius: var(--bor-rad);
+			/* border: 2px solid black; */
+			outline-offset: -2ch;
+			top: 0; left: 0; bottom: 0; right: 0;
+			transition: outline ease-out .1s;
+		}
+		/*--------*/
+		a:hover,a:active {text-decoration: none}
+		a:visited {color: var(--col-P2)}
+		a:hover {color: var(--col-T2)}
+		a:active {color: var(--col-P1)}
+		a:hover::before {
+			outline: 2ch solid var(--col-P2);
+		}
+		a:active::before {
+			animation: .2s ease-out 0s pop;
+			animation-fill-mode: forwards;
+			--bor-rad: 100%;
+		}
+		/*a {
+			padding: 4px 8px;
+			position: relative;
+			font-family: 'Comic Sans MS', cursive;
+			z-index: 1;
+			outline: 1ch solid var(--col-P2); 
+			outline-offset: -2ch;
+			border-radius: calc(1ch + 4px);
+			border: 1ch solid blue;
 		}
 		a::before,a::after {
 			position: absolute;
@@ -46,29 +97,27 @@
 		a:visited {color: var(--col-P2)}
 		a:hover,a:active {text-decoration: none}
 		a:hover {
-			position: relative;
 			border-radius: calc(1ch + 4px);
 			background: var(--col-P1);
 			color: var(--col-T2);
 		}
 		a::before {
 			content: '';
-			outline: 4px dashed var(--col-P1);
-			/* outline-offset: -2ch; */
 			border-radius: calc(1ch + 4px);
+			outline: 4px dashed var(--col-P1);
+			outline-offset: -2ch;
 			top: 4px; left: 4px; bottom: 4px; right: 4px;
 			z-index: -1;
-			/* background: #fff8; */
+			background: #fff8;
 			transition: 'outline-offset' ease-out .5s;
 		}
 		a::after {
-			content: '';
 			width: 4px; height: 4px;
 			border: solid #fff;
 			border-width: 4px 0 0 4px;
 			border-radius: 100% 0 0;
 			top: 4px; left: 4px;
-			/* background: #0008; */
+			background: #0008;
 		}
 		a:active {
 			position: relative;
@@ -77,7 +126,7 @@
 		}
 		a:active::before {
 			outline-offset: 1ch;
-		}
+		}*/
 	</style>
 </head>
 <body>

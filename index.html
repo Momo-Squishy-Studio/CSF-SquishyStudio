@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>En construction...</title>
 	<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/brands.css"> -->
 	<style>
 /*- general ------*/
 		:root {
@@ -41,39 +42,42 @@
 			z-index: 1;
 			color: var(--bal-col);
 		}
-		a::before,a::after {position: absolute;	z-index: -1}
 		a::before {
 			content: '';
+			position: absolute;
+			z-index: 0
+		}
+		a::after {
+			content: '';
 			border-radius: calc(1ch + 4px);
+			position: absolute;
 			left: 50%; top: 100%; right: 50%; bottom: 0;
 			transition: all cubic-bezier(1,0,.5,1.5) .2s;
 			transition-property: left, right, top, bottom;
+			box-shadow: 0 0 8px 0 #fff inset;
 			background: var(--bal-col);
+			z-index: -1;
 		}
 		/*--------*/
 		a:hover,a:active {text-decoration: none}
-		a:visited {--bal-col: var(--col-P2)}
+		/* a:visited {--bal-col: var(--col-P2)} */
 		a:hover {color: var(--col-T2)}
+		a:hover::after {left: 0; top: 0; right: 0; bottom: 0}
 		a:hover::before {
-			left: 0; top: 0; right: 0; bottom: 0;
-		}
-		a:hover::after {
-			content: '';
 			width: 4px; height: 4px;
-			border: solid #fff;
-			border-width: 4px 0 0 4px;
+			border: 4px solid #fff;
+			border-style: solid none none solid;
 			border-radius: 100% 0 0;
 			top: 4px; left: 4px;
 		}
 		/*--------*/
 		a:active {color: var(--bal-col)}
-		a:active::before {
+		a:active::after {
 			transition: none;
 			animation: .2s linear 0s pop;
 			animation-fill-mode: forwards;
 			background: none;
 		}
-		a:active::after {content: none}
 		@keyframes pop {
 			0% {
 				border: 4px solid currentColor;
@@ -91,15 +95,51 @@
 				left: -.5ch; top: -.5ch; right: -.5ch; bottom: -.5ch;
 			}
 		}
+		/*- icon -*/
+		a.fab {
+			padding: 8px;
+			font-size: 32px;
+			width: calc(1em + 16px); height: calc(1em + 16px);
+		}
+		a.fab::after {border-radius: 50% 50% 0 50%; transform: rotate(45deg);}
+		a.fab::before {
+			left: 8px; top: 8px; right: 8px; bottom: 8px;
+			width: 1em; height: 1em;
+			text-align: center;
+		}
+		a.fab:hover {
+			padding: 0;
+		}
+		a.fab:hover::before {
+			border-radius: 50%;
+			border-width: 0;
+		}
+		.fa-facebook-f {--bal-col: #4267B2}
+		.fa-vimeo-v {--bal-col: #86c9ef}
+		.fa-twitter {--bal-col: #1DA1F2}
+		.fa-instagram {--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%)}
+		.fa-instagram:not(:hover)::before {
+			background: radial-gradient(circle farthest-corner at 0% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(135deg, #4C68D7 30%,#8A3AB9,#CD486B 70%);
+			background-clip: text;
+			-webkit-background-clip: text;
+			color: transparent;
+		}
+		.fa-instagram:active {--bal-col: #8A3AB9}
+		.fa-youtube {--bal-col: #F00}
+		.fa-youtube::before {font-size: calc(8em / 9)}
 	</style>
+	<script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
 </head>
 <body>
 	<h1>Clown Sans Fronti&egrave;res</h1>
 	<h2>Squishy Studio</h2>
-	<a href="https://github.com/Momo-Squishy-Studio/CSF-SquishyStudio/">Repo GitHub</a>
-	<a href="https://clownsansfrontieres-ss.qc.lu/">H&eacute;bergement Web</a>
-	<p>
-		Lorem ipsum dolor sit amet, <a href="\">consectetur</a> adipiscing elit, sed do eiusmod <a href="">tempor</a> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-	</p>
+	<a href="https://github.com/Momo-Squishy-Studio/CSF-SquishyStudio/">Repo GitHub
+	</a><a href="https://clownsansfrontieres-ss.qc.lu/">H&eacute;bergement Web</a>
+	<p>Lorem ipsum dolor sit amet, <a href="\">consectetur</a> adipiscing elit, sed do eiusmod <a href="">tempor</a> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<a class="fab fa-facebook-f" href="https://www.facebook.com/ClownsSansFrontieres"></a>
+	<a class="fab fa-vimeo-v" href="https://vimeo.com/user2650793"></a>
+	<a class="fab fa-twitter" href="https://twitter.com/csf_canada"></a>
+	<a class="fab fa-instagram" href="https://www.instagram.com/clownssansfrontieres"></a>
+	<a class="fab fa-youtube" href="https://www.youtube.com/channel/UCQWUO8JZx69GPWRInazRPMw"></a>
 </body>
 </html>

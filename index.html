@@ -8,21 +8,25 @@
 /*- general ------*/
 		@keyframes pop {
 			0% {
-				outline-width: 4px dashed initial;
-				outline-offset: -4ch;
+				outline: 1px solid var(--bal-col);
+				outline-offset: -1px;
 			}
-			90% {
-				outline: 4px dashed initial;
-				outline-offset: 1ch;
+			10% {
+				outline: 2px solid var(--bal-col);
+				outline-offset: -1ch;
+			}
+			50% {
+				outline: 4px dotted var(--bal-col);
+				outline-offset: .4ch;
 			}
 			100% {
-				outline: 4px dashed transparent;
-				outline-offset: 1.5ch;
+				outline: 4px dotted transparent;
+				outline-offset: .5ch;
 			}
 		}
 		:root {
 			--col-P1: #EC1A24;
-			--col-P2: #CE1921;
+			--col-P2: #19FE21;
 			--col-S1: #FFEFEF;
 			--col-S2: #E8E8E8;
 			--col-S3: #535353;
@@ -48,38 +52,52 @@
 
 	/*- link ---------*/
 		a {
+			--bor-rad: calc(1ch + 4px);
+			--bal-col: var(--col-P1);
+			--bal-fill: 50%;
 			padding: 4px 8px;
 			position: relative;
 			font-family: 'Comic Sans MS', cursive;
 			z-index: 1;
+			color: var(--bal-col);
 		}
-		a::before,a::after {
-			content: '';
-			position: absolute;
-			z-index: -1;
-		}
+		a::before,a::after {position: absolute;	z-index: -1}
 		a::before {
-			--bor-rad: calc(1ch + 4px);
+			content: '';
+			margin: 0;
 			border-radius: var(--bor-rad);
 			-moz-outline-radius: var(--bor-rad);
-			/* border: 2px solid black; */
-			outline-offset: -2ch;
-			top: 0; left: 0; bottom: 0; right: 0;
-			transition: outline ease-out .1s;
+			outline-width: 0;
+			outline-offset: calc(-1.5ch - 4px);
+			left: var(--bal-fill); top: 100%; right: var(--bal-fill); bottom: 0;
+			transition: outline cubic-bezier(1,0,.5,1.5) .2s;
+			transition-property: margin, left, right, top, bottom;
 		}
 		/*--------*/
 		a:hover,a:active {text-decoration: none}
-		a:visited {color: var(--col-P2)}
+		a:visited {--bal-col: var(--col-P2)}
 		a:hover {color: var(--col-T2)}
-		a:active {color: var(--col-P1)}
 		a:hover::before {
-			outline: 2ch solid var(--col-P2);
+			--bal-fill: 0;
+			top: var(--bal-fill); bottom: var(--bal-fill);
+			outline: calc(1.5ch + 4px) solid var(--bal-col)
 		}
+		a:hover::after {
+			content: '';
+			width: 4px; height: 4px;
+			border: solid #fff;
+			border-width: 4px 0 0 4px;
+			border-radius: 100% 0 0;
+			top: 4px; left: 4px;
+		}
+		a:active {color: var(--bal-col)}
 		a:active::before {
-			animation: .2s ease-out 0s pop;
+			transition: none;
+			animation: .2s linear 0s pop;
 			animation-fill-mode: forwards;
-			--bor-rad: 100%;
+			/* --bor-rad: 100%; */
 		}
+		a:active::after {content: none}
 		/*a {
 			padding: 4px 8px;
 			position: relative;

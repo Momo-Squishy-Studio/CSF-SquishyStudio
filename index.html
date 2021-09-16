@@ -33,6 +33,51 @@
 		h3 {font-size: 25px; font-weight: 500}
 
 /*- link --------*/
+		a {
+			padding: 4px 8px;
+			position: relative;
+			font-family: 'Comic Sans MS', cursive;
+			z-index: 1;
+		}
+		a::before,a::after {
+			position: absolute;
+		}
+		a:link {color: var(--col-P1)}
+		a:visited {color: var(--col-P2)}
+		a:hover,a:active {text-decoration: none}
+		a:hover {
+			position: relative;
+			border-radius: calc(1ch + 4px);
+			background: var(--col-P1);
+			color: var(--col-T2);
+		}
+		a::before {
+			content: '';
+			outline: 4px dashed var(--col-P1);
+			/* outline-offset: -2ch; */
+			border-radius: calc(1ch + 4px);
+			top: 4px; left: 4px; bottom: 4px; right: 4px;
+			z-index: -1;
+			/* background: #fff8; */
+			transition: 'outline-offset' ease-out .5s;
+		}
+		a::after {
+			content: '';
+			width: 4px; height: 4px;
+			border: solid #fff;
+			border-width: 4px 0 0 4px;
+			border-radius: 100% 0 0;
+			top: 4px; left: 4px;
+			/* background: #0008; */
+		}
+		a:active {
+			position: relative;
+			background: none;
+			color: var(--col-P1)
+		}
+		a:active::before {
+			outline-offset: 1ch;
+		}
 	</style>
 </head>
 <body>

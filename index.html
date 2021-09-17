@@ -22,6 +22,7 @@
 			font-weight: 400;
 			color: var(--col-T1);
 		}
+
 	/*- heading ------*/
 		h1,h2,h3 {
 			font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -40,6 +41,7 @@
 			font-family: 'Comic Sans MS', cursive;
 			z-index: 1;
 			color: var(--bal-col);
+			transition: color cubic-bezier(1,0,.5,1.5) .2s;
 		}
 		a::before {
 			content: '';
@@ -57,7 +59,8 @@
 			background: var(--bal-col);
 			z-index: -1;
 		}
-		/*--------*/
+
+		/*- hov --*/
 		a:hover,a:active {text-decoration: none}
 		/* a:visited {--bal-col: var(--col-P2)} */
 		a:hover {color: var(--col-T2)}
@@ -69,7 +72,8 @@
 			border-radius: 100% 0 0;
 			top: 4px; left: 4px;
 		}
-		/*--------*/
+
+		/*- act --*/
 		a:active {color: var(--bal-col)}
 		a:active::after {
 			transition: none;
@@ -78,9 +82,7 @@
 			background: none;
 		}
 		@keyframes pop {
-			0% {
-				border: 4px solid currentColor;
-			}
+			0% {border: 4px solid currentColor}
 			20% {
 				border: 4px dotted currentColor;
 				left: 1ch; top: 1ch; right: 1ch; bottom: 1ch;
@@ -94,6 +96,7 @@
 				left: -.5ch; top: -.5ch; right: -.5ch; bottom: -.5ch;
 			}
 		}
+
 		/*- icon -*/
 		a.fab {
 			padding: 8px;
@@ -113,6 +116,7 @@
 			border-radius: 50%;
 			border-width: 0;
 		}
+		/*- soc --*/
 		.fa-facebook-f {--bal-col: #4267B2}
 		.fa-vimeo-v {--bal-col: #86c9ef}
 		.fa-twitter {--bal-col: #1DA1F2}
@@ -126,6 +130,9 @@
 		.fa-instagram:active {--bal-col: #8A3AB9}
 		.fa-youtube {--bal-col: #F00}
 		.fa-youtube::before {font-size: calc(8em / 9)}
+
+	/*- text ---------*/
+		::selection {background: var(--col-P1); color: var(--col-T2)}
 	</style>
 	<script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
 </head>

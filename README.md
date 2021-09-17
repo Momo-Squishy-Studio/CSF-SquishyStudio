@@ -14,4 +14,5 @@ Dans le cadre du cours
 [Cheat Sheet Markdown](markdown-cheat-sheet.md)
 
 [Hébergement](https://clownsansfrontieres-ss.qc.lu/)
+
 ---

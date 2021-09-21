@@ -15,4 +15,6 @@ Dans le cadre du cours
 
 [Hébergement](https://clownsansfrontieres-ss.qc.lu/)
 
+[Trello](https://trello.com/b/N2G06row/clown-sans-fronti%C3%A8res-squishy-studios)
+
 ---

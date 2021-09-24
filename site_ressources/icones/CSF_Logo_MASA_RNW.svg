@@ -1,28 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="367" height="270" viewBox="0 0 400 400">
-<g>
-	<defs>
-		<filter id="shine" x="-10%" y="-10%" width="120%" height="120%">
-			<feComponentTransfer in="SourceAlpha">
-				<feFuncA type="table" tableValues="1 0" />
-			</feComponentTransfer>
-			<feGaussianBlur stdDeviation="4"/>
-			<feOffset dx="0" dy="5" result="offsetblur"/>
-			<feFlood flood-color="rgb(0, 0, 0)" result="color"/>
-			<feComposite in2="offsetblur" operator="in"/>
-			<feComposite in2="SourceAlpha" operator="in" />
-			<feMerge>
-				<feMergeNode in="SourceGraphic" />
-				<feMergeNode />
-			</feMerge>
-		</filter>
-		<filter id="glow">
-			<feFlood flood-color="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 400 400">
+	<!-- <defs>
+		<filter id="bloom">
+			<feFlood flood-color="#fff8"/>
 			<feComposite in2="SourceAlpha" operator="out"/>
 			<feGaussianBlur stdDeviation="10" result="blur"/>
 			<feComposite operator="atop" in2="SourceGraphic"/>
-		</filter> 
-	</defs>
-	<ellipse cx="200" cy="220" rx="135" ry="150" fill="#fff" />
+		</filter>
+	</defs> -->
+	<!-- <ellipse cx="200" cy="220" rx="135" ry="150" fill="#fff" /> -->
 	<path fill="none" stroke="#222" stroke-width="15" d="M120,290 Q155,328 200,328 Q245,328 280,290" />
 	<g fill="#222">
 		<circle cx="132" cy="173" r="16" />
@@ -30,10 +15,9 @@
 		<path d="M105,150 Q130,155 160,145 C163,144 163,139.5 160,138 Q130,120 105,142 C102,144 102,149 105,150Z" />
 		<path d="M295,150 Q270,155 240,145 C237,144 237,139.5 240,138 Q270,120 295,142 C298,144 298,149 295,150Z" />
 	</g>
-	<g fill="#EC1A24" filter="url(#glow)">
+	<g fill="#EC1A24" filter="">
 		<ellipse cx="200" cy="240" rx="60" ry="50"/>
 		<path d="M67,195 Q82,117 143,84 126,74 114,88 C114,58 70,58 70,87 46,67 22,99 37,118 11,122 11,158 38,162 17,181 41,215 67,195" />
 		<path d="M333,195 Q318,117 257,84 274,74 286,88 C286,58 330,58 330,87 354,67 378,99 363,118 389,122 389,158 362,162 383,181 359,215 333,195" />
 	</g>
-</g>
 </svg>

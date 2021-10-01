@@ -15,14 +15,15 @@ body {
 a, a:hover,a:active {text-decoration: none}
 
 /*- heading ------*/
-h1,h2,h3 {
+h1,h2,h3{
 	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-transform: uppercase;
 	color: $col-P1;
 }
-h1 {font-size: 45px; font-weight: 900; color: $col-P2}
+h1 {font-size: 45px; font-weight: 900; letter-spacing:2px; color: $col-P1}
 h2 {font-size: 36px; font-weight: 700}
 h3 {font-size: 25px; font-weight: 500}
+p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: 500}
 
 /*- link ---------*/
 a {
@@ -87,33 +88,12 @@ a:active::after {
 	}
 }
 
-/*- icon -*/
-a.fab {
-	padding: 8px;
-	font-size: 32px;
-	width: calc(1em + 16px); height: calc(1em + 16px);
-}
-a.fab::after {border-radius: 50% 50% 0 50%; transform: rotate(45deg);}
-a.fab::before {
-	left: 8px; top: 8px; right: 8px; bottom: 8px;
-	width: 1em; height: 1em;
-	text-align: center;
-}
-a.fab:hover {
-	padding: 0;
-}
-a.fab:hover::before {
-	border-radius: 50%;
-	border-width: 0;
-}
-
 /*- header -*/
 .header {
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-width: 1190px;
   width: 100%;
 }
 .site-logo {
@@ -121,9 +101,16 @@ a.fab:hover::before {
   margin-left: 30px;
   margin-right: 30px;
 }
+.site-logo:hover {
+  width: 125px;
+  margin-left: 30px;
+  margin-right: 30px;
+  cursor: pointer; 
+}
 
 .head-link{
   font-weight: 700;
+  font-size: 20px;
   font-family: 'Roboto', sans-serif;
   text-transform: uppercase;
   padding-left: 20px;
@@ -141,4 +128,61 @@ a.fab:hover::before {
   margin-left: 30px; 
   padding: 10px;
   color: $col-P1;
+}
+
+@media screen and (max-width: 1190px) {
+  .head-link{
+    display: none;
+  }
+  .head-lang{
+    display: none;
+  }
+  .navicon {
+    display: block!important;
+  }
+}
+
+.navicon {
+  display: none;
+  background: $col-P1;
+  height: 6px;
+  position: relative;
+  width: 50px;
+  border-radius: 90px;
+
+    &:before, &:after {
+        background: inherit;
+        content: '';
+        display: block;
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        border-radius: 50px;
+    }
+    &:before {
+        top: 15px;
+    }
+    &:after {
+        top: -15px;
+    }
+}
+
+.navicon:hover {
+  background: $col-P2;
+  cursor: pointer; 
+}
+
+/*- hero -*/
+
+.hero{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.hero-logo{
+  width: 500px;
 }

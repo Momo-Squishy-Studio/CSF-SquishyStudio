@@ -25,6 +25,21 @@ h2 {font-size: 36px; font-weight: 700}
 h3 {font-size: 25px; font-weight: 500}
 p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: 500}
 
+button{
+  text-decoration: none;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  border: none;
+  color: $col-T2;
+  background-color: $col-P1;
+  padding: 8px 25px;
+  border-radius: 50px;
+  margin: 30px;
+}
+button:hover{
+  background-color: $col-P2;
+  cursor: pointer;
+}
 /*- link ---------*/
 a {
 	padding: 4px 8px;
@@ -146,6 +161,7 @@ a:active::after {
   display: none;
   background: $col-P1;
   height: 6px;
+  margin-right: 30px;
   position: relative;
   width: 50px;
   border-radius: 90px;
@@ -185,4 +201,12 @@ a:active::after {
 }
 .hero-logo{
   width: 500px;
+}
+.hero-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-left: 80px;
+  margin-right: 80px;
 }

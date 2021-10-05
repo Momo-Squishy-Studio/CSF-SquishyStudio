@@ -203,7 +203,10 @@ a:active::after {
   margin-right: 80px;
 }
 
+/*- hero end -*/
 
+
+/*- footer -*/
 .footer-square{
   
   position: relative;
@@ -212,7 +215,10 @@ a:active::after {
   background-color: red;
   z-index: 100;
   bottom: 0;
-  padding: 5%;;
+  padding-top: 5%;
+  padding-bottom: 1%;
+  padding-left: 1%;
+  padding-right: 1%;
 
 }
 
@@ -221,6 +227,9 @@ display: flex;
 flex-direction: row;
 position: relative;
 justify-content:center;
+align-items:center ;
+padding-bottom: 20px;
+
 
 }
 
@@ -236,23 +245,23 @@ justify-content:center;
 	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-transform: uppercase;
 	color: white;
-  font-size: 20px;
-  
+  font-size: 25px;
+  padding-left: 10px;
 }
 .footer-button{
   position: relative;
-  
+  display: block;
+  margin: 0 auto;
 
+
+  text-transform: uppercase;
   text-decoration: none;
   font-family: 'Comic Sans MS', cursive;
-  font-size: 16px;
+  font-size: 26px;
   border: solid 2px white ;
   color: white;
   background-color: red;
-  
- 
- 
-  
+  border-radius: 50px;
   
 }
 
@@ -260,3 +269,87 @@ justify-content:center;
   background-color: $col-P2;
   cursor: pointer;
 }
+
+
+
+
+.aligner2{
+ 
+  flex-direction: column;
+  text-align: center;
+ 
+  
+  }
+  
+  .info{
+color: white;
+  }
+
+  .aligner3{
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+   
+  
+  
+  }
+  @media screen and (max-width:1200px) {
+    .aligner3 {
+      display: flex;
+      flex-direction: row;
+      left: 60%;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .aligner3 {
+      display: flex;
+      flex-direction: row;
+      
+      justify-content: center;
+      left: 0%;
+    }
+  }
+    
+       
+    
+
+
+
+    .resaux{
+
+width: 40px;
+margin: 7px;
+    }
+
+    @media screen and (max-width:1200px) {
+      .resaux {
+       width: 35px;
+      }
+    }
+    
+    
+
+    .copyright{
+      position: relative;
+      display: flex;
+      justify-content: end;
+     color: white;
+
+    }
+
+    @media screen and (max-width:768px) {
+      .copyright {
+       justify-content: center;
+      }
+    }
+    .partenaire{
+      position: relative;
+      left: 50%;
+      transform: translate(-50%);
+
+      
+    }
+    
+
+    /*- footer end -*/

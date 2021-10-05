@@ -210,3 +210,61 @@ a:active::after {
   margin-left: 80px;
   margin-right: 80px;
 }
+
+
+.footer-square{
+  
+  position: relative;
+  width: 100%;
+  height: 50%;
+  background-color: red;
+  z-index: 100;
+  bottom: 0;
+  padding: 5%;;
+
+}
+
+.aligner{
+display: flex;
+flex-direction: row;
+position: relative;
+justify-content:center;
+
+}
+
+.whiteclown{
+  position: relative;
+  width: 20%;
+  height: 20%;
+  
+}
+
+
+.quote-blanc{
+	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-transform: uppercase;
+	color: white;
+  font-size: 20px;
+  
+}
+.footer-button{
+  position: relative;
+  
+
+  text-decoration: none;
+  font-family: 'Comic Sans MS', cursive;
+  font-size: 16px;
+  border: solid 2px white ;
+  color: white;
+  background-color: red;
+  
+ 
+ 
+  
+  
+}
+
+.footer-button:hover{
+  background-color: $col-P2;
+  cursor: pointer;
+}

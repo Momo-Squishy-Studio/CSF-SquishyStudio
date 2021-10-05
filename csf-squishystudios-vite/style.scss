@@ -1,6 +1,6 @@
-@use './site_ressources/stylesheet/variables.scss' as var;
-@use './site_ressources/stylesheet/footer.scss' as foot;
-@use './site_ressources/stylesheet/vague.scss';
+@use './site_ressources/partials/vague';
+@use './site_ressources/partials/variables' as var;
+@use './site_ressources/stylesheet/footer' as foot;
 
 * {
 	box-sizing: border-box;

@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './site_ressources/stylesheet/variables.scss';
 
 * {
 	box-sizing: border-box;
@@ -30,7 +30,9 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
   font-family: 'Comic Sans MS', cursive;
   font-size: 16px;
   border: none;
+
   color: $col-T2;
+
   background-color: $col-P1;
   padding: 8px 25px;
   border-radius: 50px;

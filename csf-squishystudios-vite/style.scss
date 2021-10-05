@@ -25,7 +25,7 @@ h2 {font-size: 36px; font-weight: 700}
 h3 {font-size: 25px; font-weight: 500}
 p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: 500}
 
-button{
+.hero-button{
   text-decoration: none;
   font-family: 'Comic Sans MS', cursive;
   font-size: 16px;
@@ -36,7 +36,7 @@ button{
   border-radius: 50px;
   margin: 30px;
 }
-button:hover{
+.hero-button:hover{
   background-color: $col-P2;
   cursor: pointer;
 }
@@ -145,49 +145,36 @@ a:active::after {
   color: $col-P1;
 }
 
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1200px) {
   .head-link{
     display: none;
   }
   .head-lang{
     display: none;
   }
-  .navicon {
+  .hamburger {
     display: block!important;
   }
 }
 
-.navicon {
+.hamburger {
   display: none;
-  background: $col-P1;
-  height: 6px;
-  margin-right: 30px;
-  position: relative;
-  width: 50px;
-  border-radius: 90px;
-
-    &:before, &:after {
-        background: inherit;
-        content: '';
-        display: block;
-        height: 100%;
-        position: absolute;
-        width: 100%;
-        border-radius: 50px;
-    }
-    &:before {
-        top: 15px;
-    }
-    &:after {
-        top: -15px;
-    }
+}
+.hamburger:hover{
+  cursor: pointer;
 }
 
-.navicon:hover {
-  background: $col-P2;
-  cursor: pointer; 
+.hamburger-link{
+  font-weight: 700;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: $col-P1;
 }
-
 /*- hero -*/
 
 .hero{

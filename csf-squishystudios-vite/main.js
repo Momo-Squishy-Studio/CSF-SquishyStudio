@@ -15,6 +15,18 @@ hamburger.addEventListener('click', ()=> {
 	x.style.display = "block";
 });
 
+const swiper = new Swiper('.swiper-container', {
+	autoplay: {
+		delay: 3000,
+	  },
+	speed: 1000,
+	loop: true,
+	effect: 'cube',
+	slidesPerView: 'auto',
+	cubeEffect: {slideShadows: false},
+	pagination: {el: '.swiper-pagination', type: 'bullets',},
+	navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+  });
 /*gsap.timeline()
 	.to(upper, 0.5, {attr: {d: "M8,2 L2,8"}, x: 1, ease:Power2.easeInOut}, 'start')
 	.to(middle, 0.5, {autoAlpha: 0}, 'start')

@@ -1,0 +1,5 @@
+@use './site_ressources/stylesheet/vague.scss';
+
+.footer-square {
+	@include vague.vague();
+}

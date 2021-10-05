@@ -1,0 +1,13 @@
+@mixin vague($bot: false, $top: true, $thick: 100) {
+	border-image: url("./site_ressources/images/vague.svg") 80 round;
+	border-image-width: $thick;
+	border-image-outset: $thick;
+	@if $top {
+		margin-top: 120px;
+		border-top: 1px solid transparent;
+	}
+	@if $bot {
+		margin-bottom: 120px;
+		border-bottom: 1px solid transparent;
+	}
+}

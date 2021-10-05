@@ -244,17 +244,13 @@ position: relative;
 justify-content:center;
 align-items:center ;
 padding-bottom: 20px;
-
-
 }
 
 .whiteclown{
   position: relative;
-  width: 20%;
-  height: 20%;
-  
+  width: 110px;
+  height: 80px;
 }
-
 
 .quote-blanc{
 	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -267,9 +263,6 @@ padding-bottom: 20px;
   position: relative;
   display: block;
   margin: 0 auto;
-
-
-  text-transform: uppercase;
   text-decoration: none;
   font-family: 'Comic Sans MS', cursive;
   font-size: 26px;
@@ -285,30 +278,22 @@ padding-bottom: 20px;
   cursor: pointer;
 }
 
-
-
-
-.aligner2{
- 
+.aligner2{ 
   flex-direction: column;
   text-align: center;
- 
-  
   }
   
-  .info{
-color: white;
+.info{
+  color: white;
   }
 
-  .aligner3{
-    position: relative;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-   
-  
-  
+.aligner3{
+  position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column; 
   }
+
   @media screen and (max-width:1200px) {
     .aligner3 {
       display: flex;
@@ -325,16 +310,9 @@ color: white;
       left: 0%;
     }
   }
-    
-       
-    
-
-
-
-    .resaux{
-
-width: 40px;
-margin: 7px;
+  .resaux{
+    width: 40px;
+    margin: 7px;
     }
 
     @media screen and (max-width:1200px) {
@@ -343,14 +321,11 @@ margin: 7px;
       }
     }
     
-    
-
     .copyright{
       position: relative;
       display: flex;
       justify-content: end;
      color: white;
-
     }
 
     @media screen and (max-width:768px) {
@@ -361,9 +336,7 @@ margin: 7px;
     .partenaire{
       position: relative;
       left: 50%;
-      transform: translate(-50%);
-
-      
+      transform: translate(-50%);     
     }
     
 

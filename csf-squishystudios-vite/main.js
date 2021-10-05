@@ -1,4 +1,3 @@
-import gsap from "gsap";
 import './style.scss'
 
 var upper = document.getElementsByClassName('upper');

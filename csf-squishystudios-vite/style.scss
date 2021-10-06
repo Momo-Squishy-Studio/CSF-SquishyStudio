@@ -27,6 +27,9 @@ h2 {font-size: 36px; font-weight: 700}
 h3 {font-size: 25px; font-weight: 500}
 p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: 500}
 
+.container{
+  max-width: 1750px;
+}
 .hero-button{
   text-decoration: none;
   font-family: 'Comic Sans MS', cursive;
@@ -40,6 +43,10 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 }
 .hero-button:hover{
   background-color: var.$col-P2;
+  cursor: pointer;
+}
+.hero-button:active{
+  background-color: var.$col-P3;
   cursor: pointer;
 }
 /*- link ---------*/
@@ -229,8 +236,7 @@ a:active::after {
   margin-top: 80px;
   margin-bottom: 80px;
   width: 100%;
-  max-width: 1500px;
-  height: 100%;
+  max-width: 1750px;
   position: relative;
   left: 50%;
   padding-left: 75px;
@@ -287,7 +293,6 @@ a:active::after {
 }
 .card-img-top{
     width:100%;
-    max-width: 700px;
     border-radius: 20px;
     margin-top: 30px;
     margin-bottom: 30px;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Templates</title>
+	<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<style>
+		section {
+			margin: 0 50px;
+			padding: 35px 15px;
+		}
+		section:not(:nth-last-of-type(1)) {border-bottom: 2px solid #333}
+		.template {
+			margin: 20px;
+			border-radius: 20px;
+			padding: 10px;
+			box-shadow: 5px 5px 10px #0001;
+		}
+		.template>div {margin: 20px 0}
+		.template>:nth-child(2) {margin: 0 20px}
+		code {background: #4441}
+	</style>
+</head>
+<body>
+	<section>
+		<div class="template">
+			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt; ... &lt;/a&gt;</code><br></div>
+			
+			<a href="#">Onglet</a>
+			
+			<div><label><strong>Requis</strong></label>
+				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+			</div>
+		</div>
+
+		<div class="template">
+			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt;&lt;h3&gt; ... &lt;/h3&gt;&lt;/a&gt;</code></div>
+			
+			<a href="#"><h3>Onglet</h3></a>
+			
+			<div><label><strong>Requis</strong></label>
+				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="template">
+			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;button onclick="location.href='#'"&gt; ... &lt;/button&gt;</code><br></div>
+			
+			<button onclick="location.href='#'">Bouton Type 1</button>
+			
+			<div><label><strong>Requis</strong></label>
+				<pre><code></code></pre>
+			</div>
+		</div>
+
+		<div class="template">
+			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;input onclick="location.href='#'" type="button" value=" ... "&gt;</code><br></div>
+			
+			<input onclick="location.href='#'" type="button" value="Bouton Type 2">
+			
+			<div><label><strong>Requis</strong></label>
+				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+			</div>
+		</div>
+	</section>
+	<script type="module" src="/main.js"></script>
+</body>
+</html>

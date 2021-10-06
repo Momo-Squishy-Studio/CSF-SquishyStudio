@@ -303,6 +303,19 @@ a:active::after {
 
 /*- evenements fin-*/
 
+/*- temoignage-*/
+.temoignage{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+/*- temoignage fin-*/
+
 /*- footer -*/
 .footer-square{  
   position: relative;

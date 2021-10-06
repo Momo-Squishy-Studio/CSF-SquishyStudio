@@ -19,18 +19,39 @@
 		}
 		.template>div {margin: 20px 0}
 		.template>:nth-child(2) {margin: 0 20px}
-		code {background: #4441}
+		pre, :not(pre)>code {
+			padding: 5px;
+			background: #0081
+		}
 	</style>
 </head>
-<body>
+<body class="templates">
 	<section>
+		<div class="template">
+			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt; ... &lt;/a&gt;</code><br></div>
+			
+			<a href="#">Lien</a>
+			
+			<div><label><strong>Requis</strong></label>
+				<pre><code>@use './site_ressources/partials/bouton';
+
+... {
+	@include bouton.lien();
+}</code></pre>
+			</div>
+		</div>
+		
 		<div class="template">
 			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt; ... &lt;/a&gt;</code><br></div>
 			
 			<a href="#">Onglet</a>
 			
 			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+				<pre><code>@use './site_ressources/partials/bouton';
+
+... {
+	@include bouton.lien();
+}</code></pre>
 			</div>
 		</div>
 
@@ -40,7 +61,11 @@
 			<a href="#"><h3>Onglet</h3></a>
 			
 			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+				<pre><code>@use './site_ressources/partials/bouton';
+
+... {
+	@include bouton.lien();
+}</code></pre>
 			</div>
 		</div>
 	</section>

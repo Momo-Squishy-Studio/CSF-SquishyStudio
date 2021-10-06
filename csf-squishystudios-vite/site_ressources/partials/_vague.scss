@@ -3,11 +3,11 @@
 	border-image-width: $thick;
 	border-image-outset: $thick;
 	@if $top {
-		margin-top: 120px;
-		border-top: 1px solid transparent;
+		margin-top: $thick+20px;
+		border-top: 60px solid transparent;
 	}
 	@if $bot {
-		margin-bottom: 120px;
-		border-bottom: 1px solid transparent;
+		margin-bottom: $thick+20px;
+		border-bottom: 60px solid transparent;
 	}
 }

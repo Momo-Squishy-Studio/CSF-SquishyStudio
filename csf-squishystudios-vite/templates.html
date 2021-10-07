@@ -4,7 +4,10 @@
 	<meta charset="UTF-8">
 	<title>Templates</title>
 	<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">
-	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/vs.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+	<script>hljs.highlightAll();</script>
+	<script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
 	<style>
 		section {
 			margin: 0 50px;
@@ -19,74 +22,153 @@
 		}
 		.template>div {margin: 20px 0}
 		.template>:nth-child(2) {margin: 0 20px}
-		pre, :not(pre)>code {
-			padding: 5px;
-			background: #0081
+
+		code:active {
+			overflow: visible;
+			position: relative;
 		}
+		/* code:active::before {
+			content: 'Texte copié';
+			padding: 5px;
+			outline: 2px solid black;
+			position: absolute;
+			right: 10px;
+			background: #fff;
+		} */
 	</style>
 </head>
 <body class="templates">
 	<section>
 		<div class="template">
-			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt; ... &lt;/a&gt;</code><br></div>
+			<div><label><strong>HTML</strong></label>
+				<pre><code class="language-html">&lt;a href="#"&gt; ... &lt;/a&gt;</code></pre>
+			</div>
 			
-			<a href="#">Lien</a>
+			<a id="lien" href="#">Lien</a>
 			
-			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';
+			<div><label>
+					<strong>Requis</strong><br>
+					SCSS
+				</label>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
-	@include bouton.lien();
+	@include bouton.lien;
+
+	//true pour la couleur alternative (blanc)
+	@include bouton.lien(true); 
 }</code></pre>
 			</div>
 		</div>
 		
 		<div class="template">
-			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt; ... &lt;/a&gt;</code><br></div>
+			<div><label><strong>HTML</strong></label><pre>
+				<code class="language-html">&lt;a href="#"&gt; ... &lt;/a&gt;</code></pre>
+			</div>
 			
-			<a href="#">Onglet</a>
+			<a id="onglet" href="#">Onglet</a>
 			
-			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';
+			<div><label>
+					<strong>Requis</strong><br>
+					SCSS
+				</label>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
-	@include bouton.lien();
+	@include bouton.onglet;
+	
+	//true pour la couleur alternative (blanc)
+	@include bouton.onglet(true);
 }</code></pre>
 			</div>
 		</div>
 
 		<div class="template">
-			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;a href="#"&gt;&lt;h3&gt; ... &lt;/h3&gt;&lt;/a&gt;</code></div>
+			<div><label><strong>HTML</strong></label><pre>
+				<code class="language-html">&lt;a href="#"&gt;&lt;div&gt; ... &lt;/div&gt;&lt;/a&gt;</code></pre>
+			</div>
 			
-			<a href="#"><h3>Onglet</h3></a>
+			<a id="lienParent" href="#"><div>Lien Parent</div></a>
 			
-			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';
+			<div><label>
+					<strong>Requis</strong><br>
+					SCSS
+				</label>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
-	@include bouton.lien();
+	@include bouton.lienParent;
+	
+	//true pour la couleur alternative (blanc)
+	@include bouton.lienParent(true);
+}</code></pre>
+			</div>
+		</div>
+
+		<div class="template">
+			<div><label><strong>HTML</strong></label>
+				<pre><code class="language-html">&lt;a class="fab fa-facebook-f" href="#"&gt;&lt;/a&gt;</code></pre>
+			</div>
+			
+			<a id="reseauBallon" class="fab fa-facebook-f" href="#"></a>
+			<a class="fab fa-facebook-f" href="#"></a>
+			<a class="fab fa-vimeo-v" href="https://vimeo.com/user2650793"></a>
+			<a class="fab fa-twitter" href="https://twitter.com/csf_canada"></a>
+			<a class="fab fa-instagram" href="https://www.instagram.com/clownssansfrontieres"></a>
+			<a class="fab fa-youtube" href="https://www.youtube.com/channel/UCQWUO8JZx69GPWRInazRPMw"></a>
+			
+			<div><label>
+					<strong>Requis</strong><br>
+					HTML
+				</label>
+				<pre><code class="language-html">&lt;script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+
+&lt;!-- Vimeo --&gt;
+&lt;a class="fab fa-vimeo-v" href="#"&gt;&lt;/a&gt;
+
+&lt;!-- Twitter --&gt;
+&lt;a class="fab fa-twitter" href="#"&gt;&lt;/a&gt;
+
+&lt;!-- Instagram --&gt;
+&lt;a class="fab fa-instagram-v" href="#"&gt;&lt;/a&gt;
+
+&lt;!-- Youtube --&gt;
+&lt;a class="fab fa-youtube" href="#"&gt;&lt;/a&gt;
+</code></pre>
+				<label>SCSS</label>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
+
+... {
+	@include bouton.lien;
+
+	//true pour la couleur alternative (blanc)
+	@include bouton.lien(true);
 }</code></pre>
 			</div>
 		</div>
 	</section>
 	<section>
 		<div class="template">
-			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;button onclick="location.href='#'"&gt; ... &lt;/button&gt;</code><br></div>
+			<div><label><strong>HTML</strong></label>
+				<pre><code class="language-html">&lt;button onclick="location.href='#'"&gt; ... &lt;/button&gt;</code></pre>
+			</div>
 			
 			<button onclick="location.href='#'">Bouton Type 1</button>
 			
 			<div><label><strong>Requis</strong></label>
-				<pre><code></code></pre>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
 			</div>
 		</div>
 
 		<div class="template">
-			<div><label><strong>HTML</strong> </label><code id="onglet">&lt;input onclick="location.href='#'" type="button" value=" ... "&gt;</code><br></div>
+			<div><label><strong>HTML</strong></label>
+				<pre><code class="language-html">&lt;input onclick="location.href='#'" type="button" value=" ... "&gt;</code></pre>
+			</div>
 			
 			<input onclick="location.href='#'" type="button" value="Bouton Type 2">
 			
 			<div><label><strong>Requis</strong></label>
-				<pre><code>@use './site_ressources/partials/bouton';</code></pre>
+				<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
 			</div>
 		</div>
 	</section>

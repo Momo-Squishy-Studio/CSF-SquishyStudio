@@ -1,114 +1,5 @@
-@use './site_ressources/partials/variables' as var;
+@use './site_ressources/partials/variables' as var; // importe variables
 
-@mixin lien($alt:false) {
-	@if $alt {
-		--bal-col: #{var.$col-T2};
-	}
-	@else {
-		--bal-col: #{var.$col-P1};
-	}
-
-	padding: 4px 8px;
-	position: relative;
-	font-family: 'Comic Sans MS', cursive;
-
-	z-index: 1;
-	color: var(--bal-col);
-	transition: color cubic-bezier(1,0,.5,1.5) .2s;
-
-	&::before {
-		content: '';
-		position: absolute;
-		z-index: 0
-	}
-	&::after {
-		content: '';
-		border-radius: calc(1ch + 4px);
-		position: absolute;
-		left: 50%; top: 100%; right: 50%; bottom: 0;
-
-		transition: all cubic-bezier(1,0,.5,1.5) .2s;
-		transition-property: left, right, top, bottom;
-
-		@if $alt {
-			box-shadow: 0 0 8px 0 var.$col-P1 inset;
-			background: var.$col-T2;
-		}
-		@else {
-			box-shadow: 0 0 8px 0 var.$col-T2 inset;
-			background: var.$col-P1;
-		}
-		z-index: -1;
-	}
-	
-	&:hover {
-		@if $alt {
-			color: var.$col-T2;
-		}
-		@else {
-			color: var.$col-P1;
-		}
-		&::after {left: 0; top: 0; right: 0; bottom: 0}
-		&::before {
-			width: 4px; height: 4px;
-			border: 4px solid #fff;
-			border-style: solid none none solid;
-			border-radius: 100% 0 0;
-			top: 4px; left: 4px;
-		}
-	}
-}
-
-@mixin onglet() {
-
-}
-
-/*- link ---------*/
-/*a {
-	padding: 4px 8px;
-	position: relative;
-	font-family: 'Comic Sans MS', cursive;
-	z-index: 1;
-	color: var.$col-P1;
-	transition: color cubic-bezier(1,0,.5,1.5) .2s;
-}
-a::before {
-	content: '';
-	position: absolute;
-	z-index: 0
-}
-a::after {
-	content: '';
-	border-radius: calc(1ch + 4px);
-	position: absolute;
-	left: 50%; top: 100%; right: 50%; bottom: 0;
-	transition: all cubic-bezier(1,0,.5,1.5) .2s;
-	transition-property: left, right, top, bottom;
-	box-shadow: 0 0 8px 0 var.$col-P1 inset;
-	background: var.$col-P1;
-	z-index: -1;
-}*/
-
-/*- hov --*/
-/*a:hover,a:active {text-decoration: none}
-a:hover {color: var.$col-T2}
-a:hover::after {left: 0; top: 0; right: 0; bottom: 0}
-a:hover::before {
-	width: 4px; height: 4px;
-	border: 4px solid #fff;
-	border-style: solid none none solid;
-	border-radius: 100% 0 0;
-	top: 4px; left: 4px;
-}*/
-
-/*- act --*/
-/*a:active {color: var.$col-P1}
-a:active::after {
-	transition: none;
-	animation: .2s linear 0s pop;
-	animation-fill-mode: forwards;
-	background: none;
-}
 @keyframes pop {
 	0% {border: 4px solid currentColor}
 	20% {
@@ -123,4 +14,168 @@ a:active::after {
 		border: 4px dotted transparent;
 		left: -.5ch; top: -.5ch; right: -.5ch; bottom: -.5ch;
 	}
-}*/
+}
+
+@function buttonColor($alt) { // Retourne Rouge ou blanc
+	@if $alt {@return var.$col-T2};
+	@return var.$col-P1;
+}
+
+// LIEN DE BASE ----------------------------------
+%link {
+	padding: 4px 8px;
+	position: relative;
+	font-family: 'Comic Sans MS', cursive;
+
+	z-index: 1;
+	color: var(--bal-col);
+	transition: color cubic-bezier(1,0,.5,1.5) .2s;
+
+	&::after {
+		border-radius: calc(1ch + 4px);
+		position: absolute;
+		left: 50%; top: 100%; right: 50%; bottom: 0;
+
+		transition: all cubic-bezier(1,0,.5,1.5) .2s;
+		transition-property: left, right, top, bottom;
+		z-index: -1;
+	}
+	&::before {
+		position: absolute;
+		z-index: 0
+	}
+}
+%linkHover {
+	&::after {left: 0; top: 0; right: 0; bottom: 0}
+	&::before {
+		width: 4px; height: 4px;
+		border: 4px solid #fff;
+		border-style: solid none none solid;
+		border-radius: 100% 0 0;
+		top: 4px; left: 4px;
+	}
+}
+%linkActive {
+	color: var(--bal-col) !important;
+	transition: none;
+	&::after {
+		transition: none;
+		animation: .2s linear 0s pop;
+		animation-fill-mode: forwards;
+		background: none;
+	}
+	&::before{content: none}
+}
+//------------------------------------------------
+
+// Lien normal -------------------------
+@mixin lien($alt:false) {
+	--bal-col: #{buttonColor($alt)};
+
+	@extend %link;
+
+	&::after {
+		content: '';
+		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
+		background: buttonColor($alt);
+	}
+	@if not $alt {&::before {content: ''}}
+	
+	&:hover {
+		@extend %linkHover;
+		color: buttonColor(not $alt)
+	}
+	&:active {
+		@extend %linkActive;
+	}
+}
+
+// Lien de menu ------------------------
+@mixin onglet($alt:false) {
+	--bal-col: #{buttonColor($alt)};
+
+	@extend %link;
+	font-family: inherit;
+	font-weight: 700;
+	text-transform: uppercase;
+
+	&::after {
+		content: '';
+		@if not $alt {box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;}
+		background: buttonColor($alt);
+	}
+	@if not $alt {&::before {content: ''}}
+	
+	&:hover {
+		@extend %linkHover;
+		color: buttonColor(not $alt)
+	}
+	&:active {
+		@extend %linkActive;
+	}
+}
+
+// Lien parent -------------------------
+@mixin lienParent($alt:false) {
+	--bal-col: #{buttonColor($alt)};
+	
+	&>* {
+		@extend %link;
+
+		&::after {
+			content: '';
+			box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
+			background: buttonColor($alt);
+		}
+		@if not $alt {&::before {content: ''}}
+	}
+	
+	&:hover>* {
+		@extend %linkHover;
+		color: buttonColor(not $alt)
+	}
+	&>*:active {
+		@extend %linkActive;
+	}
+}
+
+@mixin reseauBallon($taille, $orig:true, $alt:false) {
+	@if $orig {
+		.fa-facebook-f {--bal-col: #4267B2}
+		.fa-vimeo-v {--bal-col: #86c9ef}
+		.fa-twitter {--bal-col: #1DA1F2}
+		.fa-instagram {--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%)}
+	}
+	@else {--bal-col: #{buttonColor($alt)};}
+
+	@extend %link;
+	padding: 8px;
+	font-size: 32px;
+	width: calc(1em + 16px); height: calc(1em + 16px);
+
+	&::after {
+		content: '';
+		border-radius: 50% 50% 0 50%;
+		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
+		transform: rotate(45deg);
+		background: buttonColor($alt);
+	}
+	&::before {
+		left: 8px; top: 8px; right: 8px; bottom: 8px;
+		width: 1em; height: 1em;
+		text-align: center;
+	}
+	
+	&:hover {
+		@extend %linkHover;
+		color: var(--bal-col);
+		padding: 0;
+		&::before {
+			border-radius: 50%;
+			border-width: 0;
+		}
+	}
+	&:active {
+		@extend %linkActive;
+	}
+}

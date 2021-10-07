@@ -5,8 +5,17 @@
 @use './site_ressources/partials/bouton';
 
 .templates {
-	a {
-		@include bouton.lien();
+	#lien {
+		@include bouton.lien;
+	}
+	#onglet {
+		@include bouton.onglet;
+	}
+	#lienParent {
+		@include bouton.lienParent;
+	}
+	#reseauBallon {
+		@include bouton.reseauBallon(32px,true,false);
 	}
 }
 

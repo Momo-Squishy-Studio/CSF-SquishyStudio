@@ -315,7 +315,37 @@ a:active::after {
   padding-bottom: 50px;
 }
 /*- temoignage fin-*/
+/*- nouvelles-accueil -*/
+.nouvelles-accueil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+#card-v2{
+  background-color: var.$col-T3;
+}
+#card-footer-v2{
+  background-color: var.$col-T3;
+}
 
+/*- nouvelles-accueil fin-*/
+/*- faire-un-don-accueil -*/
+.don-accueil{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+/*- faire-un-don-accueil fin-*/
 /*- footer -*/
 .footer-square{  
   position: relative;

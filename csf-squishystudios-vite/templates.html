@@ -10,106 +10,123 @@
 	<script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
 	<style>
 		section {
-			margin: 0 50px;
+			margin: 0 15px;
 			padding: 35px 15px;
 		}
 		section:not(:nth-last-of-type(1)) {border-bottom: 2px solid #333}
-		.template {
-			margin: 20px;
-			border-radius: 20px;
-			padding: 10px;
-			box-shadow: 5px 5px 10px #0001;
-		}
-		.template>div {margin: 20px 0}
-		.template>:nth-child(2) {margin: 0 20px}
 
-		code:active {
-			overflow: visible;
+		.template {
+			margin: 40px 0;
+			border-radius: 20px;
+			padding: 10px 20px;
+			box-shadow: 5px 5px 10px #0001;
+			/* background: red; */
+		}
+		pre {margin: 0}
+
+		.tag,.requis,.params {
+			margin: 15px 20px;
+			padding-top: 2ch;
 			position: relative;
 		}
-		/* code:active::before {
-			content: 'Texte copié';
-			padding: 5px;
-			outline: 2px solid black;
+		.tag::before,.requis::before,.params::before {
+			content:attr(class);
+			text-transform: capitalize;
+			font-weight: bold;
+			top: 0;
 			position: absolute;
-			right: 10px;
-			background: #fff;
-		} */
+		}
+		label {margin: 10px 0}
+		code, code * {font-family: 'Courier New', Courier, monospace}
 	</style>
 </head>
 <body class="templates">
 	<section>
 		<div class="template">
-			<div><label><strong>HTML</strong></label>
+			<a id="lien" href="#">Lien</a>
+			
+			<div class="tag">
 				<pre><code class="language-html">&lt;a href="#"&gt; ... &lt;/a&gt;</code></pre>
 			</div>
 			
-			<a id="lien" href="#">Lien</a>
-			
-			<div><label>
-					<strong>Requis</strong><br>
-					SCSS
-				</label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
+			<div class="requis">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
 	@include bouton.lien;
-
-	//true pour la couleur alternative (blanc)
-	@include bouton.lien(true); 
 }</code></pre>
+				</div>
+			</div>
+			
+			<div class="params">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">	// bouton.lien($alt?: bool) couleur alternative (false par défaut)
+	// true pour la couleur de texte 2 (blanc)
+	@include bouton.lien(true);</code></pre>
+				</div>
 			</div>
 		</div>
 		
 		<div class="template">
-			<div><label><strong>HTML</strong></label><pre>
-				<code class="language-html">&lt;a href="#"&gt; ... &lt;/a&gt;</code></pre>
-			</div>
-			
 			<a id="onglet" href="#">Onglet</a>
 			
-			<div><label>
-					<strong>Requis</strong><br>
-					SCSS
-				</label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
+			<div class="tag">
+				<pre><code class="language-html">&lt;a href="#"&gt; ... &lt;/a&gt;</code></pre>
+			</div>
+			
+			<div class="requis">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
 	@include bouton.onglet;
-	
-	//true pour la couleur alternative (blanc)
-	@include bouton.onglet(true);
 }</code></pre>
+				</div>
+			</div>
+			
+			<div class="params">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">	// bouton.onglet($alt?: bool) couleur alternative (false par défaut)
+	// true pour la couleur de texte 2 (blanc)
+	@include bouton.onglet(true);</code></pre>
+				</div>
 			</div>
 		</div>
 
 		<div class="template">
-			<div><label><strong>HTML</strong></label><pre>
-				<code class="language-html">&lt;a href="#"&gt;&lt;div&gt; ... &lt;/div&gt;&lt;/a&gt;</code></pre>
-			</div>
-			
 			<a id="lienParent" href="#"><div>Lien Parent</div></a>
 			
-			<div><label>
-					<strong>Requis</strong><br>
-					SCSS
-				</label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
+			<div class="tag">
+				<pre><code class="language-html">&lt;a href="#"&gt;&lt;div&gt; ... &lt;/div&gt;&lt;/a&gt;</code></pre>
+			</div>
+			
+			<div class="requis">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
 ... {
 	@include bouton.lienParent;
-	
-	//true pour la couleur alternative (blanc)
-	@include bouton.lienParent(true);
 }</code></pre>
+				</div>
+			</div>
+			
+			<div class="params">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">	// bouton.lienParent($alt?: bool) couleur alternative (false par défaut)
+	// true pour la couleur de texte 2 (blanc)
+	@include bouton.lienParent(true);</code></pre>
+				</div>
 			</div>
 		</div>
 
 		<div class="template">
-			<div><label><strong>HTML</strong></label>
-				<pre><code class="language-html">&lt;a class="fab fa-facebook-f" href="#"&gt;&lt;/a&gt;</code></pre>
-			</div>
-			
 			<a id="reseauBallon" class="fab fa-facebook-f" href="#"></a>
 			<a class="fab fa-facebook-f" href="#"></a>
 			<a class="fab fa-vimeo-v" href="https://vimeo.com/user2650793"></a>
@@ -117,13 +134,28 @@
 			<a class="fab fa-instagram" href="https://www.instagram.com/clownssansfrontieres"></a>
 			<a class="fab fa-youtube" href="https://www.youtube.com/channel/UCQWUO8JZx69GPWRInazRPMw"></a>
 			
-			<div><label>
-					<strong>Requis</strong><br>
-					HTML
-				</label>
-				<pre><code class="language-html">&lt;script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+			<div class="tag">
+				<pre><code class="language-html">&lt;a class="fab fa-facebook-f" href="#"&gt;&lt;/a&gt;</code></pre>
+			</div>
+			
+			<div class="requis">
+				<div>
+					<label>HTML</label>
+					<pre><code class="language-html">&lt;script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"&gt;&lt;/script&gt;</code></pre>
+				</div>
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';
 
-&lt;!-- Vimeo --&gt;
+... {
+	@include bouton.reseauBallon(32px);
+}</code></pre>
+				</div>
+			</div>
+			
+			<div class="params"><div>
+				<label>HTML</label>
+				<pre><code class="language-html">&lt;!-- Vimeo --&gt;
 &lt;a class="fab fa-vimeo-v" href="#"&gt;&lt;/a&gt;
 
 &lt;!-- Twitter --&gt;
@@ -133,42 +165,45 @@
 &lt;a class="fab fa-instagram-v" href="#"&gt;&lt;/a&gt;
 
 &lt;!-- Youtube --&gt;
-&lt;a class="fab fa-youtube" href="#"&gt;&lt;/a&gt;
-</code></pre>
-				<label>SCSS</label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';
-
-... {
-	@include bouton.lien;
-
-	//true pour la couleur alternative (blanc)
-	@include bouton.lien(true);
-}</code></pre>
+&lt;a class="fab fa-youtube" href="#"&gt;&lt;/a&gt;</code></pre>
+				</div>
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">	// bouton.reseauBallon($alt?: bool) couleur alternative (false par défaut)
+	// true pour la couleur de texte 2 (blanc)
+	@include bouton.reseauBallon(32px, true);</code></pre>
+				</div>
 			</div>
 		</div>
 	</section>
 	<section>
 		<div class="template">
-			<div><label><strong>HTML</strong></label>
+			<button onclick="location.href='#'">Bouton Type 1</button>
+			
+			<div class="tag">
 				<pre><code class="language-html">&lt;button onclick="location.href='#'"&gt; ... &lt;/button&gt;</code></pre>
 			</div>
 			
-			<button onclick="location.href='#'">Bouton Type 1</button>
-			
-			<div><label><strong>Requis</strong></label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
+			<div class="requis">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
+				</div>
 			</div>
 		</div>
 
 		<div class="template">
-			<div><label><strong>HTML</strong></label>
+			<input onclick="location.href='#'" type="button" value="Bouton Type 2">
+			
+			<div class="tag">
 				<pre><code class="language-html">&lt;input onclick="location.href='#'" type="button" value=" ... "&gt;</code></pre>
 			</div>
 			
-			<input onclick="location.href='#'" type="button" value="Bouton Type 2">
-			
-			<div><label><strong>Requis</strong></label>
-				<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
+			<div class="requis">
+				<div>
+					<label>SCSS</label>
+					<pre><code class="language-scss">@use './site_ressources/partials/bouton';</code></pre>
+				</div>
 			</div>
 		</div>
 	</section>

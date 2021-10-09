@@ -4,15 +4,15 @@
 	0% {border: 4px solid currentColor}
 	20% {
 		border: 4px dotted currentColor;
-		left: 1ch; top: 1ch; right: 1ch; bottom: 1ch;
+		top: 1ch; left: 1ch; bottom: 1ch; right: 1ch;
 	}
 	50% {
 		border: 4px dotted currentColor;
-		left: -.4ch; top: -.4ch; right: -.4ch; bottom: -.4ch;
+		top: -.4ch; left: -.4ch; bottom: -.4ch; right: -.4ch;
 	}
 	100% {
 		border: 4px dotted transparent;
-		left: -.5ch; top: -.5ch; right: -.5ch; bottom: -.5ch;
+		top: -.5ch; left: -.5ch; bottom: -.5ch; right: -.5ch;
 	}
 }
 
@@ -25,39 +25,47 @@
 %link {
 	padding: 4px 8px;
 	position: relative;
-	font-family: 'Comic Sans MS', cursive;
 
-	z-index: 1;
 	color: var(--bal-col);
-	transition: color cubic-bezier(1,0,.5,1.5) .2s;
-
-	&::after {
-		border-radius: calc(1ch + 4px);
+	transition: color var.$atf-boing;
+	z-index: 1;
+	
+	&::after, &::before {
 		position: absolute;
-		left: 50%; top: 100%; right: 50%; bottom: 0;
 
-		transition: all cubic-bezier(1,0,.5,1.5) .2s;
-		transition-property: left, right, top, bottom;
+		transition: all var.$atf-boing;
+		left: 50%; top: 100%; right: 50%; bottom: 0;
+		pointer-events: none;
+	}
+	&::after {
+		content: '';
+		border-radius: calc(1ch + 4px);
+
+		transition-property: top, left, bottom, right;
+		box-shadow: 0 0 8px 0 var(--bal-alt) inset;
+		background: var(--bal-col);
 		z-index: -1;
 	}
 	&::before {
-		position: absolute;
-		z-index: 0
+		border: 0 solid #fff;
+		border-style: solid none none solid;
+		border-radius: 100% 0 0;
+
+		transition-property: border, top, left, bottom, right;
+		z-index: 0;
 	}
 }
 %linkHover {
 	&::after {left: 0; top: 0; right: 0; bottom: 0}
 	&::before {
-		width: 4px; height: 4px;
-		border: 4px solid #fff;
-		border-style: solid none none solid;
-		border-radius: 100% 0 0;
-		top: 4px; left: 4px;
+		border-width: 3.5px;
+		top: 4px; left: 4px; bottom: calc(100% - 12px); right: calc(100% - 12px);
 	}
 }
 %linkActive {
 	color: var(--bal-col) !important;
 	transition: none;
+
 	&::after {
 		transition: none;
 		animation: .2s linear 0s pop;
@@ -71,15 +79,13 @@
 // Lien normal -------------------------
 @mixin lien($alt:false) {
 	--bal-col: #{buttonColor($alt)};
+	--bal-alt: #{buttonColor(not $alt)};
+	font-family: 'Comic Sans MS', cursive;
 
 	@extend %link;
 
-	&::after {
-		content: '';
-		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
-		background: buttonColor($alt);
-	}
-	@if not $alt {&::before {content: ''}}
+	@if $alt {&::after {box-shadow: none}}
+	@else {&::before {content: ''}}
 	
 	&:hover {
 		@extend %linkHover;
@@ -93,18 +99,14 @@
 // Lien de menu ------------------------
 @mixin onglet($alt:false) {
 	--bal-col: #{buttonColor($alt)};
-
-	@extend %link;
-	font-family: inherit;
+	--bal-alt: #{buttonColor(not $alt)};
 	font-weight: 700;
 	text-transform: uppercase;
 
-	&::after {
-		content: '';
-		@if not $alt {box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;}
-		background: buttonColor($alt);
-	}
-	@if not $alt {&::before {content: ''}}
+	@extend %link;
+
+	@if $alt {&::after {box-shadow: none}}
+	@else {&::before {content: ''}}
 	
 	&:hover {
 		@extend %linkHover;
@@ -118,16 +120,15 @@
 // Lien parent -------------------------
 @mixin lienParent($alt:false) {
 	--bal-col: #{buttonColor($alt)};
+	--bal-alt: #{buttonColor(not $alt)};
 	
 	&>* {
+		font-family: 'Comic Sans MS', cursive;
+		
 		@extend %link;
 
-		&::after {
-			content: '';
-			box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
-			background: buttonColor($alt);
-		}
-		@if not $alt {&::before {content: ''}}
+		@if $alt {&::after {box-shadow: none}}
+		@else {&::before {content: ''}}
 	}
 	
 	&:hover>* {
@@ -141,12 +142,29 @@
 
 @mixin reseauBallon($taille, $orig:true, $alt:false) {
 	@if $orig {
-		.fa-facebook-f {--bal-col: #4267B2}
-		.fa-vimeo-v {--bal-col: #86c9ef}
-		.fa-twitter {--bal-col: #1DA1F2}
-		.fa-instagram {--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%)}
+		--bal-alt: #{buttonColor(true)};
+		&.fa-facebook-f {--bal-col: #4267B2}
+		&.fa-vimeo-v {--bal-col: #86c9ef}
+		&.fa-twitter {--bal-col: #1DA1F2}
+		&.fa-instagram {
+			--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%);
+			&:not(:hover)::before {
+				background: radial-gradient(circle farthest-corner at 0% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(135deg, #4C68D7 30%,#8A3AB9,#CD486B 70%);
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
+			&:active {--bal-col: #8A3AB9}
+		}
+		&.fa-youtube {
+			--bal-col: #F00;
+			&::before {font-size: calc(8em / 9)}
+		}
 	}
-	@else {--bal-col: #{buttonColor($alt)};}
+	@else {
+		--bal-col: #{buttonColor($alt)};
+		--bal-alt: #{buttonColor(not $alt)};
+	}
 
 	@extend %link;
 	padding: 8px;
@@ -154,28 +172,62 @@
 	width: calc(1em + 16px); height: calc(1em + 16px);
 
 	&::after {
-		content: '';
 		border-radius: 50% 50% 0 50%;
 		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
 		transform: rotate(45deg);
-		background: buttonColor($alt);
 	}
 	&::before {
-		left: 8px; top: 8px; right: 8px; bottom: 8px;
+		border: none;
 		width: 1em; height: 1em;
+		left: 8px; top: 8px; right: 8px; bottom: 8px;
 		text-align: center;
 	}
 	
 	&:hover {
 		@extend %linkHover;
-		color: var(--bal-col);
 		padding: 0;
-		&::before {
-			border-radius: 50%;
-			border-width: 0;
-		}
 	}
 	&:active {
 		@extend %linkActive;
 	}
 }
+
+// @mixin reseauBallon($taille, $orig:true, $alt:false) {
+// 	@if $orig {
+// 		.fa-facebook-f {--bal-col: #4267B2}
+// 		.fa-vimeo-v {--bal-col: #86c9ef}
+// 		.fa-twitter {--bal-col: #1DA1F2}
+// 		.fa-instagram {--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%)}
+// 	}
+// 	@else {--bal-col: #{buttonColor($alt)};}
+
+// 	@extend %link;
+// 	padding: 8px;
+// 	font-size: 32px;
+// 	width: calc(1em + 16px); height: calc(1em + 16px);
+
+// 	&::after {
+// 		border-radius: 50% 50% 0 50%;
+// 		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
+// 		transform: rotate(45deg);
+// 		background: buttonColor($alt);
+// 	}
+// 	&::before {
+// 		left: 8px; top: 8px; right: 8px; bottom: 8px;
+// 		width: 1em; height: 1em;
+// 		text-align: center;
+// 	}
+	
+// 	&:hover {
+// 		@extend %linkHover;
+// 		color: var(--bal-col);
+// 		padding: 0;
+// 		&::before {
+// 			border-radius: 50%;
+// 			border-width: 0;
+// 		}
+// 	}
+// 	&:active {
+// 		@extend %linkActive;
+// 	}
+// }

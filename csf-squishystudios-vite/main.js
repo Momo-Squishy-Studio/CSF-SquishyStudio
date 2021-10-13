@@ -21,7 +21,6 @@ const swiper = new Swiper('.swiper-container', {
 	  },
 	speed: 1000,
 	loop: true,
-	effect: 'cube',
 	slidesPerView: 'auto',
 	cubeEffect: {slideShadows: false},
 	pagination: {el: '.swiper-pagination', type: 'bullets',},

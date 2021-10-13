@@ -236,11 +236,10 @@ a:active::after {
   margin-top: 80px;
   margin-bottom: 80px;
   width: 100%;
-  max-width: 1750px;
+  max-width: 1400px;
   position: relative;
   left: 50%;
-  padding-left: 75px;
-  padding-right: 75px;
+  overflow: hidden;
   transform: translateX(-50%);
 }
 .swiper-slide {
@@ -257,9 +256,11 @@ a:active::after {
 }
 .swiper-button-next{
   color: var.$col-P1 !important;
+  padding-right: 2%;
 }
 .swiper-button-prev{
   color: var.$col-P1 !important;
+  padding-left: 2%;
 }
 /*- hero carousel end -*/
 /*- hero end -*/

@@ -214,6 +214,8 @@ a:active::after {
   text-align: center;
   margin-right: 30px;
   margin-left: 30px;
+  background-image: url(site_ressources/images/hospital_vector.png);
+  background-position: center;
 }
 .hero-logo{
   width: 500px;
@@ -241,6 +243,8 @@ a:active::after {
   transform: translateX(-50%);
   border-radius: 50px;
   border: solid 10px #EC1A24;
+  background-image: url(site_ressources/images/bg_bulles_roses.png);
+  background-position: center;
 }
 .swiper-slide {
   background-position: center;
@@ -268,6 +272,8 @@ a:active::after {
 /*- evenements-*/
 .evenements-bg{
   background-color: var.$col-P1;
+  background-image: url(site_ressources/images/bg_bulles_rouges.png);
+  background-position: center;
 }
 .evenements{
   display: flex;
@@ -345,6 +351,28 @@ a:active::after {
   margin-right: 80px;
   padding-top: 50px;
   padding-bottom: 50px;
+}
+.don-bulles{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 20px 0px 20px 0px;
+}
+.bulle{
+  border-radius: 20px;
+  border: solid 3px var.$col-P1;
+  padding: 15px 30px 15px 30px;
+  margin: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-transform: uppercase;
+	color: var.$col-P1;
+}
+.bulle:hover{
+  background-color: var.$col-T3;
+  cursor: pointer;
 }
 /*- faire-un-don-accueil fin-*/
 /*- footer -*/

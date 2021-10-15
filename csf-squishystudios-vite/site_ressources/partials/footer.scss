@@ -32,6 +32,7 @@
 position: relative;
 width: 110px;
 height: 80px;
+cursor: pointer;
 }
 
 .quote-blanc{
@@ -149,3 +150,16 @@ height: 80px;
 	  
   
 	  /*- footer end -*/
+
+	  
+	 
+	 
+	 
+	  .confetti{
+
+		width: 7px;;
+		height: 12px;
+		position:absolute;
+		z-index: 2;
+
+	  }

@@ -18,7 +18,8 @@ Dans le cadre du cours
 [Trello](https://trello.com/b/N2G06row/clown-sans-fronti%C3%A8res-squishy-studios)
 
 ---
-
+# Tutoriels
 [Tutoriel Wordpress](https://smnarnold.com/cours/wordpress)
 
 [Changer le dossier racine de Mamp](sources/mamp_customDir.png)
+<img src="sources/mamp_customDir.png" alt="MAMP > MAMP > Preferences > Web Server > Document Root: C:Users\...\Documents\Github\CSF-SquishyStudio\wordpress" width="100%"/>

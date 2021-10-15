@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 20" height="200" fill="#EC1A24">
-		<path d="M0 10 Q20,30 40,10 60,-10 80,10 100,30 120,10 140,-10 160,10 V20 H0">
-			<!-- <animateTransform attributeName="transform"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 20" fill="#EC1A24" preserveAspectRatio="none">
+		<path d="M0 10 Q30,30 60,10 90,-10 120,10 150,30 180,10 210,-10 240,10 V20 H0">
+			<animateTransform attributeName="transform"
 												dur="20"
 												type="translate"
 												repeatCount="indefinite"
-												values="0;-80"/> -->
+												values="0;-120"/>
 		</path>
 </svg>

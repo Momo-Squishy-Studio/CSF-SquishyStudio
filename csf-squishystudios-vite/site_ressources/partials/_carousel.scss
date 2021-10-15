@@ -1,0 +1,43 @@
+@use './site_ressources/partials/vague';
+@use './site_ressources/partials/variables' as var;
+@use './site_ressources/partials/bouton' as btn;
+
+/*- hero carousel -*/
+.carousel-accueil-img{
+    width: 100%;
+  }
+  .swiper-container {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+    left: 50%;
+    overflow: hidden;
+    transform: translateX(-50%);
+    border-radius: 50px;
+    border: solid 10px #EC1A24;
+    background-image: url(site_ressources/images/bg_bulles_roses.png);
+    background-position: center;
+  }
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+  }
+  .swiper-pagination-bullet{
+    opacity: 0.8;
+    background-color: var.$col-S1;
+  }
+  .swiper-pagination-bullet-active{
+    opacity: 1;
+    background-color: var.$col-P1;
+  }
+  .swiper-button-next{
+    color: var.$col-P1 !important;
+    padding-right: 2%;
+  }
+  .swiper-button-prev{
+    color: var.$col-P1 !important;
+    padding-left: 2%;
+  }
+  /*- hero carousel end -*/

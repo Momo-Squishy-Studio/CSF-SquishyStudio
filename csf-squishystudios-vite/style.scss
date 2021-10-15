@@ -4,7 +4,7 @@
 @use './site_ressources/partials/header' ;
 @use './site_ressources/partials/carousel' ;
 @use './site_ressources/partials/hero' ;
-@use './site_ressources/partials/evenements-accueil' ;
+@use './site_ressources/partials/cards' ;
 
 * {
 	box-sizing: border-box;
@@ -75,25 +75,6 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 .h1-evenements{
   color: var.$col-S1;
 }
-
-.card{
-  padding: 20px;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  border: none;
-  border-radius: 50px;
-  background-color: var.$col-S1;
-}
-.card-img-top{
-    width:100%;
-    border-radius: 20px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-.card-footer{
-  background-color: var.$col-S1;
-}
 /*-evenements-fin-*/
 
 /*-temoignage-*/
@@ -119,12 +100,6 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
   margin-right: 80px;
   padding-top: 50px;
   padding-bottom: 50px;
-}
-#card-v2{
-  background-color: var.$col-T3;
-}
-#card-footer-v2{
-  background-color: var.$col-T3;
 }
 
 /*- nouvelles-accueil-fin-*/

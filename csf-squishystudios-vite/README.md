@@ -20,3 +20,5 @@ Dans le cadre du cours
 ---
 
 [Tutoriel Wordpress](https://smnarnold.com/cours/wordpress)
+
+[Changer le dossier racine de Mamp](sources/mamp_customDir.png)

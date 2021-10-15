@@ -15,6 +15,7 @@
   }
   .hero-logo{
     width: 500px;
+    z-index: 1;
   }
   .hero-container{
     display: flex;
@@ -23,5 +24,21 @@
     align-items: center;
     margin-left: 80px;
     margin-right: 80px;
+    z-index: 1;
   }
+  .ballon-1{
+    position: absolute;
+    transform: translateX(-30vw);
+    }
+    .ballon-2{
+    position: absolute;
+    transform: translateX(35vw) translateY(-200px) scale(1.2);
+    }
+    .ballon-3{
+        position: absolute;
+        transform: translateX(25vw) translateY(300px) scale(0.7);
+        }
+    
+
+
   /*- hero end -*/

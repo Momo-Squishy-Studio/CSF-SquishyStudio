@@ -6,6 +6,10 @@
 .carousel-accueil-img{
     width: 100%;
   }
+  .bg-swiper{
+    background-image: url(site_ressources/images/bg_bulles_roses.png);
+    background-position: center;
+  }
   .swiper-container {
     margin-top: 80px;
     margin-bottom: 80px;
@@ -17,7 +21,6 @@
     transform: translateX(-50%);
     border-radius: 50px;
     border: solid 10px #EC1A24;
-    background-image: url(site_ressources/images/bg_bulles_roses.png);
     background-position: center;
   }
   .swiper-slide {

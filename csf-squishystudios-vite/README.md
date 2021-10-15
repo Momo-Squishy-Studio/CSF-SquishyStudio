@@ -18,3 +18,5 @@ Dans le cadre du cours
 [Trello](https://trello.com/b/N2G06row/clown-sans-fronti%C3%A8res-squishy-studios)
 
 ---
+
+[Tutoriel Wordpress](https://smnarnold.com/cours/wordpress)

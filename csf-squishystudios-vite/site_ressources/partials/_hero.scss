@@ -16,6 +16,7 @@
   .hero-logo{
     width: 500px;
     z-index: 1;
+    overflow: hidden;
   }
   .hero-container{
     display: flex;
@@ -32,7 +33,7 @@
     }
     .ballon-2{
     position: absolute;
-    transform: translateX(35vw) translateY(-200px) scale(1.2);
+    transform: translateX(35vw) translateY(-180px) scale(1.2);
     }
     .ballon-3{
         position: absolute;

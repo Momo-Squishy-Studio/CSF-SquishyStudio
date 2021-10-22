@@ -48,3 +48,5 @@ const hover = gsap.timeline()
 				click.reverse(this);
 			}
 		})*/
+
+// if document.

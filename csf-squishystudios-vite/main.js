@@ -1,5 +1,11 @@
 import './style.scss'
 
+console.log("Main");
+var tmpScripts = document.getElementsByClassName("tempScript");
+while (tmpScripts[0]) {
+	tmpScripts[0].parentNode.removeChild(tmpScripts[0]);
+}
+
 const upper = document.querySelector('.upper');
 const middle = document.querySelector('.middle');
 const lower = document.querySelector('.lower');
@@ -48,5 +54,3 @@ const hover = gsap.timeline()
 				click.reverse(this);
 			}
 		})*/
-
-// if document.

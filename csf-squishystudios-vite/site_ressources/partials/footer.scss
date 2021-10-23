@@ -2,8 +2,7 @@
 @use './site_ressources/partials/variables' as var;
 @use './site_ressources/partials/bouton' as btn;
 
-/*- footer -*/
-.footer-square{  
+footer {  
 	position: relative;
 	width: 100%;
 	height: 50%;
@@ -55,11 +54,6 @@ cursor: pointer;
 	margin-bottom: 40px;
 	text-decoration: none;
 	font-family: 'Comic Sans MS', cursive;
-  
-   
-	
-	
-	
   }
   
   .footer-button:hover{

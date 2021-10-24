@@ -1,0 +1,14 @@
+@use './site_ressources/partials/vague';
+@use './site_ressources/partials/variables' as var;
+@use './site_ressources/partials/bouton' as btn;
+
+#p-rouge{
+    color: var.$col-P1;
+}
+#article-texte{
+    text-align: left;
+    padding: 20px;
+}
+#h1-article{
+    margin-top: 150px;
+}

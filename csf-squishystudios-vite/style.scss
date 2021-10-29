@@ -6,6 +6,7 @@
 @use './site_ressources/partials/hero' ;
 @use './site_ressources/partials/cards' ;
 @use './site_ressources/partials/nouvelles' ;
+@use './site_ressources/partials/animationmono' ;
 
 * {
 	box-sizing: border-box;
@@ -17,6 +18,7 @@
 
 body {
   background-color: var.$col-S1;
+  overflow-x: hidden;
 }
 
 a, a:hover,a:active {text-decoration: none}
@@ -163,5 +165,8 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
   background-color: var.$col-S1;
   transform: translateY(-3px);
   cursor: pointer;
+}
+#mono-don{
+  margin-bottom: 100px;
 }
 /*- faire-un-don-accueil fin-*/

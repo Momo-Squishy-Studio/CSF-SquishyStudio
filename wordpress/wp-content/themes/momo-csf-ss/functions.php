@@ -46,9 +46,10 @@ function add_style_and_js()  {
 	  1. 'default' = ID de référence à donner au à la feuille de style
 		2. get_template_directory_uri() . '/style.css' = Chemin où ce trouve le fichier CSS en question
 	*/
-	wp_enqueue_style('default', get_template_directory_uri() . '/styles.css');
+	wp_enqueue_style('default', get_template_directory_uri() . '/style.css');
 	
 	/* Pour ajoutez une feuille de style supplémentaire, copier la ligne précédente et ajuster le chemin du fichier de façon relative vers votre nouveau fichier CSS */
+	wp_enqueue_style('default', get_template_directory_uri() . '/normalize.css');
 	// wp_enqueue_style('default', get_template_directory_uri() . '../../csf-squishystudios-vite/style.scss');
 
 	/* Ajoute le fichier main.js du theme WordPress actif 

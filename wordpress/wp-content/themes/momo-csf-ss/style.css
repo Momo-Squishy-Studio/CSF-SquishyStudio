@@ -13,3 +13,50 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
  \___)(____/(____/
  
  */
+* {
+  box-sizing: border-box;
+}
+:root {
+	--col-P1: #EC1A24;
+	--col-P2: #CE1921;
+	--col-S1: #FFEFEF;
+	--col-S2: #E8E8E8;
+	--col-S3: #535353;
+	--col-T1: #484848;
+	--col-T2: #F0EEEE;
+  color: var(--col-T1);
+  font-family: 'Roboto', sans-serif;
+}
+body{
+  margin: 0;
+}
+
+
+
+/*- section --------------------------------------------------------------------------------------*/
+
+section:nth-of-type(2n+1) {
+  --sect-pad: 80px;
+  width: 100vw;
+  min-height: 500px;
+  margin-top: var(--sect-pad); margin-bottom: var(--sect-pad);
+  position: relative;
+  background: var(--col-P1);
+  color: var(--col-T2);
+}
+section:nth-of-type(2n+1):before, section:nth-of-type(2n+1)::after {
+  content: '';
+  position: absolute;
+  background: url("/wp-content/uploads/images/vague.svg") center / calc(100vmin + 50vmax - 50vw) 100% repeat-x;
+}
+section::before {
+  top: calc(-1 * var(--sect-pad)); left: 0; bottom: 100%; right: 0;
+}
+section::after {
+  top: 100%; left: 0; bottom: calc(-1 * var(--sect-pad)); right: 0;
+  transform: scale(-1);
+}
+
+
+
+/*------------------------------------------------------------------------------------------------*/

@@ -12,6 +12,9 @@
 	<?php bloginfo('name'); // Affiche le nom du blog ?> | 
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // si nous sommes sur la page d'accueil, affichez la description à partir des paramètres du site - sinon, affichez le titre du post ou de la page. ?>
 </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"> 
 <?php 
 	// Tous les .css et .js sont chargés dans le fichier functions.php
 ?>

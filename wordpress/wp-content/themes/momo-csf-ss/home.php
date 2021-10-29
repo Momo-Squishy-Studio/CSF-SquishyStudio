@@ -24,6 +24,6 @@ endif;
 ?>
 </section>
 <?php
-get_sidebar(); // Affiche le contenu de sidebar.php
+//get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

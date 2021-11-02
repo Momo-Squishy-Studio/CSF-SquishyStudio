@@ -23,6 +23,12 @@
 
   #card-v2{
     background-color: var.$col-T3;
+    box-shadow: 4px 4px 10px #00000018;
+  }
+  #card-v2:hover{
+    transform: translateY(-2px);
+    box-shadow: 4px 4px 10px #00000036;
+    transition: 0.2s;
   }
   #card-footer-v2{
     background-color: var.$col-T3;

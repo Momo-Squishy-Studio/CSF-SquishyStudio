@@ -17,8 +17,7 @@ register_nav_menus(
 			1. 'main-menu' = Nom dans le code
 			2. 'Menu principal' = Nom dans l'admin
 			3. 'Menu principal du site' = Description dans l'admin */
-		'main-menu' => __( 'Menu principal', 'Menu principal du site' ), 
-		'partner-menu' => __( 'Menu Partenaires', 'Menu listant tous les partenaires du site' ), 
+		'main-menu' => __( 'Menu principal', 'Menu principal du site' ),
 		/* Dupliquer cette ligne si vous désirez déclarer d'autres menus */
 	)
 );
@@ -67,3 +66,18 @@ function add_style_and_js()  {
 
 /* Appel de la fonction ajoutant les styles et scripts */
 add_action('wp_enqueue_scripts', 'add_style_and_js'); 
+
+/* --------------------------------
+Appels personalisés du REST API*/
+
+/*//https://wordpress.stackexchange.com/questions/209381/get-wp-navigation-menu-from-rest-api-v2/274513#274513?newreg=1d1561e470ba4f6c9b0f579f6cc02d4c
+function get_menu() {
+	return wp_get_nav_menu_items('main');
+}
+
+add_action( 'rest_api_init', function () {
+			register_rest_route( 'myroutes', '/menu', array(
+			'methods' => 'GET',
+			'callback' => 'get_menu',
+	) );
+} );*/

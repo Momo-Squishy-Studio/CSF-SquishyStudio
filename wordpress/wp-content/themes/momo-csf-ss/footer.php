@@ -7,7 +7,19 @@
 </main>
 
 <footer>
-	<?php wp_nav_menu( array( 'theme_location' => 'partner-menu' ) );?>
+	<div id="partenaires-list">
+		<?php //https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
+		$patnPosts = json_decode(file_get_contents('http://localhost/wp-json/wp/v2/partners?orderby=id&order=asc'));
+		echo $patnPost;
+		// if($patnPost):
+			foreach($patnPosts as $patnPost):
+				$id = $patnPost->id;?>
+					<a href="<?php echo get_field('link', $id)?>" target="_blank">
+						<img src="<?php echo get_field('icon_' . get_field('icon_type', $id), $id);?>" alt="logo <?php echo $patnPost->title->rendered;?>">
+					</a>
+			<?php endforeach;
+		//endif;?>
+		</div>
 	<p>Développement web - Collège Montmorency - 2021</p>
 </footer>
 

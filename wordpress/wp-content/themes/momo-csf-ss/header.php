@@ -14,7 +14,8 @@
 </title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap"> 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
+<script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
 <?php 
 	// Tous les .css et .js sont chargés dans le fichier functions.php
 ?>
@@ -36,21 +37,23 @@
 >
 
 <header>
-	<h1>
-		<a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?></a>
-	</h1>
-
 	<nav>
-		<?php 
+		<?php
+			// $siteLogo = '<a href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="logo ' . esc_attr(get_bloginfo('name', 'display') .'"></a>';
+			$siteLogo = '<a id="%1$s-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
+			$siteHamb = '<input type="checkbox" id="%1$s-cb">';
 			// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
-			wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
-		?>
+			//https://monsterspost.com/how-to-build-wordpress-navigation-using-wp_nav_menu/
+			wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>' ) );
+			?>
 	</nav>
-
-	<?php 
-		// Affiche la description de site se trouvant dans "General Settings" dans l'admin WordPress
-		bloginfo( 'description' ); 
-	?>
 </header>
+<h1>
+	<a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?></a>
+</h1>
+<?php 
+	// Affiche la description de site se trouvant dans "General Settings" dans l'admin WordPress
+	bloginfo( 'description' ); 
+?>
 
 <main><!-- Débute le contenu principal de notre site -->

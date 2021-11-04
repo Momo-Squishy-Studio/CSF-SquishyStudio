@@ -18,6 +18,7 @@ register_nav_menus(
 			2. 'Menu principal' = Nom dans l'admin
 			3. 'Menu principal du site' = Description dans l'admin */
 		'main-menu' => __( 'Menu principal', 'Menu principal du site' ),
+		'social-menu' => __( 'Menu social', 'Menu listant les liens vers les réseaux sociaux' ),
 		/* Dupliquer cette ligne si vous désirez déclarer d'autres menus */
 	)
 );
@@ -46,10 +47,10 @@ function add_style_and_js()  {
 	  1. 'default' = ID de référence à donner au à la feuille de style
 		2. get_template_directory_uri() . '/style.css' = Chemin où ce trouve le fichier CSS en question
 	*/
+	wp_enqueue_style('normalize', get_template_directory_uri() . '/normalize.css');
 	wp_enqueue_style('default', get_template_directory_uri() . '/style.css');
 	
 	/* Pour ajoutez une feuille de style supplémentaire, copier la ligne précédente et ajuster le chemin du fichier de façon relative vers votre nouveau fichier CSS */
-	wp_enqueue_style('default', get_template_directory_uri() . '/normalize.css');
 	// wp_enqueue_style('default', get_template_directory_uri() . '../../csf-squishystudios-vite/style.scss');
 
 	/* Ajoute le fichier main.js du theme WordPress actif 
@@ -60,6 +61,7 @@ function add_style_and_js()  {
 		 5. true = Est-ce que le script doit-être ajouté à la fin du body. Si mis à false le script est ajouter dans le head à la place
 	*/
 	wp_enqueue_script('default', get_template_directory_uri() . '/main.js', array(), false, true);
+	// wp_enqueue_script('default', 'https://kit.fontawesome.com/f5e9d462b9.js', array(), false, true);
 
 	/* Pour ajoutez un script, copier la ligne précédente et ajuster le chemin de façon relative vers votre nouveau fichier JS */
 }

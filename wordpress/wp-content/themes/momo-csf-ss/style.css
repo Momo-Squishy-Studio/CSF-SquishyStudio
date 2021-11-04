@@ -26,6 +26,7 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 	--col-S3: #535353;
 	--col-T1: #484848;
 	--col-T2: #F0EEEE;
+	--pad-h: 30px 60px;
 	color: var(--col-T1);
 	font-family: 'Roboto', sans-serif;
 }
@@ -37,6 +38,7 @@ body{
 /*- header ---------------------------------------------------------------------------------------*/
 
 header {
+	padding: var(--pad-h);
 	position: sticky;
 	top: 0;
 	background: inherit;
@@ -50,13 +52,22 @@ header {
 	position: relative;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	align-items: center;
 }
 #menu-main-logo {
 	height: 100px;
 }
 #menu-main-logo img {height: 100%}
 
-#menu-main-cb {display: none}
+#menu-main-cb, #menu-main-cb-lbl {
+	display: none;
+	font-size: 30px;
+	color: var(--col-P1);
+	transition: transform ease-out .5s;
+	cursor: pointer;
+}
+#menu-main-cb-lbl:hover {transform: scale(1.1)}
+#menu-main-cb:checked+label {transform: rotate(180deg)}
 #menu-main {
 	display: flex;
 	padding: 0;
@@ -68,12 +79,13 @@ header {
 	overflow: hidden;
 }
 @media (max-width: 900px) {
-	#menu-main-cb:not(:checked)+ul {height: 0;}
-	#menu-main-cb {display: block;}
+	#menu-main-cb:not(:checked)~ul {height: 0;}
+	#menu-main-cb-lbl {display: block;}
 	#menu-main {
 		width: 100%;
 		height: 200px;
-		flex: initial;
+		margin: 0;
+		flex: unset;
 		flex-direction: column;
 	}
 }
@@ -87,6 +99,7 @@ section:nth-of-type(2n+1) {
 	--sect-pad: 80px;
 	min-height: 500px;
 	margin-top: var(--sect-pad); margin-bottom: var(--sect-pad);
+	padding: var(--pad-h);
 	position: relative;
 	background: var(--col-P1);
 	color: var(--col-T2);
@@ -111,6 +124,7 @@ section::after {
 footer {
 	--sect-pad: 80px;
 	margin-top: calc(var(--sect-pad) * 1.5);
+	padding: var(--pad-h);
 	position: relative;
 	top: var(--sect-pad);
 	background: var(--col-P1);

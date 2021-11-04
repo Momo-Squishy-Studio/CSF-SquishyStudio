@@ -7,6 +7,8 @@
 </main>
 
 <footer>
+	<?php wp_nav_menu( array( 'theme_location' => 'social-menu', 'link_before' => '<h1>YOLO</h1>') );?>
+
 	<div id="partenaires-list">
 		<?php //https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
 		$patnPosts = json_decode(file_get_contents('http://localhost/wp-json/wp/v2/partners?orderby=id&order=asc'));

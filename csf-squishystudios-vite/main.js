@@ -6,6 +6,14 @@ while (tmpScripts[0]) {
 	tmpScripts[0].parentNode.removeChild(tmpScripts[0]);
 }
 
+/*animation 404*/
+gsap.timeline({repeat:-1})
+.to('#plateau2', {rotate: '-20vw', duration: 1, ease: 'ease-out', yoyo:true},1)
+.to('#plateau2', {rotate: '20vw', duration: 1, ease: 'ease-in'},2)
+.to('#plateau2', {rotate: '0vw', duration: 1.2, ease: 'ease-in'},3)
+
+gsap.timeline() .to('#carousel1', {rotate: 360, duration: 4, ease:Linear.easeNone, repeat:-1})
+
 /*hamburger toggle*/
 const upper = document.querySelector('.upper');
 const middle = document.querySelector('.middle');
@@ -60,6 +68,8 @@ var playmono = document.querySelector('#mono-don');
 	
 	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
 		});
+
+
 
 /*const click = gsap.timeline()
 .to(middle, 0.1, {opacity: 0}, )

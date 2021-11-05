@@ -7,6 +7,7 @@
 @use './site_ressources/partials/cards' ;
 @use './site_ressources/partials/nouvelles' ;
 @use './site_ressources/partials/animationmono' ;
+@use './site_ressources/partials/erreur-404' ;
 
 * {
 	box-sizing: border-box;
@@ -57,7 +58,6 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
   background-color: var.$col-P3;
   cursor: pointer;
 }
-
 
 /*- evenements-*/
 .evenements-bg{

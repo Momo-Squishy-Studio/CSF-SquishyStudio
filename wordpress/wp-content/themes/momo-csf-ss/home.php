@@ -23,6 +23,7 @@ else : // Si aucune page n'a été trouvée
 endif;
 ?>
 </section>
+<?php get_template_part( 'partials/donation' ); // Affiche partials/donation.php?>
 <?php
 //get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 

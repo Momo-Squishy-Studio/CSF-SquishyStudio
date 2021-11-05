@@ -8,7 +8,8 @@
 
 <footer>
 	<div class="footer-square">
-		<?php wp_nav_menu( array( 'theme_location' => 'social-menu', 'link_before' => '') );?>
+		<?php
+		wp_nav_menu( array( 'theme_location' => 'social-menu') );?>
 	</div>
 
 	<div id="partenaires-list">

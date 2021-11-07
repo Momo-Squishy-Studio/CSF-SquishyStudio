@@ -158,39 +158,6 @@ get_header(); // Affiche header.php
 					</div>
 				</div>
 			</div>
-			<div class="don-accueil">
-				<img class="ballon-7" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-				<img class="ballon-8" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-				<div class="row">
-				<div class="col-12">
-				<h1>Faire Un Don</h1>
-				</div>
-				<div class="col-12">
-				<div class="don-bulles">
-					<div class="bulle">5$</div>
-					<div class="bulle">10$</div>
-					<div class="bulle">15$</div>
-					<div class="bulle">20$</div>
-					<div class="bulle">25$</div>
-					<div class="bulle">30$</div>
-					<div class="bulle">35$</div>
-					<div class="bulle">50$</div>
-				</div>
-				<!-- animation mono -->
-				<div id="mono">
-					<img src="https://i.imgur.com/DOif5Qj.png" id="roue">
-					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle">
-				  </div>
-				  
-				  <div id="mono2">
-					<img src="https://i.imgur.com/DOif5Qj.png" id="roue2">
-					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle2">
-				  </div>
-				  <!-- animation mono fin-->
-				<button class="hero-button" id="mono-don"><?php the_field('bouton_don'); ?></button>
-				</div>
-			</div>
-		</div>
 		</div>
 	</section>
 

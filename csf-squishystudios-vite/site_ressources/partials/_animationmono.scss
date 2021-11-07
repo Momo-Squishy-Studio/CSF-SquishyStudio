@@ -7,6 +7,7 @@
     transform: translate(50vw, 2vw);
     left: 50%;
     margin-top: 30px;
+    z-index: -1;
   }
   
   #roue { 
@@ -27,6 +28,7 @@
     transform: translate(50vw, 2vw) scaleX(-1);
     left: -52.5%;
     margin-top: 30px;
+    z-index: -1; 
   }
   
   #roue2 { 

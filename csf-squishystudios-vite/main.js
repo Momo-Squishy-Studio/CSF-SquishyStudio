@@ -14,6 +14,32 @@ gsap.timeline({repeat:-1})
 
 gsap.timeline() .to('#carousel1', {rotate: 360, duration: 4, ease:Linear.easeNone, repeat:-1})
 
+/*animation monocycle*/
+	gsap.timeline()
+	.to('#roue', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
+	.to('#monocycle', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
+	
+	  gsap.timeline() .to('#roue', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:-1})
+	
+	gsap.timeline()
+	.to('#roue2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
+	.to('#monocycle2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
+	
+	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, ease: 'ease-out', yoyo:true, repeat:-1})
+
+/*swiper*/
+const swiper = new Swiper('.swiper-container', {
+	autoplay: {
+		delay: 3000,
+	  },
+	speed: 1000,
+	loop: true,
+	slidesPerView: 'auto',
+	cubeEffect: {slideShadows: false},
+	pagination: {el: '.swiper-pagination', type: 'bullets',},
+	navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+  });
+
 /*hamburger toggle*/
 const upper = document.querySelector('.upper');
 const middle = document.querySelector('.middle');
@@ -30,18 +56,6 @@ hamburger.addEventListener('click', ()=> {
 	x.style.display = "block";
 });
 
-/*swiper*/
-const swiper = new Swiper('.swiper-container', {
-	autoplay: {
-		delay: 3000,
-	  },
-	speed: 1000,
-	loop: true,
-	slidesPerView: 'auto',
-	cubeEffect: {slideShadows: false},
-	pagination: {el: '.swiper-pagination', type: 'bullets',},
-	navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
-  });
 /*animation hover hamburger*/
 const hover = gsap.timeline()
 	.to(upper, 0.1, {attr: {d: "M8,2 L2,2"}, x: 1, y: 1, ease:Power2.easeInOut, }, )
@@ -51,21 +65,5 @@ const hover = gsap.timeline()
 	hamburger.addEventListener("mouseenter", () => hover.play());
 	hamburger.addEventListener("mouseleave", () => hover.reverse());
 
-/*animation monocycle*/
-var playmono = document.querySelector('#mono-don');
 
-	playmono.addEventListener('click', () => {
-	
-	gsap.timeline()
-	.to('#roue', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
-	.to('#monocycle', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
-	
-	  gsap.timeline() .to('#roue', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
-	
-	gsap.timeline()
-	.to('#roue2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
-	.to('#monocycle2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
-	
-	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
-		});
 

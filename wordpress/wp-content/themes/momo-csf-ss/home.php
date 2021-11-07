@@ -52,16 +52,16 @@ get_header(); // Affiche header.php
 		<div class="evenements">
             <div class="row">
                 <div class="col-12">
-                <h1 class="h1-evenements">Événements</h1>
+                <h1 class="h1-evenements"><?php the_field('evenements_titre'); ?></h1>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
                     <div class="card card1">
                         
                         <div class="card-body">
-                            <h2 class="card-title">Spectacles</h2>
+                            <h2 class="card-title"><?php the_field('spectacles_titre'); ?></h2>
 							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                            <div class="card-footer"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></div>
                         </div>
                     </div>
                 </div>
@@ -69,10 +69,10 @@ get_header(); // Affiche header.php
                 <div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
                     <div class="card card2">            
                         <div class="card-body">
-                            <h2 class="card-title">Animations</h2>
+                            <h2 class="card-title"><?php the_field('animations_titre'); ?></h2>
 							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                            <div class="card-footer"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></div>
                         </div>
                     </div>
                 </div>
@@ -80,10 +80,10 @@ get_header(); // Affiche header.php
                 <div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
                     <div class="card card3">
                         <div class="card-body">
-                            <h2 class="card-title">Ateliers</h2>
+                            <h2 class="card-title"><?php the_field('ateliers_titre'); ?></h2>
 							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                            <div class="card-footer"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></div>
                         </div>
                     </div>
                 </div>
@@ -93,14 +93,14 @@ get_header(); // Affiche header.php
 		<div class="temoignage">
 			<div class="row">
                 <div class="col-12">
-                <h1 class="h1-evenements">Témoignage de Sarah</h1>
+                <h1 class="h1-evenements"><?php the_field('temoignage'); ?></h1>
                 </div>
                 <div class="col-12">
                     <div class="card card1">                        
 		                <div class="card-body">
 							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
                             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-                            <div class="card-footer"><button class="hero-button">En Savoir Plus Sur l'Histoire De Sarah</button></div>
+                            <div class="card-footer"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></div>
                         </div>
                     </div>
                 </div>
@@ -122,7 +122,7 @@ get_header(); // Affiche header.php
 			<div class="nouvelles-accueil">
 				<div class="row">
 					<div class="col-12">
-					<h1>Nouvelles</h1>
+					<h1><?php the_field('nouvelles'); ?></h1>
 					</div>
 					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
 						<div class="card card1" id="card-v2">							
@@ -130,7 +130,7 @@ get_header(); // Affiche header.php
 								<h2 class="card-title">Nouvelle 1</h2>
 								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
 							</div>
 						</div>
 					</div>
@@ -141,7 +141,7 @@ get_header(); // Affiche header.php
 								<h2 class="card-title">Nouvelle 2</h2>
 								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
 							</div>
 						</div>
 					</div>
@@ -152,7 +152,7 @@ get_header(); // Affiche header.php
 								<h2 class="card-title">Nouvelle 3</h2>
 								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
 							   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
 							</div>
 						</div>
 					</div>

@@ -69,17 +69,3 @@ var playmono = document.querySelector('#mono-don');
 	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
 		});
 
-
-
-/*const click = gsap.timeline()
-.to(middle, 0.1, {opacity: 0}, )
-	.to(upper, 0.1, {attr: {d: "M8,2 L2,8"}, x: 1, ease:Power2.easeInOut, }, )
-	.to(lower, 0.1, {attr: {d: "M8,10 L2,4"}, x: 1, ease:Power2.easeInOut, }, );
-
-		hamburger.addEventListener('click', function () {
-			if (click.reversed()) {
-				click.play();
-			} else {
-				click.reverse(this);
-			}
-		})*/

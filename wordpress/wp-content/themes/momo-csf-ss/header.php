@@ -16,6 +16,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap">
 <script src="https://kit.fontawesome.com/f5e9d462b9.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">-->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    
 <?php 
 	// Tous les .css et .js sont chargés dans le fichier functions.php
 ?>
@@ -45,15 +49,10 @@
 			// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
 			//https://monsterspost.com/how-to-build-wordpress-navigation-using-wp_nav_menu/
 			wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>' ) );
-			?>
+		?>
 	</nav>
 </header>
-<h1>
-	<a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?></a>
-</h1>
-<?php 
-	// Affiche la description de site se trouvant dans "General Settings" dans l'admin WordPress
-	bloginfo( 'description' ); 
-?>
+
+
 
 <main><!-- Débute le contenu principal de notre site -->

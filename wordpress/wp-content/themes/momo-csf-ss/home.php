@@ -6,24 +6,203 @@
 
 get_header(); // Affiche header.php
 ?>
-<section>
 	<?php
 	if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
 		// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 		while ( have_posts() ) : the_post(); 
 		?>
 		
-		<article>
-			<?php the_content(); // Contenu principal de la page ?>
-		</article>
+		<div class="hero">
+		<img class="ballon-1" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-2" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-3" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="hero-logo" src="<?php echo get_template_directory_uri(); ?>\site_ressources\icones\CSF_Logo_MASA_RNW.svg" alt="logo clown">
+		<h1><?php the_field('titre_site'); ?></h1>
+		<div class="hero-container">
+			<p><?php the_field('slogan'); ?></p>
+			<button class="hero-button"><?php the_field('bouton_don'); ?></button>
+		</div>
+	</div>
+	<div class="bg-swiper">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_01.jpg">
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg">
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_03.jpg"> 
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_04.jpg">
+		</div>
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	  </div>
+	</div>
+	
+	<div style='height: 100px; background: url("<?php echo get_template_directory_uri(); ?>/site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
+
+	<section class="evenements-bg">
+		<div class="container">
+		<div class="evenements">
+            <div class="row">
+                <div class="col-12">
+                <h1 class="h1-evenements">Événements</h1>
+                </div>
+                <div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+                    <div class="card card1">
+                        
+                        <div class="card-body">
+                            <h2 class="card-title">Spectacles</h2>
+							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+                    <div class="card card2">            
+                        <div class="card-body">
+                            <h2 class="card-title">Animations</h2>
+							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+                    <div class="card card3">
+                        <div class="card-body">
+                            <h2 class="card-title">Ateliers</h2>
+							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+                           <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div class="card-footer"><button class="hero-button">En Savoir Plus</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+		<div class="temoignage">
+			<div class="row">
+                <div class="col-12">
+                <h1 class="h1-evenements">Témoignage de Sarah</h1>
+                </div>
+                <div class="col-12">
+                    <div class="card card1">                        
+		                <div class="card-body">
+							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                            <div class="card-footer"><button class="hero-button">En Savoir Plus Sur l'Histoire De Sarah</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+		</div>
+
+	</div>
+	</section>
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#EC1A24" fill-opacity="1" d="M0,160L80,181.3C160,203,320,245,480,234.7C640,224,800,160,960,160C1120,160,1280,224,1360,256L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+	</path>
+	</svg>
+	
+	<section class="nouvelles-don">
+		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<div class="container">
+			<div class="nouvelles-accueil">
+				<div class="row">
+					<div class="col-12">
+					<h1>Nouvelles</h1>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+						<div class="card card1" id="card-v2">							
+							<div class="card-body">
+								<h2 class="card-title">Nouvelle 1</h2>
+								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+						<div class="card card2" id="card-v2">            
+							<div class="card-body">
+								<h2 class="card-title">Nouvelle 2</h2>
+								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+							</div>
+						</div>
+					</div>
+	
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Nouvelle 3</h2>
+								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button">En Savoir Plus</button></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="don-accueil">
+				<img class="ballon-7" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+				<img class="ballon-8" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+				<div class="row">
+				<div class="col-12">
+				<h1>Faire Un Don</h1>
+				</div>
+				<div class="col-12">
+				<div class="don-bulles">
+					<div class="bulle">5$</div>
+					<div class="bulle">10$</div>
+					<div class="bulle">15$</div>
+					<div class="bulle">20$</div>
+					<div class="bulle">25$</div>
+					<div class="bulle">30$</div>
+					<div class="bulle">35$</div>
+					<div class="bulle">50$</div>
+				</div>
+				<!-- animation mono -->
+				<div id="mono">
+					<img src="https://i.imgur.com/DOif5Qj.png" id="roue">
+					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle">
+				  </div>
+				  
+				  <div id="mono2">
+					<img src="https://i.imgur.com/DOif5Qj.png" id="roue2">
+					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle2">
+				  </div>
+				  <!-- animation mono fin-->
+				<button class="hero-button" id="mono-don"><?php the_field('bouton_don'); ?></button>
+				</div>
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+
 		<?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 ?>
-</section>
-<?php get_template_part( 'partials/donation' ); // Affiche partials/donation.php?>
+ <?php get_template_part( 'partials/donation' ); // Affiche partials/donation.php?>
 <?php
 //get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 

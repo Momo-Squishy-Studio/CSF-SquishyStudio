@@ -1,10 +1,17 @@
 import './style.scss'
 
-console.log("Main");
-var tmpScripts = document.getElementsByClassName("tempScript");
-while (tmpScripts[0]) {
-	tmpScripts[0].parentNode.removeChild(tmpScripts[0]);
-}
+/*swiper*/
+const swiper = new Swiper('.swiper-container', {
+	autoplay: {
+		delay: 3000,
+	  },
+	speed: 1000,
+	loop: true,
+	slidesPerView: 'auto',
+	cubeEffect: {slideShadows: false},
+	pagination: {el: '.swiper-pagination', type: 'bullets',},
+	navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
+  });
 
 /*animation 404*/
 gsap.timeline({repeat:-1})
@@ -26,19 +33,6 @@ gsap.timeline() .to('#carousel1', {rotate: 360, duration: 4, ease:Linear.easeNon
 	.to('#monocycle2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
 	
 	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, ease: 'ease-out', yoyo:true, repeat:-1})
-
-/*swiper*/
-const swiper = new Swiper('.swiper-container', {
-	autoplay: {
-		delay: 3000,
-	  },
-	speed: 1000,
-	loop: true,
-	slidesPerView: 'auto',
-	cubeEffect: {slideShadows: false},
-	pagination: {el: '.swiper-pagination', type: 'bullets',},
-	navigation: {nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev', },
-  });
 
 /*hamburger toggle*/
 const upper = document.querySelector('.upper');

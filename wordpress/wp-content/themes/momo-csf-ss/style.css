@@ -125,7 +125,13 @@ section::after {
 }
 
 /*- don ------------------------------------------------------------------------------------------*/
-
+.fetch-api-cards{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 20px;
+}
 .donations {
 	display: flex;
 	justify-content: center;

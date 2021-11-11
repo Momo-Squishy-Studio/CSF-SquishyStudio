@@ -124,9 +124,7 @@ get_header(); // Affiche header.php
 					<div class="col-12">
 					<h1><?php the_field('nouvelles'); ?></h1>
 					</div>
-
-					<div class="fetch-api-cards">
-						
+					<div id="fetch-api-cards" class="row">
 					</div>
 				</div>
 			</div>

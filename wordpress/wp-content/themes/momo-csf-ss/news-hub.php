@@ -24,7 +24,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 					<div class="col-12">
 					<h1><?php the_title(); // Titre de la page ?></h1>
 					</div>
-					<div class="col-xl-12 col-lg-6 col-sm-12 mb-4">
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
 						<div class="card card1" id="card-v2">							
 							<div class="card-body">
 								<h2 class="card-title">Nouvelle 1</h2>

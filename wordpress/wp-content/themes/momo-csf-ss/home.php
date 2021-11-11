@@ -54,9 +54,9 @@ get_header(); // Affiche header.php
                 <div class="col-12">
                 <h1 class="h1-evenements"><?php the_field('evenements_titre'); ?></h1>
                 </div>
+
                 <div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
-                    <div class="card card1">
-                        
+                    <div class="card card1">                    
                         <div class="card-body">
                             <h2 class="card-title"><?php the_field('spectacles_titre'); ?></h2>
 							<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
@@ -124,37 +124,9 @@ get_header(); // Affiche header.php
 					<div class="col-12">
 					<h1><?php the_field('nouvelles'); ?></h1>
 					</div>
-					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
-						<div class="card card1" id="card-v2">							
-							<div class="card-body">
-								<h2 class="card-title">Nouvelle 1</h2>
-								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
-							</div>
-						</div>
-					</div>
-	
-					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
-						<div class="card card2" id="card-v2">            
-							<div class="card-body">
-								<h2 class="card-title">Nouvelle 2</h2>
-								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
-								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
-							</div>
-						</div>
-					</div>
-	
-					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
-						<div class="card card3" id="card-v2">
-							<div class="card-body">
-								<h2 class="card-title">Nouvelle 3</h2>
-								<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg" class="card-img-top">
-							   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
-							</div>
-						</div>
+
+					<div class="fetch-api-cards">
+						
 					</div>
 				</div>
 			</div>

@@ -25,10 +25,12 @@
     background-color: var.$col-T3;
     box-shadow: 4px 4px 10px #00000018;
   }
-  #card-v2:hover{
+  .card:hover{
     transform: translateY(-2px);
-    box-shadow: 4px 4px 10px #00000036;
     transition: 0.2s;
+  }
+  #card-v2:hover{
+    box-shadow: 4px 4px 10px #00000036;
   }
   #card-footer-v2{
     background-color: var.$col-T3;

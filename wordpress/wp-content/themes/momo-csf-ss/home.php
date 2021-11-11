@@ -23,27 +23,8 @@ get_header(); // Affiche header.php
 			<button class="hero-button"><?php the_field('bouton_don'); ?></button>
 		</div>
 	</div>
-	<div class="bg-swiper">
-	<div class="swiper-container">
-		<div class="swiper-wrapper">
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_01.jpg">
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg">
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_03.jpg"> 
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_04.jpg">
-		</div>
-		</div>
-		<div class="swiper-pagination"></div>
-		<div class="swiper-button-next"></div>
-		<div class="swiper-button-prev"></div>
-	  </div>
-	</div>
+
+	<?php get_template_part( 'partials/carousel' );?>
 	
 	<div style='height: 100px; background: url("<?php echo get_template_directory_uri(); ?>/site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
 
@@ -124,7 +105,7 @@ get_header(); // Affiche header.php
 					<div class="col-12">
 					<h1><?php the_field('nouvelles'); ?></h1>
 					</div>
-					<div id="fetch-api-cards" class="row">
+					<div id="fetch-api-cards-accueil" class="row">
 					</div>
 				</div>
 			</div>

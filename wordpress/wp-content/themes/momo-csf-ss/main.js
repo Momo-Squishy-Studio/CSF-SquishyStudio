@@ -3,6 +3,31 @@ const l=function(){const r=document.createElement("link").relList;if(r&&r.suppor
 
 //- GSAP Hamburger ---------------------------------------------------------------------------------
 
+const hamb = document.getElementById('menu-main-cb');
+const hambLbl = document.getElementById('menu-main-cb-lbl');
+hamb.addEventListener('click', ()=> {
+	hambAnim();
+});
+hambLbl.addEventListener('mouseenter', ()=> {
+	console.log("enter");
+	hambAnim(1.75, 1.25);
+});
+hambLbl.addEventListener('mouseleave', ()=> {
+	console.log("leave");
+	hambAnim();
+});
+function hambAnim(sizeC=2, sizeD=1, angleC=180, angleD=0) {
+	
+	var hambSize = hamb.checked ? sizeC: sizeD;
+	var hambAngle = hamb.checked ? angleC: angleD;
+	
+	gsap.to('#menu-main-cb-lbl', {
+		scale: hambSize,
+		rotation: hambAngle,
+		duration: .5,
+		ease: 'linear'
+	});
+};
 
 //- Fetch nouvelles Accueil ------------------------------------------------------------------------
 fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")

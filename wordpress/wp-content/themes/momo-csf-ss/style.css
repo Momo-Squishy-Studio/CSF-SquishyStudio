@@ -64,7 +64,7 @@ header {
 	display: none;
 	font-size: 30px;
 	color: var(--col-P1);
-	transition: transform ease-out .5s;
+	/* transition: transform ease-out .2s; */
 	cursor: pointer;
 }
 #menu-main-cb-lbl:hover {transform: scale(1.1)}
@@ -90,6 +90,13 @@ header {
 		flex-direction: column;
 	}
 }
+#menu-main-paint {
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+	z-index: -1;
+	stroke: var(--col-P1);
+}
+
 
 /*- section --------------------------------------------------------------------------------------*/
 /*

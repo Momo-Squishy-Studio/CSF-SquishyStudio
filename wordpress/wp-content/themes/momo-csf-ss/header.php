@@ -39,17 +39,17 @@
 >
 
 <header>
-	<nav>
+	<nav class="container">
 		<?php
 			// $siteLogo = '<a href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="logo ' . esc_attr(get_bloginfo('name', 'display') .'"></a>';
-			$siteLogo = '<a id="%1$s-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
+			$siteLogo = '<a id="%1$s-logo" class="site-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
 			$siteHamb = '<input type="checkbox" id="%1$s-cb"><label for="%1$s-cb" id="%1$s-cb-lbl" class="fas fa-bars"></label>';
 			//https://www.cassie.codes/posts/creating-my-logo-animation/#heading-svg-stroke-dasharray
 
 			//$menuPaint = '<svg xmlns="http://www.w3.org/2000/svg" id="%1$s-paint" viewbox="0 0 800 300" fill="none"><rect width="800" height="300" fill="#fff"/><path stroke-width="10" d="M750,-50 q150,150 0,250 -50,-250 -150,-150"></svg>';
 			// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
 			//https://monsterspost.com/how-to-build-wordpress-navigation-using-wp_nav_menu/
-			wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>') );
+			wp_nav_menu( array( 'theme_location' => 'main-menu', /*'container_class' => 'header',*/ 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>') );
 		?>
 	</nav>
 </header>

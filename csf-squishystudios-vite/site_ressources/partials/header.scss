@@ -22,7 +22,7 @@
     cursor: pointer; 
   }
   
-  .head-link{
+  .head-link {
     font-weight: 700;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
@@ -32,6 +32,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     color: var.$col-P1;
+		@include btn.onglet();
   }
   
   .head-lang {
@@ -44,23 +45,23 @@
     color: var.$col-P1;
   }
   
-  @media screen and (max-width: 1200px) {
-    .head-link{
-      display: none;
-    }
-    .head-lang{
-      display: none;
-    }
-    .hamburger {
-      display: block!important;
-    }
-  }
+  // @media screen and (max-width: 1200px) {
+  //   .head-link{
+  //     display: none;
+  //   }
+  //   .head-lang{
+  //     display: none;
+  //   }
+  //   .hamburger {
+  //     display: block!important;
+  //   }
+  // }
   
-  @media screen and (min-width: 1200px) {
-    .hamburger-toggle{
-      display: none!important;
-    }
-  }
+  // @media screen and (min-width: 1200px) {
+  //   .hamburger-toggle{
+  //     display: none!important;
+  //   }
+  // }
   
   .hamburger {
     display: none;

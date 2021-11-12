@@ -12,7 +12,7 @@
 			<div class="row">
 				<div class="col-xl-4 col-md-6 col-sm-12">
 					<div class="aligner">
-						<a href="index.html"><img class="whiteclown" src="<?php echo get_template_directory_uri(); ?>\site_ressources\icones\CSF_Logo_MASA_WW.svg" href="index.html"></a>
+						<a href="/"><img class="whiteclown" src="<?php echo get_template_directory_uri(); ?>\site_ressources\icones\CSF_Logo_MASA_WW.svg" href="index.html"></a>
 						<h1 class="quote-blanc">Clowns sans<br>frontières</h1>
 					</div>
 					<button class="footer-button">Faire Un Don</button>

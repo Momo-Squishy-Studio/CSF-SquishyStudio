@@ -42,9 +42,7 @@
 					// $id = $patnPost->id;
 					$acf = $patnPost->acf;
 					?>
-						<!-- <a href="<?php// echo get_field('link', $id)?>" target="_blank"> -->
 						<a href="<?php echo $acf->link?>" target="_blank" class="partenaire">
-							<!-- <img src="<?php //echo get_field('icon_' . get_field('icon_type', $id), $id);?>" alt="logo <?php// echo $patnPost->title->rendered;?>"> -->
 							<img src="<?php echo $acf->icon_type = "vector" ? $acf->icon_vector : $acf->icon_raster;?>" alt="logo <?php echo $patnPost->title->rendered;?>">
 						</a>
 				<?php endforeach;?>

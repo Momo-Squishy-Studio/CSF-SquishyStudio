@@ -2,7 +2,20 @@
 @use './site_ressources/partials/variables' as var;
 @use './site_ressources/partials/bouton' as btn;
 
+
 /*- header -*/
+#menu-main {
+  .menu-item a {
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    padding: 5px 20px;
+    color: var.$col-P1;
+    @include btn.onglet();
+  }
+}
+
 .header {
     padding: 20px;
     display: flex;
@@ -27,10 +40,7 @@
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 5px 20px;
     color: var.$col-P1;
 		@include btn.onglet();
   }
@@ -45,23 +55,23 @@
     color: var.$col-P1;
   }
   
-  // @media screen and (max-width: 1200px) {
-  //   .head-link{
-  //     display: none;
-  //   }
-  //   .head-lang{
-  //     display: none;
-  //   }
-  //   .hamburger {
-  //     display: block!important;
-  //   }
-  // }
+  @media screen and (max-width: 1200px) {
+    .head-link{
+      display: none;
+    }
+    .head-lang{
+      display: none;
+    }
+    .hamburger {
+      display: block!important;
+    }
+  }
   
-  // @media screen and (min-width: 1200px) {
-  //   .hamburger-toggle{
-  //     display: none!important;
-  //   }
-  // }
+  @media screen and (min-width: 1200px) {
+    .hamburger-toggle{
+      display: none!important;
+    }
+  }
   
   .hamburger {
     display: none;

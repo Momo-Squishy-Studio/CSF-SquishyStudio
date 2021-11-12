@@ -64,7 +64,7 @@ fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
 
 //- Fetch nouvelles Hub ----------------------------------------------------------------------------
 
-
+//- OrderByDate ----------------------------------------------------------------------------
 var orderby = document.getElementById("order-date");
 
 function getnouvelles(param){
@@ -103,6 +103,7 @@ function getnouvelles(param){
 	});
 }
 
+//-  ----------------------------------------------------------------------------
 getnouvelles("desc")
 
 orderby.addEventListener("change", function() {

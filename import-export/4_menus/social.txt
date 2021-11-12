@@ -1,0 +1,19 @@
+-	Facebook
+	url	https://www.facebook.com/Clowns-Sans-Frontieres
+	class	fab fa-facebook-f
+
+-	Vimeo
+	url	https://vimeo.com/user2650793
+	class	fab fa-vimeo-v
+
+-	Twitter
+	url	https://twitter.com/csf_canada
+	class	fab fa-twitter
+
+-	Instagram
+	url	https://www.instagram.com/clownssansfrontieres/
+	class	fab fa-instagram
+
+-	Youtube
+	url	https://www.youtube.com/channel/UCQWUO8JZx69GPWRInazRPMw
+	class	fab fa-youtube

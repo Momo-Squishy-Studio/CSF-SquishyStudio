@@ -1,0 +1,124 @@
+[
+    {
+        "key": "group_617c5baa67dfc",
+        "title": "Partenaire",
+        "fields": [
+            {
+                "key": "field_617c694f91260",
+                "label": "Type de l&#039;icone",
+                "name": "icon_type",
+                "type": "select",
+                "instructions": "Matricielle : comme jpeg (non recommandé) ou png<br>\r\nVectorielle : comme svg ou webp",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "raster": "Raster",
+                    "vector": "Vector"
+                },
+                "default_value": "vector",
+                "allow_null": 0,
+                "multiple": 0,
+                "ui": 0,
+                "return_format": "value",
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_617c5c455d673",
+                "label": "Icone",
+                "name": "icon_raster",
+                "type": "image",
+                "instructions": "Choisir l'image qui s'affichera afin de cliquer sur le partenaire.<br>\r\nIl est recommandé de choisir une image au format png avec transparence portant les couleurs de votre site.<br><br>\r\nL'aspect carré n'est pas obligatoire.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_617c694f91260",
+                            "operator": "==",
+                            "value": "raster"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url",
+                "preview_size": "medium",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": ""
+            },
+            {
+                "key": "field_617c69329125f",
+                "label": "Icone",
+                "name": "icon_vector",
+                "type": "link",
+                "instructions": "Choisir l'image qui s'affichera afin de cliquer sur le partenaire.<br>\r\nIl est recommandé de choisir une image avec transparence portant les couleurs du site.<br><br>\r\nWordpress refuse de prendre en charge le format svg, mais tant qu'on a son url, il est possible de charger n'importe quelle image.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_617c694f91260",
+                            "operator": "==",
+                            "value": "vector"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url"
+            },
+            {
+                "key": "field_617c5cc95d674",
+                "label": "Lien",
+                "name": "link",
+                "type": "link",
+                "instructions": "Lien vers le site du partenaire en question, si possible",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "return_format": "url"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "partners"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "field",
+        "hide_on_screen": [
+            "permalink",
+            "discussion",
+            "comments"
+        ],
+        "active": true,
+        "description": ""
+    }
+]

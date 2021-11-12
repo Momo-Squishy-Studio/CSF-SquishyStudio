@@ -1,29 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" id="accueil">
 <head>
-	<meta charset="UTF-8">
-	<title>Équipe</title>
-	<link rel="stylesheet" href="/site_ressources/stylesheet/normalize.css">
+	<meta charset="UTF-8" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="site_ressources/stylesheet/normalize.css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script>
-		$(()=>{
-			$("header").load("/_header.html");
-			$("footer").load("/_footer.html");
-		});
-	</script>
-	<span id="libs"></span>
+	<link rel="icon" type="image/svg+xml" href="site_ressources/icones/CSF_Icone_MASA.svg" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Équipe</title>
 </head>
 <body>
-	<header class="container"></header>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+	Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		</div>
+		<div class="modal-body">
+		  ...
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+	
+	<div class="container">
+		<div class="header">
+			<a href="index.html"><img class="site-logo" src="site_ressources\icones\CSF_Logo_MASA_RNW.svg" alt="logo clown" href="index.html"></a>
+			<a href="hub-nouvelle.html" class="head-link">Nouvelles</a>
+			<a href="services.html" class="head-link">Services</a>
+			<a href="equipe.html" class="head-link">Équipe</a>
+			<a href="propos.html" class="head-link">À Propos</a>
+			<a href="histoire.html" class="head-link">Histoire</a>
+			<a href="#" class="head-lang">EN</a>
+			<svg viewBox="0 0 12 10" class="hamburger" height="80px" width="100px" fill="none" stroke="#EC1A24" stroke-linecap="round">
+				<path d="M10,2 L2,2" class="upper"/>
+				<path d="M2,5 L10,5" class="middle"/>
+				<path d="M10,8 L2,8" class="lower"/>
+			</svg>
+		</div>
+		<div class="hamburger-toggle">
+			<div class="hamburger-dropdown">
+				<a href="hub-nouvelle.html" class="hamburger-link">Nouvelles</a>
+				<a href="services.html" class="hamburger-link">Services</a>
+				<a href="equipe.html" class="hamburger-link">Équipe</a>
+				<a href="propos.html" class="hamburger-link">À Propos</a>
+				<a href="histoire.html" class="hamburger-link">Histoire</a>
+			</div>
+		</div>
+	</div>
 
+	<!-- CONTENU --------------------------------->
+	<div class="container">
+	<div class="hero">
+		<h1 id="h1-article">Équipe</h1>
+		<div class="hero-container">
+			<p>Une équipe passionnée prêt à relever les défis
+            </p>
+		</div>
+	</div>
+	</div>
+	<div class="bg-swiper">
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="site_ressources/images/image_01.jpg">
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="site_ressources/images/image_02.jpg">
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="site_ressources/images/image_03.jpg"> 
+		</div>
+		<div class="swiper-slide">
+		<img class="carousel-accueil-img" src="site_ressources/images/image_04.jpg">
+		</div>
+		</div>
+		<div class="swiper-pagination"></div>
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+	  </div>
+	</div>
+	
+	<section class="nouvelles-don">
+		<img class="ballon-4" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-5" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-6" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<div class="container">
+			<div class="nouvelles-accueil">
+				<div class="row">
+					<div class="col-12">
+					<h1>Direction et bénévoles</h1>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+						<div class="card card1" id="card-v2">							
+							<div class="card-body">
+								<h2 class="card-title">Président</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+								<p>François Ferland</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
 
+					
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Graphisme</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Billy Maude</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
 
-	<footer></footer>
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Technicien</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Héroux Devtek</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+						<div class="card card2" id="card-v2">            
+							<div class="card-body">
+								<h2 class="card-title">Avocat et médiateur</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+								<p>Jolicoeur Lacasse</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Secrétaire-trésorier</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Jean Crevier</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Soutien technique</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Jean-François Paré</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Directrice générale</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Katel Le Fustec</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Adjointe à la direction</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Michèle D’Argenio</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
+						<div class="card card3" id="card-v2">
+							<div class="card-body">
+								<h2 class="card-title">Responsable du Comité</h2>
+								<img src="site_ressources/images/image_02.jpg" class="card-img-top">
+							   <p>Marie-Eve Aubry</p>
+								<div class="card-footer" id="card-footer-v2"><a href="detail-nouvelle.html"></a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FOOTER ---------------------------------->
+	
+	<div style='height: 100px; background: url("./site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
+	<footer class="footer-square">
+		<container>
+			<div class="row">
+				
+				<div class="col-xl-4 col-md-6 col-sm-12">
+					<div class="aligner">
+						<a href="index.html"><img class="whiteclown" src="site_ressources\icones\CSF_Logo_MASA_WW.svg" href="index.html"></a>
+						<h1 class="quote-blanc">Clowns sans<br>frontières</h1>
+					</div>
+					<button class="footer-button">Faire Un Don</button>
+				</div>
+
+				<div class="col-xl-4 col-md-6 col-sm-12 aligner2">
+					<a class="info" href="tel:+514-495-1287">Téléphone : 514-495-1287</a>
+					<a class="info" href="mailto:contact@clownssansfrontieres.ca">Courriel : contact@clownssansfrontieres.ca</a>
+					<a class="info" href="https://goo.gl/maps/2mN1r1q5v54WZ1su5">
+						Adresse: 105 rue Ontario Est, bureau 203,<br>Montréal, Québec, H2X 1G9
+					</a>
+				</div>
+
+				<div class="col-xl-4 col-md-12  ">
+					<div class="aligner3">
+						<a href="https://www.facebook.com/ClownsSansFrontieres/">
+							<img class="resaux" src="site_ressources\icones\facebook.png" >
+						</a>
+						<a href="https://twitter.com/csf_canada">
+							<img class="resaux" src="site_ressources\icones\twitter.png" >
+						</a>
+						<a href="https://www.youtube.com/channel/UCQWUO8JZx69GPWRInazRPMw">
+							<img class="resaux" src="site_ressources\icones\youtube.png" >
+						</a>
+						<a href="https://www.instagram.com/clownssansfrontieres/?hl=fr-ca">
+							<img class="resaux" src="site_ressources\icones\instagram.png">
+						</a>
+					</div>
+				</div>
+
+			</div>
+		</container>
+
+    <div class="images-container">
+			<img class="partenaire" src="site_ressources\icones\unesco.png" >
+			<img class="partenaire" src="site_ressources\icones\desjardins.png" >
+			<img class="partenaire" src="site_ressources\icones\infopresse.png" >
+			<img class="partenaire" src="site_ressources\icones\emploiqc.png" >
+  	</div>
+
+		<p class="copyright">clowns sans frontières-squishy studios</p>
+		<p class="copyright"> ©2021</p>
+	</footer>
+
 	<script type="module" src="/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 </html>

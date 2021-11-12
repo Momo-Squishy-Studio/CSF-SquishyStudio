@@ -71,15 +71,23 @@
 	  </div>
 	</div>
 	
-	<section class="nouvelles-don">
-		<img class="ballon-4" src="site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-5" src="site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-6" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+	<div style='height: 100px; background: url("./site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
+	
+	<section class="evenements-bg">
 		<div class="container">
 			<div class="nouvelles-accueil">
 				<div class="row">
 					<div class="col-12">
-					<h1>Nouvelles</h1>
+					<h1 class="h1-evenements">Nouvelles</h1>
+					</div>
+					<div class="col-12">
+					<div class="trier-order">
+						<label for="trier-par"><p class="p-blanc">Trier par :</p></label>
+						<select class="order-button" name="order-by-date" id="order-date">
+							<option class="order-button" selected="selected" value="desc">Plus récentes</option>
+							<option class="order-button" value="asc">Plus anciennes</option>
+						</select>
+					</div>
 					</div>
 					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
 						<div class="card card1" id="card-v2">							
@@ -146,8 +154,60 @@
 							</div>
 						</div>
 					</div>
+					<div class="col-12">
+						<button class="footer-button" id="afficher-plus-nouvelles">Afficher plus de nouvelles</button>
+					</div>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#EC1A24" fill-opacity="1" d="M0,160L80,181.3C160,203,320,245,480,234.7C640,224,800,160,960,160C1120,160,1280,224,1360,256L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
+	</path>
+	</svg>
+
+	<section class="nouvelles-don">
+		<img class="ballon-4" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-5" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-6" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+		<div class="container">
+			<div class="don-accueil">
+				<img class="ballon-7" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+				<img class="ballon-8" src="site_ressources\images\ballon_AP.svg" alt="ballon">
+				<div class="row">
+				<div class="col-12">
+				<h1>Faire Un Don</h1>
+				</div>
+				<div class="col-12">
+				<div class="don-bulles">
+					<form action="" class="donations">
+						<input type="radio" name="amount" id="5" value="5">
+						<input type="radio" name="amount" id="10" value="10">
+						<input type="radio" name="amount" id="15" value="15">
+						<input type="radio" name="amount" id="20" value="20">
+						<input type="radio" name="amount" id="25" value="25">
+						<input type="radio" name="amount" id="30" value="30">
+						<input type="radio" name="amount" id="35" value="35">
+						<input type="radio" name="amount" id="other" value="autre">
+						<input type="number" name="amountOther" id="">
+						<br>
+						<input type="submit" class="hero-button" id="mono-don" value="Donnez">
+					</form>
+									<!-- animation mono -->
+				<div id="mono">
+					<img src="https://i.imgur.com/DOif5Qj.png" id="roue">
+					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle">
+				  </div>
+				  
+				  <div id="mono2">
+					<img src="https://i.imgur.com/DOif5Qj.png" id="roue2">
+					<img src="https://i.imgur.com/qYqHcNS.png" id="monocycle2">
+				  </div>
+				  <!-- animation mono fin-->
+				</div>
+				</div>
+			</div>
+		</div>
 		</div>
 	</section>
 

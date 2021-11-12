@@ -37,6 +37,10 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 
 .container{
   max-width: 1400px;
+
+.p-blanc{
+  color: #FFEFEF;
+}
 }
 /*- hero -*/
 .hero-button{
@@ -213,3 +217,29 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
   margin-bottom: 100px;
 }
 /*- faire-un-don-accueil fin-*/
+
+.order-button{
+	position: relative;
+  width: 150px;
+  left: 10px;
+  bottom: 3px;
+	display: block;
+	font-size: 16px;
+	padding: 4px 8px;
+	border: solid 2px white ;
+	color: var.$col-S1;
+	background-color: var.$col-P1 ;
+	border-radius: 50px;
+	margin-bottom: 40px;
+	text-decoration: none;
+	font-family: 'Comic Sans MS', cursive;
+  }
+  
+.order-button:hover{
+	background-color: var.$col-P2;
+	cursor: pointer;
+  }
+  .trier-order{
+    display: flex;
+    justify-content: center;
+  }

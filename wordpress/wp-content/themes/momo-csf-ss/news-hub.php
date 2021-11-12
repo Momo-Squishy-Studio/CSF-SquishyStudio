@@ -22,11 +22,15 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 				<div class="row">
 					<div class="col-12">
 					<h1 class="h1-evenements"><?php the_field('titre_nouvelles'); ?></h1>
-						<label for="trier-par">Trier par :</label>
-								<select name="order-by-date" id="order-date">
-								<option selected="selected" value="desc">Plus récentes</option>
-								<option value="asc">Plus anciennes</option>
-								</select>
+					</div>
+					<div class="col-12">
+					<div class="trier-order">
+						<label for="trier-par"><p class="p-blanc">Trier par :</p></label>
+						<select class="order-button" name="order-by-date" id="order-date">
+							<option class="order-button" selected="selected" value="desc">Plus récentes</option>
+							<option class="order-button" value="asc">Plus anciennes</option>
+						</select>
+					</div>
 					</div>
 					<div id="fetch-api-cards-hub" class="row">
 					</div>

@@ -63,13 +63,13 @@ fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
 	  });
 
 //- Fetch nouvelles Hub ----------------------------------------------------------------------------
-var order = 'desc';
+var orderdate = 'desc';
 var orderby = document.getElementById("order-date");
 
 orderby.addEventListener("change", function() {
 	var order = this.value
 
-	fetch(`/wp-json/wp/v2/news?_embed&per_page=13&order=date&order=${order}`)
+	fetch(`/wp-json/wp/v2/news?_embed&per_page=13&order=date&order=${orderdate}`)
 	.then(response => response.json())
 	.then(data => { 
 		let html2 = "";

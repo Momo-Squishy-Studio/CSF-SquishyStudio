@@ -16,25 +16,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <div style='height: 100px; background: url("<?php echo get_template_directory_uri(); ?>/site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
 
-<section class="evenements-bg">
-	<div class="container">
-	<div class="temoignage">
-		<div class="row">
-			<div class="col-12">
-				<div class="card card1">                        
-					<div class="card-body">
-						<p id=article-texte>
-						<?php the_content(); // Contenu principal de la page ?>
-						</p>                               
-						<img src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_06.jpg" class="card-img-top">
-					</div>
-					<div class="card-footer"><p id="p-rouge"><p id="p-rouge"><?php the_field('card_footer_text'); ?></p></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-</section>
+<?php get_template_part( 'partials/description' ); ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#EC1A24" fill-opacity="1" d="M0,160L80,181.3C160,203,320,245,480,234.7C640,224,800,160,960,160C1120,160,1280,224,1360,256L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
 </path>

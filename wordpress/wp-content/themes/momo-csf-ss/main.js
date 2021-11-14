@@ -117,6 +117,9 @@ btnNews.addEventListener('click', function() {
 
 	clickplus += 6;
 
+	if(clickplus > 13)
+		clickplus = 13;
+
 	fetch(`/wp-json/wp/v2/news?_embed&per_page=${clickplus}&order=date&order=desc`)
 	.then(response => response.json())
 	.then(data => {
@@ -147,5 +150,8 @@ btnNews.addEventListener('click', function() {
 
 			fetchDivHub.innerHTML = html2;
 		}
+
+		if (clickplus > 12) btnNews.style.display = "none";
+		console.log(clickplus);
 	});
 	});

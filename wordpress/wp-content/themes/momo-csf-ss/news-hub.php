@@ -25,17 +25,17 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 					</div>
 					<div class="col-12">
 					<div class="trier-order">
-						<label for="trier-par"><p class="p-blanc">Trier par :</p></label>
+						<label for="trier-par"><p class="p-blanc"><?php the_field('trier_par'); ?></p></label>
 						<select class="order-button" name="order-by-date" id="order-date">
-							<option class="order-button" selected="selected" value="desc">Plus récentes</option>
-							<option class="order-button" value="asc">Plus anciennes</option>
+							<option class="order-button" selected="selected" value="desc"><?php the_field('plus_recentes'); ?></option>
+							<option class="order-button" value="asc"><?php the_field('plus_anciennes'); ?></option>
 						</select>
 					</div>
 					</div>
 					<div id="fetch-api-cards-hub" class="row">
 					</div>
 					<div class="col-12">
-						<button class="footer-button" id="afficher-plus-nouvelles">Afficher plus de nouvelles</button>
+						<button class="footer-button" id="afficher-plus-nouvelles"><?php the_field('bouton_afficher_nouvelles'); ?></button>
 					</div>
 				</div>
 			</div>

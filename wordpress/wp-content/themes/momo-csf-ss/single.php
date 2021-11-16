@@ -31,7 +31,34 @@ if ( have_posts() ) :
 					<div class="col-12">
 					<h1><?php the_field('prochaines_nouvelles'); ?></h1>
 					</div>
-					<div id="fetch-api-cards-accueil" class="row">
+					<div class="row">
+					<?php					
+					$current_page = 3;
+
+					 $arguments = array( // 👈 Tableau d'arguments
+						'pages' => $current_page,
+						'post_type' => 'news',
+						'posts_per_page' => 3						
+					  );
+  					$news = new WP_Query($arguments);
+  					while ($news->have_posts()) : $news->the_post(); 
+					?>
+					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+					<div class="card card1">
+						<div class="card-body">
+							<h2 class="card-title"><?php the_title(); ?></h2>
+							<div class="featured-image">
+							<?php if ( has_post_thumbnail() ) :           
+                            $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'medium' ); ?>
+							<img src="<?php echo $featured_image[0]; ?>" class="card-img-top"/>
+							<?php endif; ?>
+							<p><?php the_field('resume'); ?></p>
+							</div>
+							<div class="card-footer"><a href="' . get_permalink() . '"><button class="hero-button">En Savoir Plus</button></a></div>
+						</div>
+					</div>
+					</div>
+					<?php endwhile; wp_reset_postdata(); ?>
 					</div>
 				</div>
 			</div>
@@ -39,7 +66,6 @@ if ( have_posts() ) :
 	</section>
 
 <?php endwhile; // Fermeture de la boucle
-	
 
 	else : // Si aucun article n'a été trouvée
 		get_template_part( 'partials/404' ); // Affiche partials/404.php

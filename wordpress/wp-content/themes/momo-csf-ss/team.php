@@ -164,37 +164,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
   </div>
 <!-- Modal -->
 
-<div class="container">
-	<div class="hero">
-		<h1 id="h1-article">Équipe</h1>
-		<div class="hero-container">
-			<p>Une équipe passionnée prête à relever les défis
-            </p>
-		</div>
-	</div>
-	</div>
-	<div class="bg-swiper">
-	<div class="swiper-container">
-		<div class="swiper-wrapper">
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_01.jpg">
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_02.jpg">
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_03.jpg"> 
-		</div>
-		<div class="swiper-slide">
-		<img class="carousel-accueil-img" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/image_04.jpg">
-		</div>
-		</div>
-		<div class="swiper-pagination"></div>
-		<div class="swiper-button-next"></div>
-		<div class="swiper-button-prev"></div>
-	  </div>
-	</div>
-	
+<?php get_template_part( 'partials/hero-generique' );?>
+
 	<section class="nouvelles-don">
 		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>/site_ressources\images\ballon_AP.svg" alt="ballon">
 		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>/site_ressources\images\ballon_AP.svg" alt="ballon">

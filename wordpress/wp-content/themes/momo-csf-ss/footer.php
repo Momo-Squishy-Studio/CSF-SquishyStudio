@@ -27,25 +27,22 @@
 				</div>
 
 				<div class="col-xl-4 col-md-12  ">
-					<div class="aligner3">
-					<?php wp_nav_menu( array( 'theme_location' => 'social-menu') );?>
-					</div>
+					<?php wp_nav_menu( array( 'theme_location' => 'social-menu', 'container' => '', 'menu_class' => 'aligner3') );?>
 				</div>
 			</div>
 		</container>
 
 		<div id="partenaires-list">
 			<?php //https://stackoverflow.com/questions/9802788/call-a-rest-api-in-php
-			$patnPosts = json_decode(file_get_contents(get_site_url() . '/wp-json/wp/v2/partners?orderby=title&order=asc'));
-			echo $patnPost;
+				$patnPosts = json_decode(file_get_contents(get_site_url() . '/wp-json/wp/v2/partners?orderby=title&order=asc'));
+				echo $patnPost;
 				foreach($patnPosts as $patnPost):
-					// $id = $patnPost->id;
 					$acf = $patnPost->acf;
-					?>
-						<a href="<?php echo $acf->link?>" target="_blank" class="partenaire">
-							<img src="<?php echo $acf->icon_type = "vector" ? $acf->icon_vector : $acf->icon_raster;?>" alt="logo <?php echo $patnPost->title->rendered;?>">
-						</a>
-				<?php endforeach;?>
+			?>
+				<a href="<?php echo $acf->link?>" target="_blank" class="partenaire">
+					<img src="<?php echo $acf->icon_type = "vector" ? $acf->icon_vector : $acf->icon_raster;?>" alt="logo <?php echo $patnPost->title->rendered;?>">
+				</a>
+			<?php endforeach;?>
 		</div>
 
 		<p class="copyright">clowns sans frontières-squishy studios</p>

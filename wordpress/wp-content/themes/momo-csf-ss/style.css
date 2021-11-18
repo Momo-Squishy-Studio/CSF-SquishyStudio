@@ -103,34 +103,28 @@ header {
 
 
 /*- vague --------------------------------------------------------------------------------------*/
-/*
-section, footer {
-	--sect-pad: 80px;
+
+.vague-top, .vague-bot {
+	--sect-pad: 100px;
+	--col-bg: var(--col-P1);
+	--col-alt: var(--col-S1);
 	min-height: 500px;
-	margin-top: calc(var(--sect-pad) * 1.5); margin-bottom: var(--sect-pad);
 	padding: var(--pad-h);
 	position: relative;
 	background: var(--col-bg);
-	color: var(--col-alt);
 }
-section:nth-of-type(2n) {
-	--col-bg: var(--col-S1);
-	--col-alt: var(--col-P1);
-}
-section:nth-of-type(2n+1) {
-	--col-bg: var(--col-P1);
-	--col-alt: var(--col-S1);
-	color: var(--col-T2);
-}
-:where(section:nth-of-type(2n+1), footer):before, section:nth-of-type(2n+1)::after {
+.vague-top {margin-top: var(--sect-pad)}
+.vague-bot {margin-bottom: var(--sect-pad)}
+.vague-top:before, .vague-bot::after {
 	content: '';
 	position: absolute;
 	background: url("/wp-content/uploads/images/vague.svg") center / calc(100vmin + 50vmax - 50vw) 100% repeat-x;
 }
-:where(section, footer)::before {
+.vague-top::before {
+	
 	top: calc(-1 * var(--sect-pad)); left: 0; bottom: 100%; right: 0;
 }
-section::after {
+.vague-bot::after {
 	top: 100%; left: 0; bottom: calc(-1 * var(--sect-pad)); right: 0;
 	transform: scale(-1);
 }
@@ -144,16 +138,18 @@ section::after {
 	margin: 20px;
 }
 .donations {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 20px;
+	--bord-w: 4px;
+	display: grid;
 	margin: 20px 0px 20px 0px;
+	grid-template-columns: 1fr 1fr;
+	/* justify-content: center;
+	align-items: center;
+	flex-wrap: wrap; */
+	gap: 20px;
 }
-.donations [type="radio"] {
+.donations [type=radio] {
 	width: 120px; height: 60px;
-	border: 4px solid #EC1A24;
+	border: var(--bord-w) solid #EC1A24;
 	border-radius: 20px;
 	position: relative;
 	color: #EC1A24;
@@ -165,43 +161,59 @@ section::after {
 	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 	text-transform: uppercase;
 }
-.donations [type="radio"]:hover {
+.donations [type=radio]:hover, .donations [type=number]:hover {
 	background-color: #F3E3E3;
 	cursor: pointer;
 }
-.donations [type="radio"]:active {
+.donations [type=radio]:active {
 	background-color: #FFEFEF;
 	transform: translateY(-3px);
 }
-.donations [type="radio"]::before {
+.donations [type=radio]::before {
+	transition: left linear .2s;
+	transition-property: left, right;
+}
+.donations [type=radio]::before {
 	content: '';
 	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 50%;
-	border: 4px solid #EC1A24;
-	border-radius: 15px;
+	top: calc(-1 * var(--bord-w)); left: calc(-1 * var(--bord-w)); bottom: calc(-1 * var(--bord-w)); right: 50%;
+	border: var(--bord-w) solid #EC1A24;
+	background: #FFEFEF;
+	border-radius: 20px;
+	z-index: 1;
 }
-.donations [type="radio"]::after {
+.donations [type=radio]::after {
 	position: absolute;
-	top: 0; left: 50%; bottom: 0; right: 0;
+	top: 50%; left: 50%; right: 0;
+	transform: translate(0,-50%);
 }
-.donations :not(#other)[type="radio"]::after {
-	content: attr(value) ' $';
+.donations :not(#other)[type=radio]::after {content: attr(value) ' $'}
+.donations #other::after {
+	font-size: .6em;
+	font-weight: 700
 }
-.donations [type="radio"]:checked::before {
-	left: 50%; right: 0;
+:lang("fr") .donations #other::after {content: attr(value)}
+:lang("en") .donations #other::after {content: attr(id)}
+.donations [type=radio]:checked::before {
+	left: 50%; right: calc(-1 * var(--bord-w));
 }
-.donations [type="radio"]:checked::after {
-	left: 0; right: 50%;
+.donations [type=radio]:checked::after {
+	left: 0; right: 50%
 }
-.donations #other:not(:checked)~input[type="number"] {display: none}
-.donations [type="number"] {
-	width: 20%;
-	min-width: 160px;
+.donations #other:not(:checked)~input[type=number] {display: none}
+.donations [type=number] {
+	width: 40%; min-width: 160px; height: 60px;
+	margin: auto;
+	border-radius: 20px;
+	border: 4px solid #EC1A24;
 	grid-column: span 2;
+	font-size: 20px;
+	text-align: center;
+	background: #FFEFEF;
 }
-.donations [type="submit"] {
-	width: 20%;
-	min-width: 160px;
+.donations [type=submit] {
+	width: 40%; min-width: 160px;
+	margin: auto;
 	grid-column: span 2;
 	text-align: center;
 }
@@ -213,10 +225,11 @@ section::after {
 /*- footer ---------------------------------------------------------------------------------------*/
 
 #menu-social .menu-item {
-	width: 48px; height:48px;
+	width: 40px; height:40px;
+	margin: 0 20px;
 	position: relative;
 	text-align: center;
-	font-size: 60px;
+	font-size: 40px;
 }
 #menu-social a {
 	--bal-size: 0;

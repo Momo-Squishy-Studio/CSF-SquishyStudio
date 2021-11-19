@@ -62,6 +62,36 @@ fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
 		 }
 	  });
 
+	  	//- Fetch equipe ----------------------------------------------------------------------------
+	fetch("/wp-json/wp/v2/membres_equipe?_embed")
+	.then(response => response.json())
+	.then(data => {
+		let html3 = "";
+		let fetchDivEquipe = document.querySelector('#fetch-api-cards-equipe')
+
+		for (let i = 0; i < 9; i++) {
+
+			let title = data[i].title.rendered;
+			let membre = data[i].acf.membre;
+			let modal_link = data[i].acf.modal_link;
+			let image = data[i]._embedded['wp:featuredmedia'][0].source_url;
+
+			html3 += 
+				`<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+					<div class="card card1" id="card-v2">
+						<div class="card-body">
+							<h2 class="card-title">${title}</h2>
+							<img src="${image}" class="card-img-top"/>
+							<p>${membre}</p>
+							<div class="card-footer" id="card-footer-v2"><button class="hero-button" data-bs-toggle="modal" data-bs-target="#exampleModal${modal_link}">En Savoir Plus</button></div>
+						</div>
+					</div>
+				</div>`;
+
+			fetchDivEquipe.innerHTML = html3;
+		 }
+	  });
+
 //- Fetch nouvelles Hub ----------------------------------------------------------------------------
 
 //- OrderByDate ----------------------------------------------------------------------------
@@ -155,3 +185,4 @@ btnNews.addEventListener('click', function() {
 		console.log(clickplus);
 	});
 	});
+

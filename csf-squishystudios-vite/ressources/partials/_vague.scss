@@ -1,18 +1,4 @@
-@use './site_ressources/partials/variables' as var;
-
-@mixin vague($bot: false, $top: true, $thick: 100) {
-	border-image: url("./site_ressources/images/vague.svg") 80 round;
-	border-image-width: $thick;
-	border-image-outset: $thick;
-	@if $top {
-		margin-top: $thick+20px;
-		border-top: 60px solid transparent;
-	}
-	@if $bot {
-		margin-bottom: $thick+20px;
-		border-bottom: 60px solid transparent;
-	}
-}
+@use './ressources/partials/variables' as var;
 
 .vague-top, .vague-bot {
 	--sect-pad: 100px;
@@ -26,7 +12,7 @@
 .vague-top:before, .vague-bot::after {
 	content: '';
 	position: absolute;
-	background: url("/wp-content/uploads/images/vague.svg") center / calc(100vmin + 50vmax - 50vw) 100% repeat-x;
+	background: url("/ressources/images/vague.svg") center / calc(100vmin + 50vmax - 50vw) 100% repeat-x;
 }
 .vague-top::before {
 	

@@ -1,13 +1,13 @@
-@use './site_ressources/partials/vague';
-@use './site_ressources/partials/variables' as var;
-@use './site_ressources/partials/bouton' as btn;
+@use './ressources/partials/vague';
+@use './ressources/partials/variables' as var;
+@use './ressources/partials/bouton' as btn;
 
 /*- hero carousel -*/
 .carousel-accueil-img{
     width: 100%;
   }
   .bg-swiper{
-    background-image: url(site_ressources/images/bg_bulles_roses.png);
+    background-image: url(ressources/images/bg_bulles_roses.png);
     background-position: center;
   }
   .swiper-container {

@@ -1,13 +1,13 @@
-@use './site_ressources/partials/vague';
-@use './site_ressources/partials/variables' as var;
-@use './site_ressources/partials/footer' ;
-@use './site_ressources/partials/header' ;
-@use './site_ressources/partials/carousel' ;
-@use './site_ressources/partials/hero' ;
-@use './site_ressources/partials/cards' ;
-@use './site_ressources/partials/nouvelles' ;
-@use './site_ressources/partials/animationmono' ;
-@use './site_ressources/partials/erreur-404' ;
+@use './ressources/partials/variables' as var;
+@use './ressources/partials/vague';
+@use './ressources/partials/footer' ;
+@use './ressources/partials/header' ;
+@use './ressources/partials/carousel' ;
+@use './ressources/partials/hero' ;
+@use './ressources/partials/cards' ;
+@use './ressources/partials/nouvelles' ;
+@use './ressources/partials/animationmono' ;
+@use './ressources/partials/erreur-404' ;
 
 * {
 	box-sizing: border-box;
@@ -66,7 +66,7 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 /*- evenements-*/
 .evenements-bg{
 	background-color: var.$col-P1;
-	background-image: url(site_ressources/images/bg_bulles_rouges.png);
+	background-image: url(ressources/images/bg_bulles_rouges.png);
 	background-position: top center;
 }
 .evenements{

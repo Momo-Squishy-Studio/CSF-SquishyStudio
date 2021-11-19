@@ -14,7 +14,9 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 		<?php get_template_part( 'partials/hero-generique' );?>
 
-		<section class="evenements-bg vague-top vague-bot">
+		<div style='height: 100px; background: url("<?php echo get_template_directory_uri(); ?>/site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div>
+
+		<section class="evenements-bg">
 		<div class="container">
 			<div class="nouvelles-accueil">
 				<div class="row">
@@ -39,6 +41,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 			</div>
 		</div>
 	</section>
+
+	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#EC1A24" fill-opacity="1" d="M0,160L80,181.3C160,203,320,245,480,234.7C640,224,800,160,960,160C1120,160,1280,224,1360,256L1440,288L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z">
 	
 		<?php endif; ?>	
 

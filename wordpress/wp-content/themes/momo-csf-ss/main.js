@@ -92,36 +92,6 @@ fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
 		 }
 	  });
 
-	  //- Fetch hub-services ----------------------------------------------------------------------------
-	fetch("/wp-json/wp/v2/service?_embed")
-	.then(response => response.json())
-	.then(data => {
-		let html3 = "";
-		let fetchDivEquipe = document.querySelector('#fetch-api-cards-hub-services')
-
-		for (let i = 0; i < 2; i++) {
-
-			let link = data[i].link;
-			let title = data[i].title.rendered;
-			let membre = data[i].acf.resume;
-			let image = data[i]._embedded['wp:featuredmedia'][0].source_url;
-
-			html3 += 
-				`<div class="col-xl-6 col-lg-6 col-sm-12 mb-4">
-					<div class="card card1" id="card-v2">
-						<div class="card-body">
-							<h2 class="card-title">${title}</h2>
-							<img src="${image}" class="card-img-top"/>
-							<p>${membre}</p>
-							<div class="card-footer" id="card-footer-v2"><a href='${link}'><button class="hero-button">En Savoir Plus</button></a></div>
-						</div>
-					</div>
-				</div>`;
-
-			fetchDivEquipe.innerHTML = html3;
-		 }
-	  });
-
 //- Fetch nouvelles Hub ----------------------------------------------------------------------------
 
 //- OrderByDate ----------------------------------------------------------------------------

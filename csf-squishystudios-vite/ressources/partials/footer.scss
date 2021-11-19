@@ -1,0 +1,151 @@
+@use './site_ressources/partials/vague';
+@use './site_ressources/partials/variables' as var;
+@use './site_ressources/partials/bouton' as btn;
+
+footer {  
+	position: relative;
+	width: 100%;
+	height: 50%;
+	background-color: var.$col-P1;
+	z-index: 100;
+	bottom: 0;
+	padding-top: 5%;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	padding-right: 1%;
+	a.info {
+		@include btn.lien(true);
+	}
+}
+
+.aligner{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content:center;
+  align-items:center ;
+  padding-bottom: 20px;
+}
+
+.whiteclown{
+	position: relative;
+	width: 110px;
+	height: 110px;
+	cursor: pointer;
+}
+
+.quote-blanc{
+	text-transform: uppercase;
+	color: white;
+	font-size: 25px;
+	padding-left: 10px;
+}
+.footer-button{
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	text-decoration: none;
+	font-size: 16px;
+	padding: 8px 25px;
+	border: solid 2px white ;
+	color: var.$col-S1;
+	background-color: var.$col-P1 ;
+	border-radius: 50px;
+	margin-bottom: 40px;
+	text-decoration: none;
+	font-family: 'Comic Sans MS', cursive;
+}
+  
+.footer-button:hover{
+	background-color: var.$col-P2;
+	cursor: pointer;
+}
+  
+.aligner2{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	text-align: center;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+
+.aligner3{
+	position: relative;
+	align-items: center;
+	display: flex;
+	flex-direction: column; 
+}
+  
+@media screen and (max-width:1200px) {
+	.aligner3 {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		
+		
+	}
+}
+@media screen and (max-width:768px) {
+	.aligner3 {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+			
+	}
+}
+.resaux{
+	width: 40px;
+	margin: 7px;
+}
+	  
+  
+@media screen and (max-width:1200px) {
+	.resaux {
+		width: 35px;
+
+	}
+}
+	  
+.copyright{
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+		color: white;
+}
+  
+@media screen and (max-width:768px) {
+	.copyright {
+		justify-content: center;
+	}
+}
+	  
+.partenaire-list {
+
+	display: flex;
+	justify-content: space-around;
+
+}
+	  
+.partenaire{
+	position: relative
+}
+@media screen and (max-width:768px) {
+	.partenaire {
+		
+		width: 25%;
+	}
+}
+
+/*- footer end -*/
+
+.confetti{
+
+	width: 7px;;
+	height: 12px;
+	position:absolute;
+	z-index: 2;
+
+}

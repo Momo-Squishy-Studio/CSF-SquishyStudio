@@ -41,7 +41,6 @@
 <header>
 	<nav class="container">
 		<?php
-			// $siteLogo = '<a href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="logo ' . esc_attr(get_bloginfo('name', 'display') .'"></a>';
 			$siteLogo = '<a id="%1$s-logo" class="site-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
 			$siteHamb = '<input type="checkbox" id="%1$s-cb"><label for="%1$s-cb" id="%1$s-cb-lbl" class="fas fa-bars"></label>';
 			//https://www.cassie.codes/posts/creating-my-logo-animation/#heading-svg-stroke-dasharray

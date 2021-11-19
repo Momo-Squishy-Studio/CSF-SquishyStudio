@@ -22,9 +22,9 @@ if ( have_posts() ) :
 </svg>
 
 <section class="nouvelles-don">
-		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
+		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
+		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
 		<div class="container">
 			<div class="nouvelles-accueil">
 				<div class="row">

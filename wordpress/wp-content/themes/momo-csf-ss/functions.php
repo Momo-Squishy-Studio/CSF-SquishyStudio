@@ -87,3 +87,8 @@ add_action( 'rest_api_init', function () {
 			'callback' => 'get_menu',
 	) );
 } );*/
+
+//- get home info --------------------------------
+function get_home_info($infoSlug = "") {
+	return get_field($infoSlug, get_option('page_on_front'));
+}

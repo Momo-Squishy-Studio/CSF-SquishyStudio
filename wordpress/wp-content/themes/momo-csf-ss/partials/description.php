@@ -1,4 +1,4 @@
-<section class="evenements-bg">
+<section class="evenements-bg vague-top vague-bot">
 	<div class="container">
 	<div class="temoignage">
 		<div class="row">

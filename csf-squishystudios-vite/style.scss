@@ -109,7 +109,7 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 	padding-bottom: 50px;
 }
 
-[class^=ballon] {position: absolute; z-index: -1}
+[class^=ballon] {position: absolute}
 .ballon-4{
 	transform: translateX(10vw) translateY(120px) scale(1);
 }

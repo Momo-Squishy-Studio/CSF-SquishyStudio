@@ -1,0 +1,24 @@
+@use './ressources/partials/variables' as var;
+
+.vague-top, .vague-bot {
+	--sect-pad: 100px;
+	--col-bg: var.$col-P1;
+	--col-alt: var.$col-P2;
+	padding: var.$pad-h;
+	position: relative;
+}
+.vague-top {margin-top: var(--sect-pad)}
+.vague-bot {margin-bottom: var(--sect-pad)}
+.vague-top:before, .vague-bot::after {
+	content: '';
+	position: absolute;
+	background: url("ressources/images/vague.svg") center / calc(100vmin + 50vmax - 50vw) 100% repeat-x;
+}
+.vague-top::before {
+	
+	top: calc(-1 * var(--sect-pad)); left: 0; bottom: 100%; right: 0;
+}
+.vague-bot::after {
+	top: 100%; left: 0; bottom: calc(-1 * var(--sect-pad)); right: 0;
+	transform: scale(-1);
+}

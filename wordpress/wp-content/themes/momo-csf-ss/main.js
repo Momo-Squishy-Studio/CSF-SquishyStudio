@@ -92,7 +92,7 @@ fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
 		 }
 	  });
 
-	  //- Fetch hub-services ----------------------------------------------------------------------------
+	   //- Fetch hub-services ----------------------------------------------------------------------------
 	fetch("/wp-json/wp/v2/service?_embed")
 	.then(response => response.json())
 	.then(data => {

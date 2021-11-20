@@ -6,12 +6,13 @@
 // Fermeture de la zone de contenu principale ?>
 </main>
 
+<!-- <div style='height: 100px; background: url("<?php echo get_template_directory_uri(); ?>/site_ressources/images/vague.svg") center / 100% 100% no-repeat'></div> -->
 <footer class="footer-square vague-top">
 	<container>
 		<div class="row">
 			<div class="col-xl-4 col-md-6 col-sm-12">
 				<div class="aligner">
-					<a href="/"><img class="whiteclown" src="<?php echo get_home_info('alt_logo_' . get_home_info('alt_logo_type'))?>" href="index.html"></a>
+					<a href="/"><img class="whiteclown" src="<?php echo get_template_directory_uri(); ?>\site_ressources\icones\CSF_Logo_MASA_WW.svg" href="index.html"></a>
 					<h1 class="quote-blanc">Clowns sans<br>frontières</h1>
 				</div>
 				<button class="footer-button">Faire Un Don</button>

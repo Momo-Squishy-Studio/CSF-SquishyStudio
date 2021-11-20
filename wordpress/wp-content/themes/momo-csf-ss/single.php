@@ -15,10 +15,13 @@ if ( have_posts() ) :
 
 <?php get_template_part( 'partials/description' ); ?>
 
+</path>
+</svg>
+
 <section class="nouvelles-don">
-		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
-		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
-		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>/site_ressources/images/ballon_AP.svg" alt="ballon">
+		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
 		<div class="container">
 			<div class="nouvelles-accueil">
 				<div class="row">
@@ -27,7 +30,8 @@ if ( have_posts() ) :
 					</div>
 					<div class="row">
 	
-					<?php $next_post = get_next_post(); ?>	
+					<?php $next_post = get_next_post();
+					$next_value = get_post_meta( $next_post->ID, 'CUSTOM_FIELD', $single = true); ?>	
 							
 					<div class="col-xl-12 col-lg-12 col-sm-12 mb-4">
 					<div class="card card1" id="card-v2">

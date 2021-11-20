@@ -16,7 +16,6 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <?php get_template_part( 'partials/description' ); ?>
 
-
 		<?php endif; ?>
 		
 <?php endwhile; // Fermeture de la boucle

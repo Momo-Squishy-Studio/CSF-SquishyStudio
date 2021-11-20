@@ -28,18 +28,12 @@
     z-index: 1;
   }
   .ballon-1{
-    position: absolute;
     transform: translateX(-30vw);
-    }
-    .ballon-2{
-    position: absolute;
+  }
+  .ballon-2{
     transform: translateX(35vw) translateY(-180px) scale(1.2);
-    }
-    .ballon-3{
-        position: absolute;
-        transform: translateX(25vw) translateY(300px) scale(0.7);
-        }
-    
-
-
-  /*- hero end -*/
+  }
+  .ballon-3{
+    transform: translateX(25vw) translateY(300px) scale(0.7);
+  }
+/*- hero end -*/

@@ -109,24 +109,20 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 	padding-bottom: 50px;
 }
 
+[class^=ballon] {position: absolute; z-index: -1}
 .ballon-4{
-	position: absolute;
 	transform: translateX(10vw) translateY(120px) scale(1);
 }
 .ballon-5{
-	position: absolute;
 	transform: translateX(80vw) translateY(400px) scale(1.2);
 }
 .ballon-6{
-	position: absolute;
 	transform: translateX(15vw) translateY(800px) scale(1);
 }
 .ballon-7{
-	position: absolute;
 	transform: translateX(40vw) translateY(50px) scale(1.2);
 }
 .ballon-8{
-	position: absolute;
 	transform: translateX(-40vw) translateY(100px) scale(0.9);
 }
 /*- nouvelles-accueil-fin-*/

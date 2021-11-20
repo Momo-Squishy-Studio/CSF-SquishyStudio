@@ -89,6 +89,15 @@ add_action( 'rest_api_init', function () {
 } );*/
 
 //- get home info --------------------------------
-function get_home_info($infoSlug = "") {
-	return get_field($infoSlug, get_option('page_on_front'));
+function get_home_info($slug = '') {
+	return get_field($slug, get_option('page_on_front'));
+}
+//- get ressources folder ------------------------
+function get_ressource($path = '') {
+	return get_template_directory_uri() . '/ressources/' . $path;
+}
+
+//- generer ballon -------------------------------
+function gen_ballon($x = 0, $y = 0, $scale = 1, $hueRot = 0) {
+	return get_template_part('partials/ballon', null, array('x' => $x, 'y' => $y, 'scale' => $scale, 'hueRot' => $hueRot));
 }

@@ -16,9 +16,11 @@ else : // Si aucune page n'a été trouvée
 endif;
 ?>
 	<div class="hero">
-		<img class="ballon-1" src="<?php echo get_template_directory_uri(); ?>/ressources/images/ballon_AP.svg" alt="ballon">
-		<img class="ballon-2" src="<?php echo get_template_directory_uri(); ?>/ressources/images/ballon_AP.svg" alt="ballon">
-		<img class="ballon-3" src="<?php echo get_template_directory_uri(); ?>/ressources/images/ballon_AP.svg" alt="ballon">
+		<?php echo
+			gen_ballon('-30vw'), //gen_ballon(<string>|0 x: transition sur l'axe x (0 pour désactiver), <string>|0 y: transition sur l'axe y (0 pour désactiver), <float> scale: taille du ballon)
+			gen_ballon('35vw', '-180px', 1.2),
+			gen_ballon('25vw', '300px', .7);
+		?>
 		<img class="hero-logo" src="<?php echo get_home_info('site_logo_' . get_home_info('site_logo_type'))?>" alt="logo">
 		<h1><?php the_field('titre_site'); ?></h1>
 		<div class="hero-container">
@@ -26,7 +28,6 @@ endif;
 			<button class="hero-button"><?php the_field('bouton_don'); ?></button>
 		</div>
 	</div>
-
 	<?php get_template_part( 'partials/carousel' );?>
 
 	<section class="evenements-bg vague-top vague-bot">

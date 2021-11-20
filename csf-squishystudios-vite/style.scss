@@ -152,63 +152,64 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 	display: grid;
 	margin: 20px 0px 20px 0px;
 	grid-template-columns: 1fr 1fr;
-	/* justify-content: center;
-	align-items: center;
-	flex-wrap: wrap; */
 	gap: 20px;
 
+	[type=radio]:hover, [type=number]:hover {
+		background-color: var.$col-T3;
+		cursor: pointer;
+	}
 	[type=radio] {
 		width: 120px; height: 60px;
 		border: var(--bord-w) solid var.$col-P1;
 		border-radius: 20px;
 		position: relative;
-		color: var.$col-P1;
 		text-align: center;
 		appearance: none;
-		background-color: var.$col-S1;
 		font-size: 24px;
 		font-weight: 500;
 		font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 		text-transform: uppercase;
+		color: var.$col-P1;
+
+		&:active {
+			background-color: var.$col-S1;
+			transform: translateY(-3px);
+		}
+		&::before {
+			content: '';
+			border: var(--bord-w) solid var.$col-P1;
+			position: absolute;
+			top: calc(-1 * var(--bord-w)); left: calc(-1 * var(--bord-w)); bottom: calc(-1 * var(--bord-w)); right: 50%;
+			transition: left linear .2s;;
+			transition-property: left, right;
+			background: var.$col-S1;
+			border-radius: 20px;
+			z-index: 1;
+		}
+		&::after {
+			position: absolute;
+			top: 50%; left: 50%; right: 0;
+			transform: translate(0,-50%);
+		}
+		&:not(#other)::after {content: attr(value) ' $'}
+
+		&#other {
+			&::after {
+				font-size: .6em;
+				font-weight: 700
+			}
+			&:not(:checked)~[type=number] {display: none}
+		}
+
+		&:checked {
+			&::before {
+				left: 50%; right: calc(-1 * var(--bord-w));
+			}
+			&::after {
+				left: 0; right: 50%
+			}
+		}
 	}
-	[type=radio]:hover, [type=number]:hover {
-		background-color: var.$col-T3;
-		cursor: pointer;
-	}
-	[type=radio]:active {
-		background-color: var.$col-S1;
-		transform: translateY(-3px);
-	}
-	[type=radio]::before {
-		transition: left linear .2s;
-		transition-property: left, right;
-	}
-	[type=radio]::before {
-		content: '';
-		position: absolute;
-		top: calc(-1 * var(--bord-w)); left: calc(-1 * var(--bord-w)); bottom: calc(-1 * var(--bord-w)); right: 50%;
-		border: var(--bord-w) solid var.$col-P1;
-		background: var.$col-S1;
-		border-radius: 20px;
-		z-index: 1;
-	}
-	[type=radio]::after {
-		position: absolute;
-		top: 50%; left: 50%; right: 0;
-		transform: translate(0,-50%);
-	}
-	:not(#other)[type=radio]::after {content: attr(value) ' $'}
-	#other::after {
-		font-size: .6em;
-		font-weight: 700
-	}
-	[type=radio]:checked::before {
-		left: 50%; right: calc(-1 * var(--bord-w));
-	}
-	[type=radio]:checked::after {
-		left: 0; right: 50%
-	}
-	#other:not(:checked)~input[type=number] {display: none}
 	[type=number] {
 		width: 40%; min-width: 160px; height: 60px;
 		margin: auto;

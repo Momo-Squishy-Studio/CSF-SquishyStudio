@@ -1,8 +1,10 @@
 <div class="don-accueil">
-	<img class="ballon-7" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-	<img class="ballon-8" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+	<?php echo
+		gen_ballon('-40vw', '50px', 1.2),
+		gen_ballon('40vw', '100px', .9)
+	?>
 	<div class="row">
-		<h1 class="col-12" id="don"><?php the_field('bouton_don'); ?></h1>
+		<h1 class="col-12" id="don"><?php get_home_info('bouton_don'); ?></h1>
 		<div class="col-12">
 			<div class="don-bulles">
 				<form action="" class="donations">
@@ -16,7 +18,7 @@
 					<input type="radio" name="amount" id="other" value="autre">
 					<input type="number" name="amountOther" id="">
 					<br>
-					<input type="submit" class="hero-button" id="mono-don" value="<?php the_field('bouton_don'); ?>">
+					<input type="submit" class="hero-button" id="mono-don" value="<?php get_home_info('bouton_don'); ?>">
 				</form>
 				
 				<!-- animation mono -->

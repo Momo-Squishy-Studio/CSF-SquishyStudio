@@ -7,7 +7,7 @@
 					<div class="card-body">
 						<p id=article-texte>
 						<?php the_content(); // Contenu principal de la page ?>
-						</p>                               
+						</p>
 					</div>
 					<div class="card-footer"><p id="p-rouge"><?php the_field('auteur'); ?> - <?php the_field('date'); ?> - <?php the_field('categorie'); ?></p></div>
 				</div>

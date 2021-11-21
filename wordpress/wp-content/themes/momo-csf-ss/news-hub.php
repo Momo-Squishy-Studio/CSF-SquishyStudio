@@ -19,21 +19,21 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 			<div class="nouvelles-accueil">
 				<div class="row">
 					<div class="col-12">
-					<h1 class="h1-evenements"><?php the_field('titre_nouvelles'); ?></h1>
+					<h1 class="h1-evenements"><?php get_home_info('titre_nouvelles'); ?></h1>
 					</div>
 					<div class="col-12">
 					<div class="trier-order">
-						<label for="trier-par"><p class="p-blanc"><?php the_field('trier_par'); ?></p></label>
+						<label for="trier-par"><p class="p-blanc"><?php get_home_info('trier_par'); ?></p></label>
 						<select class="order-button" name="order-by-date" id="order-date">
-							<option class="order-button" selected="selected" value="desc"><?php the_field('plus_recentes'); ?></option>
-							<option class="order-button" value="asc"><?php the_field('plus_anciennes'); ?></option>
+							<option class="order-button" selected="selected" value="desc"><?php get_home_info('plus_recentes'); ?></option>
+							<option class="order-button" value="asc"><?php get_home_info('plus_anciennes'); ?></option>
 						</select>
 					</div>
 					</div>
 					<div id="fetch-api-cards-hub" class="row">
 					</div>
 					<div class="col-12">
-						<button class="footer-button" id="afficher-plus-nouvelles"><?php the_field('bouton_afficher_nouvelles'); ?></button>
+						<button class="footer-button" id="afficher-plus-nouvelles"><?php get_home_info('bouton_afficher_nouvelles'); ?></button>
 					</div>
 				</div>
 			</div>

@@ -19,9 +19,11 @@ if ( have_posts() ) :
 </svg>
 
 <section class="nouvelles-don">
-		<img class="ballon-4" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-5" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
-		<img class="ballon-6" src="<?php echo get_template_directory_uri(); ?>\site_ressources\images\ballon_AP.svg" alt="ballon">
+		<?php echo
+			gen_ballon('10vw', '120px'),
+			gen_ballon('80vw', '-400px', 1.2),
+			gen_ballon('15vw', '800px');
+		?>
 		<div class="container">
 			<div class="nouvelles-accueil">
 				<div class="row">

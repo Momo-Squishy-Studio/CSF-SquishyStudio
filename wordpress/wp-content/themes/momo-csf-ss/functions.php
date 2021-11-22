@@ -156,6 +156,6 @@ function get_ressource($path = '') {
 }
 
 //- generer ballon -------------------------------
-function gen_ballon($x = 0, $y = 0, $scale = 1, $hueRot = 0) {
-	return get_template_part('partials/ballon', null, array('x' => $x, 'y' => $y, 'scale' => $scale, 'hueRot' => $hueRot));
+function gen_ballon($x = 0, $y = 0, $scale = 1) {
+	return get_template_part('partials/ballon', null, array('x' => $x, 'y' => $y, 'scale' => $scale));
 }

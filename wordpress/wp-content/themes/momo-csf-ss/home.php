@@ -51,7 +51,7 @@ endif;
 					</div>
 
 					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
-						<div class="card card2">            
+						<div class="card card2">
 							<div class="card-body">
 								<h2 class="card-title"><?php get_home_info('animations_titre'); ?></h2>
 								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">

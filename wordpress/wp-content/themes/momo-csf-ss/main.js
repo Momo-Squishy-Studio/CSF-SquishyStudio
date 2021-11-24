@@ -9,11 +9,11 @@ hamb.addEventListener('click', ()=> {
 	hambAnim();
 });
 hambLbl.addEventListener('mouseenter', ()=> {
-	console.log("enter");
+	// console.log("enter");
 	hambAnim(1.75, 1.25);
 });
 hambLbl.addEventListener('mouseleave', ()=> {
-	console.log("leave");
+	// console.log("leave");
 	hambAnim();
 });
 function hambAnim(sizeC=2, sizeD=1, angleC=180, angleD=0) {

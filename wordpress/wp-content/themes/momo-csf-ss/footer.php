@@ -39,7 +39,7 @@
 				$acf = $patnPost->acf;
 		?>
 			<a href="<?php echo $acf->link?>" target="_blank" class="partenaire">
-				<img src="<?php echo $acf->icon_type = "vector" ? $acf->icon_vector : $acf->icon_raster;?>" alt="logo <?php echo $patnPost->title->rendered;?>">
+				<img src="<?php echo get_partner_img_url($acf);?>" alt="logo <?php echo $patnPost->title->rendered;?>">
 			</a>
 		<?php endforeach;?>
 	</div>

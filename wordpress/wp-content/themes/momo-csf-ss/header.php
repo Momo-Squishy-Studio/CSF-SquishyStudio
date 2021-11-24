@@ -21,7 +21,7 @@
 	// Tous les .css et .js sont chargés dans le fichier functions.php
 ?>
 
-<?php wp_head(); 
+<?php wp_head();
 /* Cette fonction permet à WordPress et aux extensions d'instancier des fichier CSS et js dans le <head>
 	 Supprimer cette fonction briserait vos extensions et diverses fonctionnalités WordPress. 
 	 Vous pouvez la déplacer si désiré, mais garder là. */
@@ -47,7 +47,7 @@
 			//https://monsterspost.com/how-to-build-wordpress-navigation-using-wp_nav_menu/
 			$siteLogo = '<a id="%1$s-logo" class="site-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
 			$siteHamb = '<input type="checkbox" id="%1$s-cb"><label for="%1$s-cb" id="%1$s-cb-lbl" class="fas fa-bars"></label>';
-			wp_nav_menu( array( 'theme_location' => 'main-menu', /*'container_class' => 'header',*/ 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>') );
+			wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>') );
 		?>
 	</nav>
 </header>

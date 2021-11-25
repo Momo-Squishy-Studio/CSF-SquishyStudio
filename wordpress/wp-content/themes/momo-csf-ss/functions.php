@@ -86,11 +86,21 @@ function csf_general_section() {
 	add_settings_field(
 		'site_logo',
 		'Logo du site',
-		'csf_logo_callback',
+		'csf_img_callback',
 		'general',
 		'csf_settings_section',
 		array(
 			'site_logo'
+		)
+	);
+	add_settings_field(
+		'alt_logo',
+		'Logo alternatif du site',
+		'csf_img_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'alt_logo'
 		)
 	);
 	add_settings_field(
@@ -164,7 +174,8 @@ function csf_general_section() {
 		)
 	);
 
-	register_setting('general','site_logo');
+	register_setting('general','site_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_RN.svg'));
+	register_setting('general','alt_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_WW.svg'));
 	register_setting('general','txt_btn_don', array('default' => 'Faire un don'));
 	register_setting('general','txt_btn_plus', array('default' => 'En savoir plus'));
 	register_setting('general','ttl_evenements', array('default' => 'Évènements'));
@@ -175,20 +186,24 @@ function csf_general_section() {
 }
 
 function csf_section_options_callback() { // Section Callback
-	echo '<style>.csfOpt{padding:10px;border-radius:20px;font:"Roboto";background:#ec1a24;color:#f0eeee}</style>
-	<p class="csfOpt">Modifiez les diverses informations apparaissant dans votre site!</p>';
-	var_dump($_FILES['file']);
+	echo '<style>
+					.csf-Desc{padding:10px;border-radius:20px;font:"Roboto";background:#ec1a24;color:#f0eeee}
+					img.csf{height:80px;padding:0 20px;border-radius:40px;float:right;background:#FFEFEF}
+					img.csf:hover{background:#EC1A24}
+				</style>
+				<p class="csf-Desc">Modifiez les diverses informations apparaissant dans votre site!</p>';
 }
 
 function csf_textbox_callback($args) {  // Textbox Callback
 	$option = get_option($args[0]);
 	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
 }
-function csf_logo_callback($args) {  // Logo Callback
+function csf_img_callback($args) {  // Logo Callback
 	$option = get_option($args[0]);
-	echo '<input type="file" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" accept=".jpg, .jpeg, .png" />';
-	echo $option;
-}/*
+	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" size="80" />
+	<img class="csf" src="' . $option . '" />';
+}
+/*
 function handle_logo_upload($option)
 {
 	if(!empty($_FILES["logo"]["tmp_name"]))

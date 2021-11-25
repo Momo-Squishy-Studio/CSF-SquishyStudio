@@ -45,7 +45,7 @@
 			
 			// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
 			//https://monsterspost.com/how-to-build-wordpress-navigation-using-wp_nav_menu/
-			$siteLogo = '<a id="%1$s-logo" class="site-logo" href="' . esc_url(home_url('/')) . '"><img src="/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg" alt="' . get_bloginfo('name') . '"></a>';
+			$siteLogo = '<a id="%1$s-logo" class="site-logo" href="' . esc_url(home_url('/')) . '"><img src="' . get_option('site_logo') . '" alt="' . get_bloginfo('name') . '"></a>';
 			$siteHamb = '<input type="checkbox" id="%1$s-cb"><label for="%1$s-cb" id="%1$s-cb-lbl" class="fas fa-bars"></label>';
 			wp_nav_menu( array( 'theme_location' => 'main-menu', 'items_wrap' => $siteLogo . $siteHamb . '<ul id="%1$s" class="%2$s">%3$s</ul>') );
 		?>

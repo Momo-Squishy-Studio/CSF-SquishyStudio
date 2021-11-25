@@ -20,13 +20,12 @@ endif;
 			gen_ballon('-30vw'), //gen_ballon(<string>|0 x: transition sur l'axe x (0 pour désactiver), <string>|0 y: transition sur l'axe y (0 pour désactiver), <float> scale: taille du ballon)
 			gen_ballon('35vw', '-180px', 1.2),
 			gen_ballon('25vw', '300px', .7);
-			echo get_option('option_2');
 		?>
-		<img class="hero-logo" src="<?php get_home_info('site_logo_' . get_home_info('site_logo_type'))?>" alt="logo">
+		<img class="hero-logo" src="<?php echo get_option('site_logo');?>" alt="logo">
 		<h1><?php echo get_option('blogname'); ?></h1>
 		<div class="hero-container">
 			<p><?php echo get_option('blogdescription'); ?></p>
-			<button class="hero-button"><?php get_home_info('bouton_don'); ?></button>
+			<button class="hero-button"><?php echo get_option('txt_btn_don'); ?></button>
 		</div>
 	</div>
 	<?php get_template_part( 'partials/carousel' );?>

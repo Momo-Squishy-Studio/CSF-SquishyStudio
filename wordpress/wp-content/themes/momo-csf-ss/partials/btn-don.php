@@ -1,0 +1,1 @@
+<button class="hero-button"><?php echo get_option('txt_btn_don'); ?></button>

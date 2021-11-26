@@ -74,6 +74,12 @@ add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
 //- Réglages > Général > Options CLowns sans Frontières --------------------------------------------
 //https://wordpress.stackexchange.com/questions/129180/add-multiple-custom-fields-to-the-general-settings-page#answer-129203
 
+$pageLang = substr(get_bloginfo('language'),0,2);
+$siteLang = get_option('wpm_site_language');
+$wpmTagPat = "/\[:[a-z]{0,2}\\]/";
+$wpmPLPat = wpm_pat($pageLang);
+$wpmSLPat = wpm_pat($siteLang);
+
 add_action('admin_init', 'csf_general_section');  
 function csf_general_section() {  
 	add_settings_section(  
@@ -86,7 +92,7 @@ function csf_general_section() {
 	add_settings_field(
 		'site_logo',
 		'Logo du site',
-		'csf_img_callback',
+		'csf_url_callback',
 		'general',
 		'csf_settings_section',
 		array(
@@ -96,7 +102,7 @@ function csf_general_section() {
 	add_settings_field(
 		'alt_logo',
 		'Logo alternatif du site',
-		'csf_img_callback',
+		'csf_url_callback',
 		'general',
 		'csf_settings_section',
 		array(
@@ -176,45 +182,46 @@ function csf_general_section() {
 
 	register_setting('general','site_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_RN.svg'));
 	register_setting('general','alt_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_WW.svg'));
-	register_setting('general','txt_btn_don', array('default' => 'Faire un don'));
-	register_setting('general','txt_btn_plus', array('default' => 'En savoir plus'));
-	register_setting('general','ttl_evenements', array('default' => 'Évènements'));
-	register_setting('general','ttl_spectacles', array('default' => 'Spectacles'));
-	register_setting('general','ttl_animations', array('default' => 'Animations'));
-	register_setting('general','ttl_ateliers', array('default' => 'Ateliers'));
-	register_setting('general','ttl_nouvelles', array('default' => 'Nouvelles'));
+	register_setting('general','txt_btn_don', array('default' => '[:en]Donate[:fr]Faire un don[:]'));
+	register_setting('general','txt_btn_plus', array('default' => '[:en]Show more[:fr]En savoir plus[:]'));
+	register_setting('general','ttl_evenements', array('default' => '[:en]Events[:fr]Évènements[:]'));
+	register_setting('general','ttl_spectacles', array('default' => '[:en]Shows[:fr]Spectacles[:]'));
+	register_setting('general','ttl_animations', array('default' => '[:en]Entertainments[:fr]Animations[:]'));
+	register_setting('general','ttl_ateliers', array('default' => '[:en]Activities[:fr]Ateliers[:]'));
+	register_setting('general','ttl_nouvelles', array('default' => '[:en]News[:fr]Nouvelles[:]'));
 }
 
 function csf_section_options_callback() { // Section Callback
 	echo '<style>
 					.csf-Desc{padding:10px;border-radius:20px;font:"Roboto";background:#ec1a24;color:#f0eeee}
-					img.csf{height:80px;padding:0 20px;border-radius:40px;float:right;background:#FFEFEF}
+					img.csf{height:80px;padding:0 20px;border-radius:40px;margin-left:20px;background:#FFEFEF}
 					img.csf:hover{background:#EC1A24}
+					.csf-wpm-combine {display:none}
+					.csf-wpm-single {margin-left:5px;margin-right:20px}
 				</style>
+				<script type="text/javascript">
+					function csfWpmCombine(group) {
+						let returnVal = "";
+						for (const lang of ["en","fr"]) {
+							returnVal += "[:"+ lang +"]"+ group.querySelector("."+lang).value;
+						}
+						group.children[0].value = returnVal +"[:]";
+					}
+				</script>
 				<p class="csf-Desc">Modifiez les diverses informations apparaissant dans votre site!</p>';
 }
 
 function csf_textbox_callback($args) {  // Textbox Callback
 	$option = get_option($args[0]);
-	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" />';
-}
-function csf_img_callback($args) {  // Logo Callback
-	$option = get_option($args[0]);
-	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" value="' . $option . '" size="80" />
-	<img class="csf" src="' . $option . '" />';
-}
-/*
-function handle_logo_upload($option)
-{
-	if(!empty($_FILES["logo"]["tmp_name"]))
-	{
-		$urls = wp_handle_upload($_FILES["logo"], array('test_form' => FALSE));
-		$temp = $urls["url"];
-		return $temp;  
+	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" class="csf-wpm-combine" value="'. $option .'" size="40" readonly/>';
+	foreach (array("en","fr") as $lang) {
+		echo '<img src="/wp-content/plugins/wp-multilang/flags/'. $lang .'.png"><input type="text" class="csf-wpm-single '. $lang .'" value="'. emulate_wpm($option, wpm_pat($lang)) .'" oninput="csfWpmCombine(this.parentElement)"/>';
 	}
-	return $option;
-}*/
-
+}
+function csf_url_callback($args) {  // Logo Callback
+	$option = get_option($args[0]);
+	echo '<input type="url" id="'. $args[0] .'" name="'. $args[0] .'" value="'. $option .'" size="80" placeholder="/wp-content/uploads/.../logo.png"/><img class="csf" src="'. $option .'" />';
+}
 /* --------------------------------
 Appels personalisés du REST API*/
 
@@ -237,6 +244,22 @@ function get_home_info($slug = '', $echo = true) {
 	if ($echo) echo $info;
 	else return $info;
 }
+function csf_get_option($slug = '', $echo = true, $trans = true) {
+	global $wpmPLPat;
+	$info = get_option($slug);
+	$info = $trans ? emulate_wpm($info,$wpmPLPat) : $info;
+	if ($echo) echo $info;
+	else return $info;
+}
+function emulate_wpm($str = '', $pat) {
+	global $wpmTagPat;
+	global $wpmSLPat;
+	if (preg_match($pat, $str, $matches)) return $matches[1];
+	if (preg_match($wpmSLPat, $str, $matches)) return $matches[1];
+	return preg_replace($wpmTagPat,'',$str);
+}
+function wpm_pat($lang) {return "/\[:{$lang}\](.*?)\[:.{0,2}\]/";}
+
 //- get ressources folder ------------------------
 function get_ressource($path = '') {
 	return get_template_directory_uri() . '/ressources/' . $path;

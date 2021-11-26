@@ -25,7 +25,7 @@ endif;
 		<h1><?php echo get_option('blogname'); ?></h1>
 		<div class="hero-container">
 			<p><?php echo get_option('blogdescription'); ?></p>
-			<button class="hero-button"><?php echo get_option('txt_btn_don'); ?></button>
+			<button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button>
 		</div>
 	</div>
 	<?php get_template_part( 'partials/carousel' );?>
@@ -36,16 +36,16 @@ endif;
 				<div class="row">
 
 					<div class="col-12">
-						<h1 class="h1-evenements"><?php get_home_info('evenements_titre'); ?></h1>
+						<h1 class="h1-evenements"><?php csf_get_option('ttl_evenements'); ?></h1>
 					</div>
 
 					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
 						<div class="card card1">
 							<div class="card-body">
-								<h2 class="card-title"><?php get_home_info('spectacles_titre'); ?></h2>
+								<h2 class="card-title"><?php csf_get_option('ttl_spectacles'); ?></h2>
 								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer"><button class="hero-button"><?php get_home_info('en_savoir_plus'); ?></button></div>
+								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
 						</div>
 					</div>
@@ -53,10 +53,10 @@ endif;
 					<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
 						<div class="card card2">
 							<div class="card-body">
-								<h2 class="card-title"><?php get_home_info('animations_titre'); ?></h2>
+								<h2 class="card-title"><?php csf_get_option('ttl_animations'); ?></h2>
 								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer"><button class="hero-button"><?php get_home_info('en_savoir_plus'); ?></button></div>
+								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
 						</div>
 					</div>
@@ -64,10 +64,10 @@ endif;
 					<div class="col-xl-4 col-lg-12 col-sm-12 mb-4">
 						<div class="card card3">
 							<div class="card-body">
-								<h2 class="card-title"><?php get_home_info('ateliers_titre'); ?></h2>
+								<h2 class="card-title"><?php csf_get_option('ttl_ateliers'); ?></h2>
 								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer"><button class="hero-button"><?php get_home_info('en_savoir_plus'); ?></button></div>
+								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ endif;
 							<div class="card-body">
 								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-								<div class="card-footer"><button class="hero-button"><?php get_home_info('en_savoir_plus'); ?></button></div>
+								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
 						</div>
 					</div>
@@ -108,7 +108,7 @@ endif;
 			<div class="nouvelles-accueil">
 				<div class="row">
 					<div class="col-12">
-					<h1><?php get_home_info('nouvelles'); ?></h1>
+					<h1><?php csf_get_option('ttl_nouvelles'); ?></h1>
 					</div>
 					<div id="fetch-api-cards-accueil" class="row">
 					</div>

@@ -1,1 +1,1 @@
-<button class="hero-button"><?php echo get_option('txt_btn_don'); ?></button>
+<button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button>

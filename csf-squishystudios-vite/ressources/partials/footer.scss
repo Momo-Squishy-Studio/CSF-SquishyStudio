@@ -135,6 +135,9 @@ footer {
 		flex-direction: row;
 		justify-content: center;
 	}
+	.resaux {
+		width: 35px;
+	}
 }
 @media screen and (max-width: 768px) {
 	.aligner3 {
@@ -142,22 +145,8 @@ footer {
 		flex-direction: row;
 		justify-content: center;
 	}
-}
-
-@media screen and (max-width: 1200px) {
-	.resaux {
-		width: 35px;
-	}
-}
-@media screen and (max-width: 768px) {
 	.copyright {
 		justify-content: center;
-	}
-}
-
-@media screen and (max-width: 768px) {
-	.partenaire {
-		width: 25%;
 	}
 }
 

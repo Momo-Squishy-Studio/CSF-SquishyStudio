@@ -4,7 +4,7 @@
 		gen_ballon('40vw', '100px', .9)
 	?>
 	<div class="row">
-		<h1 class="col-12" id="don"><?php get_home_info('bouton_don'); ?></h1>
+		<h1 class="col-12" id="don"><?php csf_get_option('txt_btn_don'); ?></h1>
 		<div class="col-12">
 			<div class="don-bulles">
 				<form action="" class="donations">
@@ -18,7 +18,7 @@
 					<input type="radio" name="amount" id="other" value="autre">
 					<input type="number" name="amountOther" id="">
 					<br>
-					<input type="submit" class="hero-button" id="mono-don" value="<?php get_home_info('bouton_don'); ?>">
+					<input type="submit" class="btn-don hero-button" id="mono-don" value="<?php csf_get_option('txt_btn_don'); ?>">
 				</form>
 				
 				<!-- animation mono -->

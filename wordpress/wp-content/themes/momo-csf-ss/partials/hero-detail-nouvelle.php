@@ -5,7 +5,7 @@
 			gen_ballon('35vw', '-180px', 1.2),
 			gen_ballon('25vw', '300px', .7);
 		?>
-		<img class="hero-logo" src="<?php echo get_home_info('site_logo_' . get_home_info('site_logo_type'))?>" alt="logo">
+		<img class="hero-logo" src="<?php echo get_option('site_logo')?>" alt="logo">
 		<h1><?php the_title(); // Titre de la page ?></h1>
 		<div class="hero-container">
 			<p><?php the_field('resume'); ?>

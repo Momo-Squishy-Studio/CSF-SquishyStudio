@@ -26,14 +26,13 @@ a, a:hover,a:active {text-decoration: none}
 
 /*- heading -*/
 h1,h2,h3{
-	font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	text-transform: uppercase;
 	color: var.$col-P1;
 }
 h1 {font-size: 45px; font-weight: 900; letter-spacing:2px; color: var.$col-P1}
 h2 {font-size: 36px; font-weight: 700}
 h3 {font-size: 25px; font-weight: 500}
-p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 17px; font-weight: 500}
+p {font-size: 17px; font-weight: 500}
 
 .container{
 	max-width: 1400px;
@@ -109,7 +108,7 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 	padding-bottom: 50px;
 }
 
-[class^=ballon] {position: absolute}
+[class^=ballon] {position: absolute}/*
 .ballon-4{
 	transform: translateX(10vw) translateY(120px) scale(1);
 }
@@ -167,7 +166,7 @@ p {font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-
 		appearance: none;
 		font-size: 24px;
 		font-weight: 500;
-		font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+		font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		text-transform: uppercase;
 		color: var.$col-P1;
 

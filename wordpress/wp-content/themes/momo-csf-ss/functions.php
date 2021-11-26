@@ -239,7 +239,7 @@ add_action( 'rest_api_init', function () {
 } );*/
 
 //- get home info --------------------------------
-function get_home_info($slug = '', $echo = true) {
+function get_home_info($slug = '', $echo = true) { // LEGACY DO NOT USE
 	$info = get_field($slug, get_option('page_on_front'));
 	if ($echo) echo $info;
 	else return $info;
@@ -265,6 +265,10 @@ function get_ressource($path = '') {
 	return get_template_directory_uri() . '/ressources/' . $path;
 }
 
+//- generer bouton don ---------------------------
+function gen_btn_don($class, $id, $type, $event, $function) {
+	get_template_part('partials/btn', 'don', array('type'=>$type, 'id'=>$id, 'class'=>$class, 'event'=>$event, 'function'=>$function));
+}
 //- generer ballon -------------------------------
 function gen_ballon($x = 0, $y = 0, $scale = 1) {
 	return get_template_part('partials/ballon', null, array('x' => $x, 'y' => $y, 'scale' => $scale));

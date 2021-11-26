@@ -25,7 +25,8 @@ endif;
 		<h1><?php echo get_option('blogname'); ?></h1>
 		<div class="hero-container">
 			<p><?php echo get_option('blogdescription'); ?></p>
-			<button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button>
+			<?php gen_btn_don('unique','hero-button',1,'href','/'); ?>
+			<!-- <button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button> -->
 		</div>
 	</div>
 	<?php get_template_part( 'partials/carousel' );?>

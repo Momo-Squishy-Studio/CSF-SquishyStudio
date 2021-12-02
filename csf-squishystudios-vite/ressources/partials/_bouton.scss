@@ -33,7 +33,7 @@
 	&::after, &::before {
 		position: absolute;
 
-		transition: all var.$atf-boing;
+		transition: top var.$atf-boing;
 		left: 50%; top: 100%; right: 50%; bottom: 0;
 		pointer-events: none;
 	}
@@ -59,7 +59,7 @@
 	&::after {left: 0; top: 0; right: 0; bottom: 0}
 	&::before {
 		border-width: 3.5px;
-		top: 4px; left: 4px; bottom: calc(100% - 12px); right: calc(100% - 12px);
+		top: 4px; left: 4px; bottom: calc(100% - 12px); right: calc(100% - 12px)
 	}
 }
 %linkActive {
@@ -71,6 +71,7 @@
 		animation: .2s linear 0s pop;
 		animation-fill-mode: forwards;
 		background: none;
+		box-shadow: none;
 	}
 	&::before{content: none}
 }
@@ -90,6 +91,36 @@
 	&:hover {
 		@extend %linkHover;
 		color: buttonColor(not $alt)
+	}
+	&:active {
+		@extend %linkActive;
+	}
+}
+
+// Lien special ------------------------
+@mixin bouton($alt:false, $marge:8px) {
+	--bal-col: #{buttonColor($alt)};
+	--bal-alt: #{buttonColor(not $alt)};
+	font-family: 'Comic Sans MS', cursive;
+
+	@extend %link;
+	padding: $marge $marge*2;
+	border: 3.5px solid var(--bal-col);
+	border-radius: calc(1ch + $marge);
+	transition: border-color var.$atf-boing;
+	background: transparent;
+
+	@if $alt {&::after {box-shadow: none}}
+	@else {
+		&::before {content: ''}
+		&:hover::before {top: 5.5px; left: 5.5px; bottom: calc(100% - 1ch - $marge); right: calc(100% - 1ch - $marge)}
+	}
+	&::after {border-radius: calc(1ch + $marge)}
+	
+	&:hover {
+		@extend %linkHover;
+		color: buttonColor(not $alt);
+		border-color: transparent;
 	}
 	&:active {
 		@extend %linkActive;
@@ -140,54 +171,120 @@
 	}
 }
 
+// Lien de reseau ----------------------
+%bgtextclip {
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
 @mixin reseauBallon($taille, $orig:true, $alt:false) {
+	$brand-ig-r: #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%;
+	$brand-ig-l: #4C68D7 30%,#8A3AB9,#CD486B 70%;
+	%bgtextclip {
+		background-image: radial-gradient(circle farthest-corner at 0% 100%, #{$brand-ig-r}), linear-gradient(135deg, #{$brand-ig-l});
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
 	@if $orig {
-		--bal-alt: #{buttonColor(true)};
-		&.fa-facebook-f {--bal-col: #4267B2}
-		&.fa-vimeo-v {--bal-col: #86c9ef}
-		&.fa-twitter {--bal-col: #1DA1F2}
+		--brand-col: var.$col-P1;
+		&.fa-facebook-f {--brand-col: #4267B2}
+		&.fa-vimeo-v {--brand-col: #86c9ef}
+		&.fa-twitter {--brand-col: #1DA1F2}
 		&.fa-instagram {
-			--bal-col: radial-gradient(circle farthest-corner at 50% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(90deg, #4C68D7 30%,#8A3AB9,#CD486B 70%);
-			&:not(:hover)::before {
-				background: radial-gradient(circle farthest-corner at 0% 100%, #FCCC63 20%,#FBAD5080 60%,#CD486B00 80%), linear-gradient(135deg, #4C68D7 30%,#8A3AB9,#CD486B 70%);
+			--brand-col: radial-gradient(circle farthest-corner at 50% 100%, #{$brand-ig-r}), linear-gradient(135deg, #{$brand-ig-l});
+			&:active {--brand-col: #8A3AB9}
+		}
+		&.fa-youtube {--brand-col: #F00}
+		@if $alt {
+			--bal-col: #{buttonColor(true)};
+			--bal-alt: var(--brand-col);
+			&.fa-instagram:hover::before {
+				background-image: radial-gradient(circle farthest-corner at 0% 100%, #{$brand-ig-r}), linear-gradient(135deg, #{$brand-ig-l});
 				background-clip: text;
 				-webkit-background-clip: text;
 				color: transparent;
 			}
-			&:active {--bal-col: #8A3AB9}
-		}
-		&.fa-youtube {
-			--bal-col: #F00;
-			&::before {font-size: calc(8em / 9)}
+		}	@else {
+			--bal-alt: #{buttonColor(true)};
+			--bal-col: var(--brand-col);
+			&.fa-instagram:not(:hover)::before {
+				background-image: radial-gradient(circle farthest-corner at 0% 100%, #{$brand-ig-r}), linear-gradient(135deg, #{$brand-ig-l});
+				background-clip: text;
+				-webkit-background-clip: text;
+				color: transparent;
+			}
 		}
 	}
 	@else {
 		--bal-col: #{buttonColor($alt)};
 		--bal-alt: #{buttonColor(not $alt)};
 	}
+	&.fa-youtube::before {font-size: calc(8em / 9)}
 
-	@extend %link;
+	width: $taille; height: $taille;
 	padding: 8px;
-	font-size: 32px;
-	width: calc(1em + 16px); height: calc(1em + 16px);
+	position: relative;
+	font-size: $taille - 16px;
 
+	color: var(--bal-col);
+	transition: color var.$atf-boing;
+	z-index: 1;
+	
+	&::after, &::before {
+		position: absolute;
+
+		transition: top var.$atf-boing;
+		left: 50%; top: 100%; right: 50%; bottom: 0;
+		pointer-events: none;
+	}
 	&::after {
+		content: '';
 		border-radius: 50% 50% 0 50%;
-		box-shadow: 0 0 8px 0 buttonColor(not $alt) inset;
 		transform: rotate(45deg);
+		transition-property: top, left, bottom, right;
+		box-shadow: 0 0 8px 0 var(--bal-alt) inset;
+		background: var(--bal-col);
+		z-index: -1
 	}
 	&::before {
 		border: none;
+		border-radius: 0;
 		width: 1em; height: 1em;
 		left: 8px; top: 8px; right: 8px; bottom: 8px;
 		text-align: center;
+		transition-property: color, top, left, bottom, right;
+		z-index: 0;
+	}
+
+	@if $alt {&::after {box-shadow: none}}
+	* {
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+		color: #0000;
 	}
 	
 	&:hover {
-		@extend %linkHover;
-		padding: 0;
+		&::after {left: 0; top: 0; right: 0; bottom: 0}
+		&::before {
+			border-width: 3.5px;
+			color: var(--bal-alt)
+		}
 	}
 	&:active {
-		@extend %linkActive;
+		transition: none;
+		
+		&::after {
+			animation: .2s linear 0s pop;
+			animation-fill-mode: forwards;
+			transition: none;
+			background: none;
+			box-shadow: none;
+		}
+		&::before {
+			transition: none;
+			color: var(--bal-col)
+		}
 	}
 }

@@ -1,5 +1,6 @@
 @use './ressources/partials/variables' as var;
 @use './ressources/partials/vague';
+@use './ressources/partials/bouton' as btn;
 @use './ressources/partials/footer' ;
 @use './ressources/partials/header' ;
 @use './ressources/partials/carousel' ;
@@ -43,25 +44,14 @@ p {font-size: 17px; font-weight: 500}
 }
 /*- hero -*/
 .hero-button{
-	text-decoration: none;
-	font-family: 'Comic Sans MS', cursive;
-	font-size: 16px;
-	border: none;
-	color: var.$col-T2;
-	background-color: var.$col-P1;
-	padding: 8px 25px;
-	border-radius: 50px;
+	@include btn.bouton();
 	margin: 30px;
 }
-.hero-button:hover{
-	background-color: var.$col-P2;
-	cursor: pointer;
+.btn-don {
+	@include btn.bouton(false,12px);
+	margin: 30px;
 }
-.hero-button:active{
-	background-color: var.$col-P3;
-	cursor: pointer;
-}
-
+	
 /*- evenements-*/
 .evenements-bg{
 	background-color: var.$col-P1;

@@ -41,25 +41,25 @@ footer {
 	padding-left: 10px;
 }
 .footer-button {
-	position: relative;
+	@include btn.bouton(true);
 	display: block;
 	margin: 0 auto;
-	text-decoration: none;
-	font-size: 16px;
-	padding: 8px 25px;
-	border: solid 2px white;
-	color: var.$col-S1;
-	background-color: var.$col-P1;
-	border-radius: 50px;
+	// text-decoration: none;
+	// font-size: 16px;
+	// padding: 8px 25px;
+	// border: solid 2px white;
+	// color: var.$col-S1;
+	// background-color: var.$col-P1;
+	// border-radius: 50px;
 	margin-bottom: 40px;
-	text-decoration: none;
-	font-family: "Comic Sans MS", cursive;
+	// text-decoration: none;
+	// font-family: "Comic Sans MS", cursive;
 }
 
-.footer-button:hover {
-	background-color: var.$col-P2;
-	cursor: pointer;
-}
+// .footer-button:hover {
+// 	background-color: var.$col-P2;
+// 	cursor: pointer;
+// }
 
 .aligner2 {
 	display: flex;
@@ -78,35 +78,40 @@ footer {
 }
 
 #menu-social .menu-item {
-	width: 40px; height:40px;
+	@include btn.reseauBallon(40px, true, true);
+	// width: 40px; height:40px;
 	margin: 0 20px;
-	position: relative;
-	text-align: center;
-	font-size: 40px;
+	// position: relative;
+	// text-align: center;
+	// font-size: 40px;
 }
-#menu-social a {
-	--bal-size: 0;
-	position: absolute;
-	top: 0; left: 0; bottom: 0; right: 0;
-	border-radius: 50% 50% 0 50%;
-	transform: scale(var(--bal-size)) rotate(45deg);
-	background: var.$col-S2;
-	color: #0000;
-	transition: transform cubic-bezier(1,0,.5,1.5) .2s;
-}
-#menu-social .menu-item::before {
-	position: absolute;
-	top: 50%; left: 50%;
-	transform: translate(-50%,-50%);
-	font-size: 66.7%;
-	color: var.$col-S2;
-	transition: color cubic-bezier(1,0,.5,1.5) .2s;
-	z-index: 1;
-	pointer-events: none;
-}
-#menu-social .menu-item:hover a {--bal-size: 1}
-#menu-social .menu-item:hover:not(:active)::before {color: var.$col-P1}
-#menu-social .menu-item:active a {animation: .2s linear 0s pop}
+// #menu-social .menu-item:nth-child(2n) {
+// 	@include btn.reseauBallon(40px, true, true);
+// 	margin: 0 20px;
+// }
+// #menu-social a {
+// 	--bal-size: 0;
+// 	position: absolute;
+// 	top: 0; left: 0; bottom: 0; right: 0;
+// 	border-radius: 50% 50% 0 50%;
+// 	transform: scale(var(--bal-size)) rotate(45deg);
+// 	background: var.$col-S2;
+// 	color: #0000;
+// 	transition: transform cubic-bezier(1,0,.5,1.5) .2s;
+// }
+// #menu-social .menu-item::before {
+// 	position: absolute;
+// 	top: 50%; left: 50%;
+// 	transform: translate(-50%,-50%);
+// 	font-size: 66.7%;
+// 	color: var.$col-S2;
+// 	transition: color cubic-bezier(1,0,.5,1.5) .2s;
+// 	z-index: 1;
+// 	pointer-events: none;
+// }
+// #menu-social .menu-item:hover a {--bal-size: 1}
+// #menu-social .menu-item:hover:not(:active)::before {color: var.$col-P1}
+// #menu-social .menu-item:active a {animation: .2s linear 0s pop}
 
 .copyright {
 	display: flex;

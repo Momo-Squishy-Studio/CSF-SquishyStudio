@@ -15,7 +15,7 @@
 								calcMode="spline"
 								keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
 		</path>
-		<path fill="#ED3B44" d="M40,80 A40,40 0 1 1 80,40 V70 C80,85 95,75 85,85 75,95 85,80 70,80 V80Z" transform="rotate(45 40 40)"/>
+		<path fill="#EC1A24" d="M40,80 A40,40 0 1 1 80,40 V70 C80,85 95,75 85,85 75,95 85,80 70,80 V80Z" transform="rotate(45 40 40)"/>
 		<g fill="none" stroke-linecap="round">
 			<path stroke="#333" stroke-width="2" d="M36,95 h8
 																								m0,2 h-8"/>

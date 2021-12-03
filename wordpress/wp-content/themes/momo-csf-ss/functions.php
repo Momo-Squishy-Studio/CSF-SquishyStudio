@@ -194,8 +194,9 @@ function csf_general_section() {
 function csf_section_options_callback() { // Section Callback
 	echo '<style>
 					.csf-Desc{padding:10px;border-radius:20px;font:"Roboto";background:#ec1a24;color:#f0eeee}
-					img.csf{height:80px;padding:0 20px;border-radius:40px;margin-left:20px;background:#FFEFEF}
-					img.csf:hover{background:#EC1A24}
+					.csf-preview{height:80px;padding:0 20px;border-radius:40px;margin-left:20px;background:#FFEFEF}
+					.csf-preview:hover{background:#EC1A24}
+					.csf-preview[src=""]{visibility:hidden}
 					.csf-wpm-combine {display:none}
 					.csf-wpm-single {margin-left:5px;margin-right:20px}
 				</style>
@@ -207,21 +208,28 @@ function csf_section_options_callback() { // Section Callback
 						}
 						group.children[0].value = returnVal +"[:]";
 					}
+					function csfUpdatepreview(group) {
+						const inputSrc = group.children[0];
+						group.querySelectorAll("img")[1].src = inputSrc.value;
+					}
 				</script>
 				<p class="csf-Desc">Modifiez les diverses informations apparaissant dans votre site!</p>';
 }
 
 function csf_textbox_callback($args) {  // Textbox Callback
 	$option = get_option($args[0]);
-	echo '<input type="text" id="'. $args[0] .'" name="'. $args[0] .'" class="csf-wpm-combine" value="'. $option .'" size="40" readonly/>';
+	echo "<input type=\"text\" id=\"{$args[0]}\" name=\"{$args[0]}\" class=\"csf-wpm-combine\" value=\"{$option}\" size=\"40\" readonly/>";
 	foreach (array("en","fr") as $lang) {
-		echo '<img src="/wp-content/plugins/wp-multilang/flags/'. $lang .'.png"><input type="text" class="csf-wpm-single '. $lang .'" value="'. emulate_wpm($option, wpm_pat($lang)) .'" oninput="csfWpmCombine(this.parentElement)"/>';
+		echo "<img src=\"/wp-content/plugins/wp-multilang/flags/{$lang}.png\"><input type=\"text\" class=\"csf-wpm-single {$lang}\" value=\"". emulate_wpm($option, wpm_pat($lang)) .'" oninput="csfWpmCombine(this.parentElement)"/>';
 	}
 }
 function csf_url_callback($args) {  // Logo Callback
 	$option = get_option($args[0]);
-	echo '<input type="url" id="'. $args[0] .'" name="'. $args[0] .'" value="'. $option .'" size="80" placeholder="/wp-content/uploads/.../logo.png"/><img class="csf" src="'. $option .'" />';
+	echo "<input type=\"url\" id=\"{$args[0]}\" name=\"{$args[0]}\" value=\"{$option}\" size=\"80\" placeholder=\"/wp-content/uploads/.../logo.png\" oninput=\"csfUpdatepreview(this.parentElement)\"/><img class=\"csf-preview\" src=\"{$option}\" /><img class=\"csf-preview\" src=\"\" />";
 }
+// function csf_page_callback($args) {
+// 	$option = get_option($args[0]);
+// }
 /* --------------------------------
 Appels personalisés du REST API*/
 
@@ -266,7 +274,7 @@ function get_ressource($path = '') {
 }
 
 //- generer bouton don ---------------------------
-function gen_btn_don($class, $id, $type, $event, $function) {
+function gen_btn_don($class=null, $type=null, $event=null, $function=null, $id=null) {
 	get_template_part('partials/btn', 'don', array('type'=>$type, 'id'=>$id, 'class'=>$class, 'event'=>$event, 'function'=>$function));
 }
 //- generer ballon -------------------------------

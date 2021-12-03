@@ -7,7 +7,7 @@
 		<h1 class="col-12" id="don"><?php csf_get_option('txt_btn_don'); ?></h1>
 		<div class="col-12">
 			<div class="don-bulles">
-				<form action="" class="donations">
+				<form name="donation" action="https://www.clownssansfrontieres.ca/donner/" class="donations">
 					<input type="radio" name="amount" id="5" value="5">
 					<input type="radio" name="amount" id="10" value="10">
 					<input type="radio" name="amount" id="15" value="15">
@@ -18,7 +18,7 @@
 					<input type="radio" name="amount" id="other" value="autre">
 					<input type="number" name="amountOther" id="">
 					<br>
-					<input type="submit" class="btn-don hero-button" id="mono-don" value="<?php csf_get_option('txt_btn_don'); ?>">
+					<?php gen_btn_don('hero-button',1,'onclick','setTimeout(()=>{this.parentElement.submit()}, 5000)'); ?>
 				</form>
 				
 				<!-- animation mono -->

@@ -108,7 +108,7 @@
 	border: 3.5px solid var(--bal-col);
 	border-radius: calc(1ch + $marge);
 	transition: border-color var.$atf-boing;
-	background: transparent;
+	background: var(--bal-alt);
 
 	@if $alt {&::after {box-shadow: none}}
 	@else {

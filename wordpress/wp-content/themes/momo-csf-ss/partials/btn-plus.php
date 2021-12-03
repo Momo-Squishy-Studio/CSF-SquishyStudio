@@ -1,6 +1,6 @@
 <?php
 $defaults = array(
-	'type' => 1,
+	'type' => 2,
 	'id' => null,
 	'class' => null,
 	'event' => 'href',
@@ -15,7 +15,7 @@ $tagParams = "{$id} {$interaction} class=\"btn-don{$class}\"";
 
 switch ($args['type']) {
 	case 1:
-		echo '<button type="button" '.$tagParams.'>'.csf_get_option('txt_btn_don',false).'</button>';
+		echo '<button '.$tagParams.'>'.csf_get_option('txt_btn_don',false).'</button>';
 		break;
 	case 2:
 		echo '<button type="submit" '.$tagParams.'>'.csf_get_option('txt_btn_don',false).'</button>';
@@ -25,5 +25,4 @@ switch ($args['type']) {
 		echo '<a '.$tagParams.'>'.csf_get_option('txt_btn_don',false).'</a>';
 		break;
 }
-// setTimeout( function() { window.location = URL }, 500 );
 ?>

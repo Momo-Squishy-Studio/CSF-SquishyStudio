@@ -24,9 +24,8 @@ endif;
 		<img class="hero-logo" src="<?php echo get_option('site_logo');?>" alt="logo">
 		<h1><?php echo get_option('blogname'); ?></h1>
 		<div class="hero-container">
-			<p><?php echo get_option('blogdescription'); ?></p>
-			<?php gen_btn_don('unique','hero-button',1,'href','/'); ?>
-			<!-- <button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button> -->
+			<p class="slogan"><?php echo get_option('blogdescription'); ?></p>
+			<?php gen_btn_don('hero-button',1,'onclick','window.location.href=\'https://www.clownssansfrontieres.ca/donner\''); ?>
 		</div>
 	</div>
 	<?php get_template_part( 'partials/carousel' );?>
@@ -119,6 +118,6 @@ endif;
 	</section>
 
 	<?php get_template_part( 'partials/donation' ); // Affiche partials/donation.php
-//get_sidebar(); // Affiche le contenu de sidebar.php
+
 get_footer(); // Affiche footer.php 
 ?>

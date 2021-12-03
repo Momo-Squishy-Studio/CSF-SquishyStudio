@@ -37,6 +37,7 @@ p {font-size: 17px; font-weight: 500}
 
 .container{
 	max-width: 1400px;
+	padding-top: .1px; padding-bottom: .1px;
 
 .p-blanc{
 	color: var.$col-S1;
@@ -54,9 +55,10 @@ p {font-size: 17px; font-weight: 500}
 	
 /*- evenements-*/
 .evenements-bg{
-	background-color: var.$col-P1;
-	background-image: url(ressources/images/bg_bulles_rouges.png);
-	background-position: top center;
+	// background-color: ;
+	// background-image: url(ressources/images/bg_bulles_rouges.png);
+	// background-position: top center;
+	background: url(ressources/images/bg_bulles_rouges.png) top/100% var.$col-P1;
 }
 .evenements{
 	display: flex;
@@ -98,7 +100,10 @@ p {font-size: 17px; font-weight: 500}
 	padding-bottom: 50px;
 }
 
-[class^=ballon] {position: absolute}/*
+.ballon {
+	position: absolute;
+	z-index: -1;
+}/*
 .ballon-4{
 	transform: translateX(10vw) translateY(120px) scale(1);
 }
@@ -209,7 +214,7 @@ p {font-size: 17px; font-weight: 500}
 		text-align: center;
 		background: var.$col-S1;
 	}
-	[type=submit] {
+	[type=button] {
 		width: 40%; min-width: 160px;
 		margin: auto;
 		grid-column: span 2;

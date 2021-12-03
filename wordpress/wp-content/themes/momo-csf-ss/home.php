@@ -118,6 +118,40 @@ endif;
 		</div>
 	</section>
 
+	<script>
+	fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
+	.then(response => response.json())
+	.then(data => {
+		let html = "";
+		let fetchDivAccueil = document.querySelector('#fetch-api-cards-accueil')
+
+		for (let i = 0; i < 3; i++) {
+
+			let link = data[i].link;
+			let title = data[i].title.rendered;
+			let auteur = data[i].acf.auteur;
+			let categorie = data[i].acf.categorie;
+			let date = data[i].acf.date;
+			let resume = data[i].acf.resume;
+			let image = data[i]._embedded['wp:featuredmedia'][0].source_url;
+
+			html += 
+				`<div class="col-xl-4 col-lg-6 col-sm-12 mb-4">
+					<div class="card card1" id="card-v2">
+						<div class="card-body">
+							<h2 class="card-title">${title}</h2>
+							<img src="${image}" class="card-img-top"/>
+							<p>${resume}</p>
+							<div class="card-footer" id="card-footer-v2"><a href='${link}'><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
+						</div>
+					</div>
+				</div>`;
+
+			fetchDivAccueil.innerHTML = html;
+		 }
+	  });
+	  </script>
+
 	<?php get_template_part( 'partials/donation' ); // Affiche partials/donation.php
 //get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 

@@ -18,7 +18,7 @@
 					<input type="radio" name="amount" id="other" value="autre">
 					<input type="number" name="amountOther" id="">
 					<br>
-					<?php gen_btn_don('hero-button',1,'onclick','setTimeout(()=>{this.parentElement.submit()}, 5000)'); ?>
+					<?php gen_btn_don('hero-button',1,'onclick','setTimeout(()=>{this.parentElement.submit()}, 2500)','mono-don'); ?>
 				</form>
 				
 				<!-- animation mono -->

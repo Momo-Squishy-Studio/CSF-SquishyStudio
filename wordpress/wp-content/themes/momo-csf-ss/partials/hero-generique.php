@@ -11,7 +11,6 @@
 			<div class="hero-container">
 				<p><?php the_field('description_page'); ?></p><br>
 				<?php gen_btn_don('hero-button',1,'onclick','window.location.href=\'https://www.clownssansfrontieres.ca/donner\''); ?>
-				<!-- <button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button> -->
 			</div>
 		</div>
 	</div>

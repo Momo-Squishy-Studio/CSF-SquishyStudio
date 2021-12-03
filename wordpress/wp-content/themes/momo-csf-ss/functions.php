@@ -179,9 +179,49 @@ function csf_general_section() {
 			'ttl_nouvelles'
 		)
 	);
+	add_settings_field(
+		'txt_tri',
+		'Texte de tri des nouvelles',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'txt_tri'
+		)
+	);
+	add_settings_field(
+		'txt_opt_recentes',
+		'Texte d\'option de tri par récentes',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'txt_opt_recentes'
+		)
+	);
+	add_settings_field(
+		'txt_opt_anciennes',
+		'Texte d\'option de tri par récentes',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'txt_opt_anciennes'
+		)
+	);
+	add_settings_field(
+		'txt_btn_affichernouvelles',
+		'Texte de Bouton d\'affichage des nouvelles',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'txt_btn_affichernouvelles'
+		)
+	);
 
-	register_setting('general','site_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_RN.svg'));
-	register_setting('general','alt_logo', array('default' => '/wp-content/icones/CSF_Logo_MASA_WW.svg'));
+	register_setting('general','site_logo', array('default' => '/wp-content/uploads/icones/CSF_Logo_MASA_RN.svg'));
+	register_setting('general','alt_logo', array('default' => '/wp-content/uploads/icones/CSF_Logo_MASA_WW.svg'));
 	register_setting('general','txt_btn_don', array('default' => '[:en]Donate[:fr]Faire un don[:]'));
 	register_setting('general','txt_btn_plus', array('default' => '[:en]Show more[:fr]En savoir plus[:]'));
 	register_setting('general','ttl_evenements', array('default' => '[:en]Events[:fr]Évènements[:]'));
@@ -189,11 +229,16 @@ function csf_general_section() {
 	register_setting('general','ttl_animations', array('default' => '[:en]Entertainments[:fr]Animations[:]'));
 	register_setting('general','ttl_ateliers', array('default' => '[:en]Activities[:fr]Ateliers[:]'));
 	register_setting('general','ttl_nouvelles', array('default' => '[:en]News[:fr]Nouvelles[:]'));
+	register_setting('general','txt_tri', array('default' => '[:en]Sort by:[:fr]Trier par:[:]'));
+	register_setting('general','txt_opt_recentes', array('default' => '[:en]Newest[:fr]Plus récentes[:]'));
+	register_setting('general','txt_opt_anciennes', array('default' => '[:en]Oldest[:fr]Plus anciennes[:]'));
+	register_setting('general','txt_btn_affichernouvelles', array('default' => '[:en]Show more[:fr]Afficher plus[:]'));
 }
 
 function csf_section_options_callback() { // Section Callback
 	echo '<style>
 					.csf-Desc{padding:10px;border-radius:20px;font:"Roboto";background:#ec1a24;color:#f0eeee}
+					.csf-Desc+table th{padding:5px 10px 5px}.csf-Desc+table td{padding:5px 10px}
 					.csf-preview{height:80px;padding:0 20px;border-radius:40px;margin-left:20px;background:#FFEFEF}
 					.csf-preview:hover{background:#EC1A24}
 					.csf-preview[src=""]{visibility:hidden}

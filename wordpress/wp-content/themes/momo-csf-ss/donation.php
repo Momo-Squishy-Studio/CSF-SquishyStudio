@@ -21,12 +21,12 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	</article>
 	<?php endwhile; // Fermeture de la boucle
 
-	get_template_part( 'partials/donation' ); // Affiche partials/donation.php
-
 else : // Si aucune page n'a été trouvée
 	echo "Hello World";
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
+
+get_template_part( 'partials/donation' ); // Affiche partials/donation.php
 
 get_footer(); // Affiche footer.php 
 ?>

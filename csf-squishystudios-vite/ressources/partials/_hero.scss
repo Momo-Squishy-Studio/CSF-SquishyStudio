@@ -36,4 +36,9 @@
   .ballon-3{
     transform: translateX(25vw) translateY(300px) scale(0.7);
   }
+  @media screen and (max-width: 500px) {
+    .hero-logo{
+      width: 375px;
+    }
+  }
 /*- hero end -*/

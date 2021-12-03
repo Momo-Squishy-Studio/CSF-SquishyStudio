@@ -22,17 +22,22 @@ gsap.timeline({repeat:-1})
 gsap.timeline() .to('#carousel1', {rotate: 360, duration: 4, ease:Linear.easeNone, repeat:-1})
 
 /*animation monocycle*/
-	gsap.timeline()
-	.to('#roue', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
-	.to('#monocycle', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
-	
-	  gsap.timeline() .to('#roue', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:-1})
+var playmono = document.querySelector('#mono-don');
+
+	playmono.addEventListener('click', () => {
 	
 	gsap.timeline()
-	.to('#roue2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
-	.to('#monocycle2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:-1},-1)
+	.to('#roue', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
+	.to('#monocycle', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
 	
-	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, ease: 'ease-out', yoyo:true, repeat:-1})
+	  gsap.timeline() .to('#roue', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
+	
+	gsap.timeline()
+	.to('#roue2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
+	.to('#monocycle2', {x: '-40vw', duration: 2, ease: 'ease-out', yoyo:true, repeat:1},0)
+	
+	  gsap.timeline() .to('#roue2', {rotate: -500, duration: 2, repeat: 0, ease: 'ease-out', yoyo:true, repeat:1})
+		});
 
 /*hamburger toggle*/
 const upper = document.querySelector('.upper');

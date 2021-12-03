@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="200" viewBox="0 0 80 200">
 	<g>
-		<animateTransform attributeName="transform"
+		<!-- <animateTransform attributeName="transform"
 											type="translate"
 											dur="4"
 											repeatCount="indefinite"
 											values="0 8;0 12;0 8"
 											calcMode="spline"
-											keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
+											keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/> -->
 		<path d="M40,100 q10,20 0,40 -10,20 0,40" fill="none" stroke="#333" stroke-width="2" stroke-linecap="round">
 			<animate attributeName="d"
 								dur="10"
@@ -15,7 +15,8 @@
 								calcMode="spline"
 								keySplines="0.4 0 0.6 1; 0.4 0 0.6 1"/>
 		</path>
-		<path fill="#EC1A24" d="M40,80 A40,40 0 1 1 80,40 V70 C80,85 95,75 85,85 75,95 85,80 70,80 V80Z" transform="rotate(45 40 40)"/>
+		<path fill="#EC1A24" d="M40,80 A40,40 0 1 1 80,40 V70 C80,85 95,75 85,85 75,95 85,80 70,80 V80Z" stroke="#fff8" stroke-width=".5" transform="rotate(45 40 40)"/>
+		<path fill="#ff0" d="M15,65 V45 Q40,40 45,40Z" stroke="#fff8" stroke-width=".5" transform="rotate(45 40 40)"/>
 		<g fill="none" stroke-linecap="round">
 			<path stroke="#333" stroke-width="2" d="M36,95 h8
 																								m0,2 h-8"/>

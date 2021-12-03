@@ -34,6 +34,37 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		</div>
 </section>
 
+<script>
+		fetch("<?php the_field('json'); ?>")
+	.then(response => response.json())
+	.then(data => {
+		let html3 = "";
+		let fetchDivEquipe = document.querySelector('#fetch-api-cards-hub-services')
+
+		for (let i = 0; i < 2; i++) {
+
+			let link = data[i].link;
+			let title = data[i].title.rendered;
+			let membre = data[i].acf.resume;
+			let image = data[i]._embedded['wp:featuredmedia'][0].source_url;
+
+			html3 += 
+				`<div class="col-xl-6 col-lg-6 col-sm-12 mb-4">
+					<div class="card card1" id="card-v2">
+						<div class="card-body">
+							<h2 class="card-title">${title}</h2>
+							<img src="${image}" class="card-img-top"/>
+							<p>${membre}</p>
+							<div class="card-footer" id="card-footer-v2"><a href='${link}'><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
+						</div>
+					</div>
+				</div>`;
+
+			fetchDivEquipe.innerHTML = html3;
+		 }
+	  });
+</script>
+
 <?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée

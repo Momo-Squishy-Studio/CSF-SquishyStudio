@@ -2,8 +2,8 @@
 
 .vague-top, .vague-bot {
 	--sect-pad: 100px;
-	--col-bg: var.$col-P1;
-	--col-alt: var.$col-P2;
+	--col-bg: #{var.$col-P1};
+	--col-alt: #{var.$col-P2};
 	padding: var.$pad-h;
 	position: relative;
 }

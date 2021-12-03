@@ -188,7 +188,7 @@
 	}
 
 	@if $orig {
-		--brand-col: var.$col-P1;
+		--brand-col: #{var.$col-P1};
 		&.fa-facebook-f {--brand-col: #4267B2}
 		&.fa-vimeo-v {--brand-col: #86c9ef}
 		&.fa-twitter {--brand-col: #1DA1F2}

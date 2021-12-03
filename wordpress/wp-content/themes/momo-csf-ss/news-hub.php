@@ -45,7 +45,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 function getnouvelles(param){
 
-	fetch(`/wp-json/wp/v2/news?_embed&per_page=13&order=date&order=${param}`)
+	fetch(`<?php the_field('json'); ?>/wp-json/wp/v2/news?_embed&per_page=13&order=date&order=${param}`)
 	.then(response => response.json())
 	.then(data => { 
 		console.log(data);

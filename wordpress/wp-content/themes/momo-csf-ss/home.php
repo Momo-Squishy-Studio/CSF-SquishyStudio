@@ -119,7 +119,7 @@ endif;
 	</section>
 
 	<script>
-	fetch("/wp-json/wp/v2/news?_embed&order=date&order=desc")
+	fetch("<?php the_field('json'); ?>")
 	.then(response => response.json())
 	.then(data => {
 		let html = "";

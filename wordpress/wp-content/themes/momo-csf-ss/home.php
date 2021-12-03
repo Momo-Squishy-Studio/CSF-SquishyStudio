@@ -43,7 +43,7 @@ endif;
 						<div class="card card1">
 							<div class="card-body">
 								<h2 class="card-title"><?php csf_get_option('ttl_spectacles'); ?></h2>
-								<img src="/wp-content/uploads/images/image_01.jpg" class="card-img-top">
+								<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/image_01.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
@@ -54,7 +54,7 @@ endif;
 						<div class="card card2">
 							<div class="card-body">
 								<h2 class="card-title"><?php csf_get_option('ttl_animations'); ?></h2>
-								<img src="/wp-content/uploads/images/image_02.jpg" class="card-img-top">
+								<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/image_02.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
@@ -65,7 +65,7 @@ endif;
 						<div class="card card3">
 							<div class="card-body">
 								<h2 class="card-title"><?php csf_get_option('ttl_ateliers'); ?></h2>
-								<img src="/wp-content/uploads/images/image_03.jpg" class="card-img-top">
+								<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/image_03.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>
@@ -85,7 +85,7 @@ endif;
 					<div class="col-12">
 						<div class="card card1">
 							<div class="card-body">
-								<img src="/wp-content/uploads/images/image_04.jpg" class="card-img-top">
+								<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/image_04.jpg" class="card-img-top">
 								<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 								<div class="card-footer"><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></div>
 							</div>

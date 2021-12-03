@@ -19,7 +19,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso1.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso1.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -36,7 +36,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso2.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso2.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -52,7 +52,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso3.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso3.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -69,7 +69,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso4.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso4.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -86,7 +86,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso5.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso5.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -103,7 +103,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/images/this_person_not_exist/perso6.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso6.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -120,7 +120,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso7.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso7.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -137,7 +137,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso8.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso8.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">
@@ -154,7 +154,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		</div>
 		<div class="modal-body">
-			<img src="/wp-content/uploads/site_ressources/images/this_person_not_exist/perso9.jfif" class="card-img-top">
+			<img src="<?php echo get_template_directory_uri(); ?>/ressources/images/this_person_not_exist/perso9.jfif" class="card-img-top">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 		<div class="modal-footer">

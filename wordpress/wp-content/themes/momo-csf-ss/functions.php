@@ -191,7 +191,7 @@ function csf_general_section() {
 	);
 	add_settings_field(
 		'txt_opt_recentes',
-		'Texte d\'option de tri par récentes',
+		'Texte option de tri par récentes',
 		'csf_textbox_callback',
 		'general',
 		'csf_settings_section',
@@ -201,7 +201,7 @@ function csf_general_section() {
 	);
 	add_settings_field(
 		'txt_opt_anciennes',
-		'Texte d\'option de tri par récentes',
+		'Texte option de tri par récentes',
 		'csf_textbox_callback',
 		'general',
 		'csf_settings_section',
@@ -211,7 +211,7 @@ function csf_general_section() {
 	);
 	add_settings_field(
 		'txt_btn_affichernouvelles',
-		'Texte de Bouton d\'affichage des nouvelles',
+		'Texte de Bouton affichage des nouvelles',
 		'csf_textbox_callback',
 		'general',
 		'csf_settings_section',

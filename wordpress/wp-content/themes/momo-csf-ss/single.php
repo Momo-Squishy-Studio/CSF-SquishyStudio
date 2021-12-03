@@ -32,7 +32,7 @@ if ( have_posts() ) :
 					</div>
 					<div class="row">
 	
-					<?php $next_post = get_next_post();
+					<?php $next_post = get_previous_post();
 					$next_value = get_post_meta( $next_post->ID, 'CUSTOM_FIELD', $single = true); ?>	
 							
 					<div class="col-xl-12 col-lg-12 col-sm-12 mb-4">

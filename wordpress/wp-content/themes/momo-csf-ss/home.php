@@ -141,7 +141,7 @@ endif;
 							<h2 class="card-title">${title}</h2>
 							<img src="${image}" class="card-img-top"/>
 							<p>${resume}</p>
-							<div class="card-footer" id="card-footer-v2"><a href='${link}'><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
+							<div class="card-footer" id="card-footer-v2"><a href='${link}'><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></a></div>
 						</div>
 					</div>
 				</div>`;

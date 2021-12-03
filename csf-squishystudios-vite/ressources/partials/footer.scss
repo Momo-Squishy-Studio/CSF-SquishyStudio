@@ -41,7 +41,7 @@ footer {
 	padding-left: 10px;
 }
 .footer-button {
-	@include btn.bouton(true);
+	@include btn.bouton(true,12px);
 	display: block;
 	margin: 0 auto;
 	// text-decoration: none;

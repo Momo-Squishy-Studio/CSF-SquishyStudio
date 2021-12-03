@@ -19,7 +19,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 			<div class="nouvelles-accueil">
 				<div class="row">
 					<div class="col-12">
-					<h1 class="h1-evenements"><?php get_home_info('titre_nouvelles'); ?></h1>
+					<h1 class="h1-evenements"><?php csf_get_option('ttl_nouvelles'); ?></h1>
 					</div>
 					<div class="col-12">
 					<div class="trier-order">
@@ -69,7 +69,7 @@ function getnouvelles(param){
 							<h2 class="card-title">${title}</h2>
 							<img src="${image}" class="card-img-top"/>
 							<p>${resume}</p>
-							<div class="card-footer"><a href='${link}'><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
+							<div class="card-footer"><a href='${link}'><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></a></div>
 						</div>
 					</div>
 				</div>`;
@@ -119,7 +119,7 @@ btnNews.addEventListener('click', function() {
 							<h2 class="card-title">${title}</h2>
 							<img src="${image}" class="card-img-top"/>
 							<p>${resume}</p>
-							<div class="card-footer"><a href='${link}'><button class="hero-button"><?php the_field('en_savoir_plus'); ?></button></a></div>
+							<div class="card-footer"><a href='${link}'><button class="hero-button"><?php csf_get_option('txt_btn_plus'); ?></button></a></div>
 						</div>
 					</div>
 				</div>`;

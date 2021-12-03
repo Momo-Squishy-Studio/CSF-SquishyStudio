@@ -6,11 +6,12 @@
 				gen_ballon('35vw', '-180px', 1.2),
 				gen_ballon('25vw', '300px', .7);
 			?>
-			<img class="hero-logo" src="<?php echo get_home_info('site_logo_' . get_home_info('site_logo_type'))?>" alt="logo">
+			<img class="hero-logo" src="<?php echo get_option('site_logo')?>" alt="logo">
 			<h1><?php the_title(); // Titre de la page ?></h1>
 			<div class="hero-container">
 				<p><?php the_field('description_page'); ?></p><br>
-				<button class="hero-button"><?php get_home_info('bouton_don'); ?></button>
+				<?php gen_btn_don('hero-button',1,'onclick','window.location.href=\'https://www.clownssansfrontieres.ca/donner\''); ?>
+				<!-- <button class="hero-button"><?php csf_get_option('txt_btn_don'); ?></button> -->
 			</div>
 		</div>
 	</div>

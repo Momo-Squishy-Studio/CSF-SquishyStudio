@@ -11,10 +11,10 @@
 		<div class="row">
 			<div class="col-xl-4 col-md-6 col-sm-12">
 				<div class="aligner">
-					<a href="/"><img class="whiteclown" src="<?php echo get_option('alt_logo');?>" href="index.html"></a>
+					<a href="/"><img class="whiteclown" src="<?php echo get_option('alt_logo');?>"></a>
 					<h1 class="quote-blanc">Clowns sans<br>frontières</h1>
 				</div>
-				<button class="footer-button">Faire Un Don</button>
+				<?php gen_btn_don('footer-button',3,'onclick','window.location.href=\'https://www.clownssansfrontieres.ca/donner\''); ?>
 			</div>
 
 			<div class="col-xl-4 col-md-6 col-sm-12 aligner2">

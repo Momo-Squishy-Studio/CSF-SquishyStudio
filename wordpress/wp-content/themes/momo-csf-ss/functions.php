@@ -210,43 +210,23 @@ function csf_general_section() {
 		)
 	);
 	add_settings_field(
-		'txt_tri',
-		'Texte de tri des nouvelles',
+		'404_title',
+		'404 title',
 		'csf_textbox_callback',
 		'general',
 		'csf_settings_section',
 		array(
-			'txt_tri'
+			'404_title'
 		)
 	);
 	add_settings_field(
-		'txt_opt_recentes',
-		'Texte option de tri par récentes',
+		'404_text',
+		'404 texte',
 		'csf_textbox_callback',
 		'general',
 		'csf_settings_section',
 		array(
-			'txt_opt_recentes'
-		)
-	);
-	add_settings_field(
-		'txt_opt_anciennes',
-		'Texte option de tri par récentes',
-		'csf_textbox_callback',
-		'general',
-		'csf_settings_section',
-		array(
-			'txt_opt_anciennes'
-		)
-	);
-	add_settings_field(
-		'txt_btn_affichernouvelles',
-		'Texte de Bouton affichage des nouvelles',
-		'csf_textbox_callback',
-		'general',
-		'csf_settings_section',
-		array(
-			'txt_btn_affichernouvelles'
+			'404_text'
 		)
 	);
 
@@ -262,10 +242,8 @@ function csf_general_section() {
 	register_setting('general','telephone', array('default' => '[:en]Call[:fr]Téléphone[:]'));
 	register_setting('general','courriel', array('default' => '[:en]Email[:fr]Courriel[:]'));
 	register_setting('general','adresse', array('default' => '[:en]Adress[:fr]Adresse[:]'));
-	register_setting('general','txt_tri', array('default' => '[:en]Sort by:[:fr]Trier par:[:]'));
-	register_setting('general','txt_opt_recentes', array('default' => '[:en]Newest[:fr]Plus récentes[:]'));
-	register_setting('general','txt_opt_anciennes', array('default' => '[:en]Oldest[:fr]Plus anciennes[:]'));
-	register_setting('general','txt_btn_affichernouvelles', array('default' => '[:en]Show more[:fr]Afficher plus[:]'));
+	register_setting('general','404_title', array('default' => '[:en]Error 404[:fr]Erreur 404[:]'));
+	register_setting('general','404_text', array('default' => '[:en]The page you are looking for does not exist[:fr]La page que vous cherchez est inexistante[:]'));
 }
 
 function csf_section_options_callback() { // Section Callback

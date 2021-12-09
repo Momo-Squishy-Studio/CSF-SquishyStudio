@@ -3,7 +3,7 @@
     <div class="temoignage">
         <div class="row">
             <div class="col-12">
-            <h1>Erreur 404</h1> <h2>La page que vous cherchez n'existe pas.</h2>
+            <h1><?php csf_get_option('404_title'); ?></h1> <h2><?php csf_get_option('404_text'); ?></h2>
             </div>
                 <div class="animation-404">
                     <div id="balancoire">

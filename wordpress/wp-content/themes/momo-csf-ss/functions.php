@@ -180,6 +180,36 @@ function csf_general_section() {
 		)
 	);
 	add_settings_field(
+		'telephone',
+		'Telephone',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'telephone'
+		)
+	);
+	add_settings_field(
+		'courriel',
+		'Courriel',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'courriel'
+		)
+	);
+	add_settings_field(
+		'adresse',
+		'Adresse',
+		'csf_textbox_callback',
+		'general',
+		'csf_settings_section',
+		array(
+			'adresse'
+		)
+	);
+	add_settings_field(
 		'txt_tri',
 		'Texte de tri des nouvelles',
 		'csf_textbox_callback',
@@ -229,6 +259,9 @@ function csf_general_section() {
 	register_setting('general','ttl_animations', array('default' => '[:en]Entertainments[:fr]Animations[:]'));
 	register_setting('general','ttl_ateliers', array('default' => '[:en]Activities[:fr]Ateliers[:]'));
 	register_setting('general','ttl_nouvelles', array('default' => '[:en]News[:fr]Nouvelles[:]'));
+	register_setting('general','telephone', array('default' => '[:en]Call[:fr]Téléphone[:]'));
+	register_setting('general','courriel', array('default' => '[:en]Email[:fr]Courriel[:]'));
+	register_setting('general','adresse', array('default' => '[:en]Adress[:fr]Adresse[:]'));
 	register_setting('general','txt_tri', array('default' => '[:en]Sort by:[:fr]Trier par:[:]'));
 	register_setting('general','txt_opt_recentes', array('default' => '[:en]Newest[:fr]Plus récentes[:]'));
 	register_setting('general','txt_opt_anciennes', array('default' => '[:en]Oldest[:fr]Plus anciennes[:]'));

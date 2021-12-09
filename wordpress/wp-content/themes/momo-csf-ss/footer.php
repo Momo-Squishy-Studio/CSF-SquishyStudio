@@ -18,10 +18,10 @@
 			</div>
 
 			<div class="col-xl-4 col-md-6 col-sm-12 aligner2">
-				<a class="info" href="tel:+514-495-1287">Téléphone : 514-495-1287</a>
-				<a class="info" href="mailto:contact@clownssansfrontieres.ca">Courriel : contact@clownssansfrontieres.ca</a>
+				<a class="info" href="tel:+514-495-1287"><?php csf_get_option('telephone'); ?> : 514-495-1287</a>
+				<a class="info" href="mailto:contact@clownssansfrontieres.ca"><?php csf_get_option('courriel'); ?> : contact@clownssansfrontieres.ca</a>
 				<a class="info" href="https://goo.gl/maps/2mN1r1q5v54WZ1su5">
-					Adresse: 105 rue Ontario Est, bureau 203,<br>Montréal, Québec, H2X 1G9
+				<?php csf_get_option('adresse'); ?> : 105 rue Ontario Est, bureau 203,<br>Montréal, Québec, H2X 1G9
 				</a>
 			</div>
 
